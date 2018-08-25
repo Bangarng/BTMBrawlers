@@ -1,4 +1,4 @@
--- DROP DATABASE IF EXISTS exampledb;
+DROP DATABASE IF EXISTS users_db;
 CREATE DATABASE users_db;
 
 use users_db;
@@ -18,9 +18,7 @@ bossTwo boolean DEFAULT false,
 bossThree boolean DEFAULT false,
 Primary Key (id)
 
+);
 
 INSERT INTO userInfo (userName, pass, charName, attack, defense, intellect, bossOne, bossTwo, bossThree) VALUES ('Smarcus4','sam12345','Sidekick', 15, 2, 10, false, false, false);
 
-
-
-);
