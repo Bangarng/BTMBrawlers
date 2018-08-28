@@ -1,36 +1,29 @@
 var Sequelize = require("sequelize");
 var sequelize = require("../config/connection");
 
-var db = sequelize.define("userInfo", 
+var brawlerdb = sequelize.define("userInfo", //this is the table stupid <3 <3// 
 {
-    userName: 
-    {
+    userName: {
         type: Sequelize.STRING,
         allowNull: false,
-        validate:
-        {
+        validate:{
             len: [1,50]
         }
     },
-    charName:
-    {
+    charName:{
         type: Sequelize.STRING,
         allowNull: false,
-        validate:
-        {
+        validate:{
             len: [1,30]
         }
     },
-    attack:
-    {
+    attack:{
         type: Sequelize.INTEGER,
     },
-    defense:
-    {
+    defense:{
         type: Sequelize.INTEGER,
     },
-    intellect:
-    {
+    intellect:{
         type: Sequelize.INTEGER,
     },
 },
@@ -77,7 +70,6 @@ var itemDB =sequelize.define("items",{
 
 
 itemDB.sync();
-db.sync();
+brawlerdb.sync();
 
-module.exports = db;
-module.exports = itemDB;
+module.exports = brawlerdb;
