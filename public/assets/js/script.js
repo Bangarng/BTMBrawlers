@@ -17,7 +17,7 @@ var Mothman = new characterMaker("Mothman", 30, 30, 5);
 var characterSelection = function(event) {
     $("#heroCharacter").on("click", function (event) {
         event.preventDefault();
-        console.log(Hero)
+        
     });
     $("#sidekickCharacter").on("click", function (event) {
         event.preventDefault();

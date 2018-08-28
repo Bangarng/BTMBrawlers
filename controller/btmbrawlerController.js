@@ -1,7 +1,7 @@
 var express = require("express");
 var router = express.Router();
 var db = require("../models/btmbrawlerDB");
-var itemDB = require("../models/btmbrawlerDB");
+var itemDB = require("../models/itemDB");
 
 router.get("/", function(req, res){
     db.findAll({}).then(function(results) {
