@@ -39,6 +39,45 @@ var db = sequelize.define("userInfo",
     timestamps: false   
 });
 
+
+var itemDB =sequelize.define("items",{
+
+
+    itemName:
+        {
+            type: Sequelize.STRING,
+            allowNull: false,
+            validate:
+            {
+                len: [1,15]
+            }
+        },
+    attack:
+    {
+        type: Sequelize.INTEGER,
+    },
+    defense:
+    {
+        type: Sequelize.INTEGER,
+    },
+    intellect:
+    {
+        type: Sequelize.INTEGER,
+    },
+    
+    lvlUnlock:
+    {
+        type: Sequelize.BOOLEAN,
+    },
+},
+{
+    freezeTableName: true,
+    timestamps: false   
+});    
+
+
+itemDB.sync();
 db.sync();
 
 module.exports = db;
+module.exports = itemDB;
