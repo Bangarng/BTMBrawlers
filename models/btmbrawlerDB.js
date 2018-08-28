@@ -68,3 +68,4 @@ itemDB.sync();
 brawlerdb.sync();
 
 module.exports = brawlerdb;
+module.exports = itemDB;
