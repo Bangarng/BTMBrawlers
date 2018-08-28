@@ -36,30 +36,25 @@ var brawlerdb = sequelize.define("userInfo", //this is the table stupid <3 <3//
 var itemDB =sequelize.define("items",{
 
 
-    itemName:
+    itemName:{
+        type: Sequelize.STRING,
+        allowNull: false,
+        validate:
         {
-            type: Sequelize.STRING,
-            allowNull: false,
-            validate:
-            {
-                len: [1,15]
-            }
-        },
-    attack:
-    {
+            len: [1,15]
+        }
+    },
+    attack:{
         type: Sequelize.INTEGER,
     },
-    defense:
-    {
+    defense:{
         type: Sequelize.INTEGER,
     },
-    intellect:
-    {
+    intellect:{
         type: Sequelize.INTEGER,
     },
     
-    lvlUnlock:
-    {
+    lvlUnlock:{
         type: Sequelize.BOOLEAN,
     },
 },
