@@ -15,19 +15,19 @@ router.get("/item", function(req, res){
     });
 });
 
-router.post("/", function(req, res){
+router.post("/createuser", function(req, res){
     db.create({
         userName: req.body.userName,
-        password: req.body.password,
+        pass: req.body.password,
         charName: req.body.charName,
         attack: req.body.attack,
         defense: req.body.defense,
         intellect: req.body.intellect,
-        bossOne: false,
-        bossTwo: false,
-        bossThree: false
-    }).then(function(db){
-        res.json(db)
+        bossOne: req.body.bossOne,
+        bossTwo: req.body.bossTwo,
+        bossThree: req.body.bossThree
+    }).then(function(dbd){
+        res.json(dbd)
     }).catch(function(err){
         console.log(err);
         res.json(err);
