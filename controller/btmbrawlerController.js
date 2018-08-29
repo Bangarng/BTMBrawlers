@@ -15,7 +15,7 @@ router.get("/item", function(req, res){
     });
 });
 
-router.post("/createuser", function(req, res){
+router.post("/createuser", function(req, res){ //needed to create a new path name /createuser to activate a new command
     db.create({
         userName: req.body.userName,
         pass: req.body.password,
