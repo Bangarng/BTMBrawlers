@@ -70,3 +70,11 @@ body {
     animation: animateCity 2s linear;
     animation-fill-mode: forwards;
 }
+
+.table td  {
+    text-align: center;   
+}
+
+th {
+    text-align: center
+}
