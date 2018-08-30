@@ -10,42 +10,124 @@ var characterMaker = function(charName, attack, defense, intellect) {
     this.intellect =  intellect;
 };
 
+var itemMaker = function(itemName, itmAttack, itmDefense, itmIntellect){
+
+    this.itemName = itemName;
+    this.itmAttack = itmAttack;
+    this.itmDefense = itmDefense;
+    this.itmIntellect = itmIntellect;
+};
+//creating the different constructors of characters
+//tech glasses give defense - can anticipate enemy moves gives boosted defense, cape of strength increases dmgs
+var heroWep1 = new itemMaker("Tech Glasses", 0, 15, 4);
+var heroWep2 = new itemMaker("Cape of Strength", 10, 0, 0);
+
+//drainer helm - takes intellect from enemy and increases sidekicks intellect, grapple guns increases speed, increasing his defense because he is harder to hit
+var sidekickWep1 = new itemMaker("Drainer Helm", 0, 0, 20);
+var sidekickWep2 = new itemMaker("Dual Grapple Guns", 0, 15, 0);
+
+//black belt - increases all stats in attack dmg, defense, and hit(int), passive skill of melee strength
+var shadowtakenWep1 = new itemMaker("Black Belt", 10, 10, 10);
+var shadowtakenWep2 = new itemMaker("Increased Melee Prowness - Passive", 15, 0, 0);
+
+//Moth wings - gives flight and increases defense, Moth vision - anticipates enemy attacks, granting mothman hit chance and defense
+var mothmanWep1 = new itemMaker("Moth Wings", 0, 30,0 );
+var mothmanWep2 = new itemMaker("Moth Vision Goggles", 0, 10, 10);
+
+
 //this is the static characters
-var Hero = new characterMaker("Hero", 20, 20, 15);
-var Sidekick = new characterMaker("Sidekick", 15, 20, 13);
-var Shadowtaken = new characterMaker("Shadowtaken", 10, 15, 25);
-var Mothman = new characterMaker("Mothman", 30, 30, 5);
+
 console.log(Sidekick);
+//stats total 60
+var Hero = new characterMaker("Hero", 20, 20, 20); //full stack brawler
+var Sidekick = new characterMaker("Sidekick", 15, 20, 25); //duel grapple guns, intellect, reach
+var Shadowtaken = new characterMaker("Shadowtaken", 30, 15, 15); //triple black belt with grapple gun
+var Mothman = new characterMaker("Mothman", 10, 40, 10); //can fly, speaks gibberish, here for the free spread
+
 
 //this will hold the variable that are pushed in here to be called by the submit onclic
 var charArr = ["holder"];
+var heroArr = [heroWep1, heroWep2];
+var sidekickArr = [sidekickWep1, sidekickWep2];
+var shadowtakenArr = [shadowtakenWep1, shadowtakenWep2];
+var mothmanArr = [mothmanWep1, mothmanWep2];
+
+
 console.log(charArr);
+
+
 
 var selectHero = $("#heroCharacter");
 var selectSidekick = $("#sidekickCharacter");
 var selectShadowtaken = $("#shadowtakenCharacter");
 var selectMothman = $("#mothmanCharacter");
+console.log(heroWep1);
+
+
+
+    
+
+
+  
 
 //this takes a onclick, grabs the variable of the character and pushes it to the charArr
 selectHero.on("click", function (event) {
-    event.preventDefault();
+    
+    var attackBoost = heroWep1.itmAttack + heroWep2.itmAttack;
+    var defBoost = heroWep1.itmDefense + heroWep2.itmDefense;
+    var intBoost = heroWep1.itmIntellect + heroWep2.itmIntellect;
+
+    for(vari=0; i<heroArr.length; i++){
+       var item1= $("testbutton").html(heroArr[i]);
+
+    }
+
+ 
     charArr.splice(0,1,Hero);
+    Hero.attack += attackBoost;
+    Hero.defense +=defBoost; 
+    Hero.intellect += intBoost;
     console.log(charArr);
+    event.preventDefault();
 });
 selectSidekick.on("click", function (event) {
-    event.preventDefault();
+    var attackBoost = sidekickWep1.itmAttack + sidekickWep2.itmAttack;
+    var defBoost = sidekickWep1.itmDefense + sidekickWep2.itmDefense;
+    var intBoost = sidekickWep1.itmIntellect + sidekickWep2.itmIntellect;
+    
     charArr.splice(0,1,Sidekick);
+    Sidekick.attack += attackBoost;
+    Sidekick.defense +=defBoost; 
+    Sidekick.intellect += intBoost;
+
     console.log(charArr);
+    event.preventDefault();
 });
 selectShadowtaken.on("click", function (event) {
-    event.preventDefault();
+    var attackBoost = shadowtakenWep1.itmAttack + shadowtakenWep2.itmAttack;
+    var defBoost = shadowtakenWep1.itmDefense + shadowtakenWep2.itmDefense;
+    var intBoost = shadowtakenWep1.itmIntellect + shadowtakenWep2.itmIntellect;
+   
     charArr.splice(0,1,Shadowtaken);
+    Shadowtaken.attack += attackBoost;
+    Shadowtaken.defense +=defBoost; 
+    Shadowtaken.intellect += intBoost;
+
     console.log(charArr);
+    event.preventDefault();
 });
 selectMothman.on("click", function (event) {
-    event.preventDefault();
+    var attackBoost = mothmanWep1.itmAttack + mothmanWep2.itmAttack;
+    var defBoost = mothmanWep1.itmDefense + mothmanWep2.itmDefense;
+    var intBoost = mothmanWep1.itmIntellect + mothmanWep2.itmIntellect;
+    
     charArr.splice(0,1,Mothman);
+   
+    Mothman.attack += attackBoost;
+    Mothman.defense +=defBoost; 
+    Mothman.intellect += intBoost;
     console.log(charArr);
+    event.preventDefault();
 })
 
 //lets a button be active for when we input data?
@@ -60,15 +142,15 @@ for (var i = 0; i < btns.length; i++) {
   });
 }
 
+
 $(function() {
-
-
+    //continue game
     $("#continueGame").on("click", function(event) {
         hideWelcome();
         $("#userInfo").removeClass("hidden");
         $("#userInfo").addClass("fadeInUp animated")
     });
-
+    //create a new game
     $("#newGame").on("click", function(event) {
         hideWelcome();
         $("#createUser").removeClass("hidden");
