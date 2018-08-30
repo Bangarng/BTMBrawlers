@@ -10,6 +10,13 @@ var brawlerdb = sequelize.define("userInfo", //this is the table stupid <3 <3//
             len: [1,50]
         }
     },
+    pass: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        validate:{
+            len: [1,50]
+        }
+    },
     charName:{
         type: Sequelize.STRING,
         allowNull: false,
