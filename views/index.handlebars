@@ -1,10 +1,11 @@
-<div id = "welcomeScreen">
-    <h1>Welcome to Boloney Time Machine Brawlers</h1>
-    <br>
-    <button id = "newGame">New Game</button>
-    <br>
-    <button id = "continueGame">Continue</button>
-</div>
+<div class="container main-screen">
+    <div id = "welcomeScreen">
+        <img class="homepage-header col-md-12" src="../public/assets/images/Header.png">
+        <br>
+        <button id = "newGame" class="btn pulse">New Game</button>
+        <br>
+        <button id = "continueGame" class="btn pulse">Continue</button>
+    </div>
 
 <div id = "createUser" class = "hidden">
     <h1>Create your Character</h1>
@@ -28,29 +29,20 @@
         <button id="submitUser">Submit</button>
         <button id="backHome">Home Page</button>
 
-    </form>
-</div>
+        </form>
+    </div>
 
-
-
-<div id = "charSelection" class = "hidden">
-
-
-
-
-</div>
-
-<div id = "userInfo" class = "hidden">
-    <ul>
-        {{#each brawler}}
-            <li>
-                <h2>{{this.userName}}</h2>
-                <h2>{{this.charName}}</h2>
-                <h2>{{this.attack}}</h2>
-                <h2>{{this.defense}}</h2>
-                <h2>{{this.intellect}}</h2>
-                <h2 class="testbutton"></h2>
-            </li>
-        {{/each}}
-    </ul>
+    <div id = "userInfo" class = "hidden">
+        <ul>
+            {{#each brawler}}
+                <li>
+                    <h2>{{this.userName}}</h2>
+                    <h2>{{this.charName}}</h2>
+                    <h2>{{this.attack}}</h2>
+                    <h2>{{this.defense}}</h2>
+                    <h2>{{this.intellect}}</h2>
+                </li>
+            {{/each}}
+        </ul>
+    </div>
 </div>
