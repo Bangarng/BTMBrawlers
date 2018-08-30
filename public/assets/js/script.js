@@ -47,7 +47,12 @@ var Mothman = new characterMaker("Mothman", 10, 40, 10); //can fly, speaks gibbe
 
 //this will hold the variable that are pushed in here to be called by the submit onclic
 var charArr = ["holder"];
-var itemArr = ["holderTwo"];
+var heroArr = [heroWep1, heroWep2];
+var sidekickArr = [sidekickWep1, sidekickWep2];
+var shadowtakenArr = [shadowtakenWep1, shadowtakenWep2];
+var mothmanArr = [mothmanWep1, mothmanWep2];
+
+
 console.log(charArr);
 
 
@@ -63,16 +68,19 @@ console.log(heroWep1);
     
 
 
-    var attackBoost = heroWep1.itmAttack + heroWep2.itmAttack;
-    var defBoost = heroWep1.itmDefense + heroWep2.itmDefense;
-    var intBoost = heroWep1.itmIntellect + heroWep2.itmIntellect;
-
+  
 
 //this takes a onclick, grabs the variable of the character and pushes it to the charArr
 selectHero.on("click", function (event) {
     
-    
- 
+    var attackBoost = heroWep1.itmAttack + heroWep2.itmAttack;
+    var defBoost = heroWep1.itmDefense + heroWep2.itmDefense;
+    var intBoost = heroWep1.itmIntellect + heroWep2.itmIntellect;
+
+    for(vari=0; i<heroArr.length; i++){
+       var item1= $("testbutton").html(heroArr[i]);
+
+    }
 
  
     charArr.splice(0,1,Hero);
@@ -85,7 +93,7 @@ selectHero.on("click", function (event) {
 selectSidekick.on("click", function (event) {
     var attackBoost = sidekickWep1.itmAttack + sidekickWep2.itmAttack;
     var defBoost = sidekickWep1.itmDefense + sidekickWep2.itmDefense;
-    var intBoost = sidekickWep1.itmIntellect + sidekickWep2.itmIntellect
+    var intBoost = sidekickWep1.itmIntellect + sidekickWep2.itmIntellect;
     
     charArr.splice(0,1,Sidekick);
     Sidekick.attack += attackBoost;
@@ -160,9 +168,6 @@ $(function() {
             attack: charArr[0].attack,
             defense: charArr[0].defense,
             intellect: charArr[0].defense,
-            attBoost: attackBoost,
-            defBoost: defBoost,
-            intBoost: intBoost,
             bossOne: false,
             bossTwo: false, 
             bossThree: false
