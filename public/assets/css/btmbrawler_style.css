@@ -1,3 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+
+body {
+    background-color: black;
+}
+
 .hidden {
     display: none;
+}
+
+.homepage-header {
+    margin: auto;
+    display: block;
+    padding-top: 3%;
+}
+
+#newGame, #continueGame {
+    font-family: 'Press Start 2P', cursive;
+    margin: auto;
+    display: block;
+    font-size: 1.5em;
+    padding: 13px;
+    color: #F1DA28;
+    background-color: #494D7C;
+    box-shadow: 5px 5px lightgrey;
+    transition: all .1s ease-in-out;
+}
+
+#newGame:hover, #continueGame:hover {
+    transform: scale(1.05);
+}
+
+#newGame:active, #continueGame:active {
+    transform: scale(1.00);
+}
+
+.submit:focus, .startButton:focus {
+    outline:none;
+}
+
+#newGame {
+    margin-top: 5%;
+}
+
+/*pulse effect for crystal hover*/
+.pulse:hover {
+    animation: pulse .6s infinite;
+  }  
+@keyframes pulse {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.05); }
+    50% { transform: scale(1); }
+    75% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.main-screen {
+	background-image: url("../images/Hero-and-Sidekick.png"), url("../images/Front-Buildings.png"), url("../images/Rear-Buildings.png"), url("../images/Clouds-and-Moon.png");
+    background-repeat: no-repeat, no-repeat, repeat-x;
+    background-size: 100%, 100%, 100%;
+    min-height:575px;
+}
+
+@keyframes animateCity {
+	from { background-position: 0px 30px, 0px 40px, 0px 20px, 0px -30px; }
+	to { background-position: 130px -130px, 0px -50px, 0px -50px, 0px -30px; }
+}
+		
+.main-screen { 
+    animation: animateCity 2s linear;
+    animation-fill-mode: forwards;
 }
