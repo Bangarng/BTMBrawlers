@@ -23,6 +23,7 @@ router.post("/createuser", function(req, res){ //needed to create a new path nam
         attack: req.body.attack,
         defense: req.body.defense,
         intellect: req.body.intellect,
+        item: item1,
         bossOne: req.body.bossOne,
         bossTwo: req.body.bossTwo,
         bossThree: req.body.bossThree
