@@ -36,16 +36,21 @@ var mothmanWep2 = new itemMaker("Moth Vision Goggles", 0, 10, 10);
 
 
 //this is the static characters
-var Hero = new characterMaker("Hero", 20, 20, 15);
-var Sidekick = new characterMaker("Sidekick", 15, 20, 13);
-var Shadowtaken = new characterMaker("Shadowtaken", 10, 15, 25);
-var Mothman = new characterMaker("Mothman", 30, 30, 5);
+
 console.log(Sidekick);
+//stats total 60
+var Hero = new characterMaker("Hero", 20, 20, 20); //full stack brawler
+var Sidekick = new characterMaker("Sidekick", 15, 20, 25); //duel grapple guns, intellect, reach
+var Shadowtaken = new characterMaker("Shadowtaken", 30, 15, 15); //triple black belt with grapple gun
+var Mothman = new characterMaker("Mothman", 10, 40, 10); //can fly, speaks gibberish, here for the free spread
+
 
 //this will hold the variable that are pushed in here to be called by the submit onclic
 var charArr = ["holder"];
 var itemArr = ["holderTwo"];
 console.log(charArr);
+
+
 
 var selectHero = $("#heroCharacter");
 var selectSidekick = $("#sidekickCharacter");
@@ -129,15 +134,15 @@ for (var i = 0; i < btns.length; i++) {
   });
 }
 
+
 $(function() {
-
-
+    //continue game
     $("#continueGame").on("click", function(event) {
         hideWelcome();
         $("#userInfo").removeClass("hidden");
         $("#userInfo").addClass("fadeInUp animated")
     });
-
+    //create a new game
     $("#newGame").on("click", function(event) {
         hideWelcome();
         $("#createUser").removeClass("hidden");
