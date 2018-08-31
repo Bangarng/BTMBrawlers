@@ -177,13 +177,10 @@ $(function() {
         $.ajax("/createuser", {
             type: "POST",
             data: userdata
-        }).then(
-            function(data){
+        }).then( function(data) {
             console.log(data);
-            window.location = "/api";
-            }
-        )
-
+            window.location = "/gamepage";
+            })
     });
 
     $("#backHome").on("click", function(){
