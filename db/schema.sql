@@ -33,19 +33,8 @@ intellect DECIMAL(10,2) NULL,
 lvlUnlock boolean DEFAULT false,
 charName VARCHAR(20) NOT NULL,
 Primary Key (itemID),
-FOREIGN KEY (charName) REFERENCES userInfo(charName)
+FOREIGN KEY (id) REFERENCES userInfo(id)
 
 );
 
-INSERT INTO items (itemName, attack, defense, intellect, lvlUnlock, charName) 
-VALUES("PowerSword", 10, 0, 2, false, 'Sidekick');
 
-INSERT INTO items (itemName, attack, defense, intellect, lvlUnlock, charName) 
-VALUES("PowerSword", 10, 0, 2, false, 'Hero');
-
-INSERT INTO userInfo (userName, pass, charName, attack, defense, intellect, bossOne, bossTwo, bossThree) 
-VALUES ('Smarcus4','sam12345','Sidekick', 15, 2, 10, false, false, false);
-
-
-INSERT INTO userInfo (userName, pass, charName, attack, defense, intellect, bossOne, bossTwo, bossThree) 
-VALUES ('Smarcus4','sam12345','Hero', 15, 2, 10, false, false, false);

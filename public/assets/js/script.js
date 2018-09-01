@@ -81,7 +81,7 @@ selectHero.on("click", function (event) {
 
   
 
-    itemArr.splice(0,1,heroArr);
+    
     console.log(heroArr);  
     charArr.splice(0,1,Hero);
     for(var i=0; i<heroArr.length; i++){
@@ -142,6 +142,7 @@ selectMothman.on("click", function (event) {
     event.preventDefault();
 })
 
+
 //lets a button be active for when we input data?
 
 // var header = document.getElementById("myID");
@@ -183,8 +184,18 @@ $(function() {
         $("#enterCredentials").addClass("fadeInUp animated");
     });
     //create a new game
-    $("#submitCredentials").on("click", function(event) {
+    $("#submitCredentials").on("click", function(event) {      
         event.preventDefault();
+        
+        //creating form validation to ensure it is not left empty
+        // var userName = $("#userNameInput");
+        // var passInfo = $("#passwordInput");
+    
+        // if(userName=="" || passInfo==""){
+    
+        //     alert("Please enter username and password");
+        //     return false;
+        // }
         hideCredentials();
         $("#createUser").removeClass("hidden");
         $("#createUser").addClass("fadeInUp animated");
