@@ -1,7 +1,3 @@
-var hideWelcome = function() {
-    $("#welcomeScreen").addClass("hidden");
-}
-
 //this constructo makes our static characters
 var characterMaker = function(charName, attack, defense, intellect) {
     this.charName =  charName;
@@ -52,23 +48,13 @@ var sidekickArr = [sidekickWep1, sidekickWep2];
 var shadowtakenArr = [shadowtakenWep1, shadowtakenWep2];
 var mothmanArr = [mothmanWep1, mothmanWep2];
 
-
 console.log(charArr);
-
-
 
 var selectHero = $("#heroCharacter");
 var selectSidekick = $("#sidekickCharacter");
 var selectShadowtaken = $("#shadowtakenCharacter");
 var selectMothman = $("#mothmanCharacter");
 console.log(heroWep1);
-
-
-
-    
-
-
-  
 
 //this takes a onclick, grabs the variable of the character and pushes it to the charArr
 selectHero.on("click", function (event) {
@@ -79,10 +65,8 @@ selectHero.on("click", function (event) {
 
     for(vari=0; i<heroArr.length; i++){
        var item1= $("testbutton").html(heroArr[i]);
-
     }
 
- 
     charArr.splice(0,1,Hero);
     Hero.attack += attackBoost;
     Hero.defense +=defBoost; 
@@ -132,29 +116,43 @@ selectMothman.on("click", function (event) {
 
 //lets a button be active for when we input data?
 
-var header = document.getElementById("myID");
-var btns = header.getElementsByClassName("btn");
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function() {
-    var current = document.getElementsByClassName("active");
-    current[0].className = current[0].className.replace(" active", "");
-    this.className += " active";
-  });
+// var header = document.getElementById("myID");
+// var btns = header.getElementsByClassName("btns");
+// for (var i = 0; i < btns.length; i++) {
+//   btns[i].addEventListener("click", function() {
+//     var current = document.getElementsByClassName("active");
+//     current[0].className = current[0].className.replace(" active", "");
+//     this.className += " active";
+//   });
+// }
+
+// Code for the start up screen.
+var hideWelcome = function() {
+    $("#welcomeScreen").addClass("hidden");
 }
 
+var hideCredentials = function() {
+    $("#enterCredentials").addClass("hidden");
+}
 
 $(function() {
     //continue game
     $("#continueGame").on("click", function(event) {
         hideWelcome();
         $("#userInfo").removeClass("hidden");
-        $("#userInfo").addClass("fadeInUp animated")
+        $("#userInfo").addClass("fadeInUp animated");
     });
     //create a new game
     $("#newGame").on("click", function(event) {
         hideWelcome();
+        $("#enterCredentials").removeClass("hidden");
+        $("#enterCredentials").addClass("fadeInUp animated");
+    });
+    //create a new game
+    $("#submitCredentials").on("click", function(event) {
+        hideCredentials();
         $("#createUser").removeClass("hidden");
-        $("#createUser").addClass("fadeInUp animated")
+        $("#createUser").addClass("fadeInUp animated");
     });
 
     $("#submitUser").on("click", function(event) {
