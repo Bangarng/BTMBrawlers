@@ -47,6 +47,7 @@ var Mothman = new characterMaker("Mothman", 10, 40, 10); //can fly, speaks gibbe
 
 //this will hold the variable that are pushed in here to be called by the submit onclic
 var charArr = ["holder"];
+var itemArr = ["holder"];
 var heroArr = [heroWep1, heroWep2];
 var sidekickArr = [sidekickWep1, sidekickWep2];
 var shadowtakenArr = [shadowtakenWep1, shadowtakenWep2];
@@ -65,8 +66,16 @@ console.log(heroWep1);
 
 
 
-    
 
+function renderHeroButtons(){
+    for(var i=0; i<heroArr.length; i++){
+        $("#itembuttons").append("<button>"+heroArr[i].itemName+"</button>");
+        
+                event.preventDefault();
+                console.log(heroArr[i]);
+
+})
+}
 
   
 
@@ -77,13 +86,22 @@ selectHero.on("click", function (event) {
     var defBoost = heroWep1.itmDefense + heroWep2.itmDefense;
     var intBoost = heroWep1.itmIntellect + heroWep2.itmIntellect;
 
-    for(vari=0; i<heroArr.length; i++){
-       var item1= $("testbutton").html(heroArr[i]);
+  
+
+    itemArr.splice(0,1,heroArr);
+    console.log(heroArr);  
+    charArr.splice(0,1,Hero);
+    for(var i=0; i<heroArr.length; i++){
+        $("#itembuttons").append("<button>"+heroArr[i].itemName+"</button>");
+        
+                event.preventDefault();
+                console.log(heroArr[i]);
+            
+           
+       
 
     }
-
  
-    charArr.splice(0,1,Hero);
     Hero.attack += attackBoost;
     Hero.defense +=defBoost; 
     Hero.intellect += intBoost;
