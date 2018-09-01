@@ -17,7 +17,7 @@
             <span class="pressStart">Password: </span><textarea id="passwordInput" rows="1" cols="40"></textarea>
             <br>
             <div class="backNext">
-                <button id="backHome" class="btn">Back</button>
+                <button class="btn backHome">Back</button>
                 <button id="submitCredentials" class="btn">Next</button>
             </div>
         </form>
@@ -29,10 +29,10 @@
         <div id="myID" class="charSelect text-center">
             <br>
             {{!-- <div class="col-xs-12 charNames">Hero&nbsp; Sidekick Shadowtaken Mothman</div> --}}
-            <img class="img img-responsive heroCharacter flash" src="../public/assets/images/charSelect/HeroSelect.png" />
-            <img class="img img-responsive sidekickCharacter flash" src="../public/assets/images/charSelect/SidekickSelect.png" />
-            <img class="img img-responsive shadowtakenCharacter flash" src="../public/assets/images/charSelect/ShadowtakenSelect.png" />
-            <img class="img img-responsive mothmanCharacter flash" src="../public/assets/images/charSelect/MothmanSelect.png" />      
+            <img id="heroCharacter" class="img img-responsive heroCharacter flash" src="../public/assets/images/charSelect/HeroSelect.png" />
+            <img id="sidekickCharacter" class="img img-responsive sidekickCharacter flash" src="../public/assets/images/charSelect/SidekickSelect.png" />
+            <img id="shadowtakenCharacter" class="img img-responsive shadowtakenCharacter flash" src="../public/assets/images/charSelect/ShadowtakenSelect.png" />
+            <img id="mothmanCharacter" class="img img-responsive mothmanCharacter flash" src="../public/assets/images/charSelect/MothmanSelect.png" />      
             <div class="container">
                 <div class="row">
                         <div class="col-md-4 heroStats">
@@ -59,10 +59,13 @@
                 <button class="btns flash" id = "mothmanCharacter">
                     <img src="../public/assets/images/charSelect/MothmanSelect.png" width="150" />
                 </button> --}}
+                <br>
+        <div>
+            <button class="backHome btn">Home</button>
+            <button id="backToUser" class="btn">User Credentials</button>
+            <button id="submitUser" class="btn">Submit</button>
         </div>
-        <br>
-        <button id="submitUser">Submit</button>
-        <button id="backHome">Home Page</button>
+        </div>
     </div>
 
 

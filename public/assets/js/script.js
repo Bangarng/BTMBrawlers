@@ -135,25 +135,41 @@ var hideCredentials = function() {
     $("#enterCredentials").addClass("hidden");
 }
 
+var hideCharSelect = function() {
+    $("#createUser").addClass("hidden");
+}
+
 $(function() {
     //continue game
     $("#continueGame").on("click", function(event) {
+        event.preventDefault();
         hideWelcome();
         $("#userInfo").removeClass("hidden");
         $("#userInfo").addClass("fadeInUp animated");
     });
     //create a new game
     $("#newGame").on("click", function(event) {
+        event.preventDefault();
         hideWelcome();
         $("#enterCredentials").removeClass("hidden");
         $("#enterCredentials").addClass("fadeInUp animated");
     });
     //create a new game
     $("#submitCredentials").on("click", function(event) {
+        event.preventDefault();
         hideCredentials();
         $("#createUser").removeClass("hidden");
         $("#createUser").addClass("fadeInUp animated");
     });
+     //back to User Credentials
+     $("#backToUser").on("click", function(event) {
+        event.preventDefault();
+        hideWelcome();
+        hideCharSelect();
+        $("#enterCredentials").removeClass("hidden");
+        $("#enterCredentials").addClass("fadeInUp animated");
+    });   
+
 
     $("#submitUser").on("click", function(event) {
         //prevent page from reloading
@@ -181,10 +197,9 @@ $(function() {
             })
     });
 
-    $("#backHome").on("click", function(){
+    $(".backHome").on("click", function(){
         event.preventDefault();
         window.location.href = ("/");
-
     })
 
 });

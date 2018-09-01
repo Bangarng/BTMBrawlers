@@ -45,7 +45,7 @@ body {
     margin: 8% 0;
 }
 
-#submitCredentials, #backHome {
+#submitCredentials, .backHome, #backToUser, #submitUser {
     font-family: 'Press Start 2P', cursive;
     margin: auto;
     font-size: 1em;
@@ -58,11 +58,11 @@ body {
     margin: 0 1%;
 }
 
-#submitCredentials:hover, #backHome:hover {
+#submitCredentials:hover, .backHome:hover, #backToUser:hover, #submitUser:hover {
     transform: scale(1.05);
 }
 
-#submitCredentials:active, #backHome:active {
+#submitCredentials:active, .backHome:active, #backToUser:active, #submitUser:active {
     transform: scale(1.00);
 }
 
