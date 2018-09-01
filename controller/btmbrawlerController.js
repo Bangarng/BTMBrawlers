@@ -9,6 +9,13 @@ router.get("/", function(req, res){
     });
 });
 
+router.get("/gamepage", function(req, res){
+
+   db.findOne({where: ({userName: req.params.userName})}).then(function(results) {
+       res.render("gamepage", {brawler: results}); 
+   });
+});
+
 router.get("/item", function(req, res){
     itemDB.findAll({}).then(function(results) {
         res.render("items", {itemStuff: results}); 
@@ -28,6 +35,7 @@ router.post("/createuser", function(req, res){ //needed to create a new path nam
         bossThree: req.body.bossThree
     }).then(function(dbd){
         res.json(dbd)
+        console.log(dbd)
     }).catch(function(err){
         console.log(err);
         res.json(err);
