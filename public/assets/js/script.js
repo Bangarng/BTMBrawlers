@@ -1,7 +1,3 @@
-var hideWelcome = function() {
-    $("#welcomeScreen").addClass("hidden");
-}
-
 //this constructo makes our static characters
 var characterMaker = function(charName, attack, defense, intellect) {
     this.charName =  charName;
@@ -48,15 +44,12 @@ var Mothman = new characterMaker("Mothman", 10, 40, 10); //can fly, speaks gibbe
 //this will hold the variable that are pushed in here to be called by the submit onclic
 var charArr = ["holder"];
 var itemArr = ["holder"];
-var heroArr = [heroWep1, heroWep2];
-var sidekickArr = [sidekickWep1, sidekickWep2];
-var shadowtakenArr = [shadowtakenWep1, shadowtakenWep2];
-var mothmanArr = [mothmanWep1, mothmanWep2];
-
+// var heroArr = [heroWep1, heroWep2];
+// var sidekickArr = [sidekickWep1, sidekickWep2];
+// var shadowtakenArr = [shadowtakenWep1, shadowtakenWep2];
+// var mothmanArr = [mothmanWep1, mothmanWep2];
 
 console.log(charArr);
-
-
 
 var selectHero = $("#heroCharacter");
 var selectSidekick = $("#sidekickCharacter");
@@ -67,24 +60,24 @@ console.log(heroWep1);
 
 
 
-function renderHeroButtons(){
-    for(var i=0; i<heroArr.length; i++){
-        $("#itembuttons").append("<button>"+heroArr[i].itemName+"</button>");
+// function renderHeroButtons(){
+//     for(var i=0; i<heroArr.length; i++){
+//         $("#itembuttons").append("<button>"+heroArr[i].itemName+"</button>");
         
-                event.preventDefault();
-                console.log(heroArr[i]);
+//                 event.preventDefault();
+//                 console.log(heroArr[i]);
 
-})
-}
+// })
+// }
 
   
 
 //this takes a onclick, grabs the variable of the character and pushes it to the charArr
 selectHero.on("click", function (event) {
     
-    var attackBoost = heroWep1.itmAttack + heroWep2.itmAttack;
-    var defBoost = heroWep1.itmDefense + heroWep2.itmDefense;
-    var intBoost = heroWep1.itmIntellect + heroWep2.itmIntellect;
+    // var attackBoost = heroWep1.itmAttack + heroWep2.itmAttack;
+    // var defBoost = heroWep1.itmDefense + heroWep2.itmDefense;
+    // var intBoost = heroWep1.itmIntellect + heroWep2.itmIntellect;
 
   
 
@@ -102,78 +95,109 @@ selectHero.on("click", function (event) {
 
     }
  
-    Hero.attack += attackBoost;
-    Hero.defense +=defBoost; 
-    Hero.intellect += intBoost;
+    // Hero.attack += attackBoost;
+    // Hero.defense +=defBoost; 
+    // Hero.intellect += intBoost;
     console.log(charArr);
     event.preventDefault();
 });
+
 selectSidekick.on("click", function (event) {
-    var attackBoost = sidekickWep1.itmAttack + sidekickWep2.itmAttack;
-    var defBoost = sidekickWep1.itmDefense + sidekickWep2.itmDefense;
-    var intBoost = sidekickWep1.itmIntellect + sidekickWep2.itmIntellect;
+    // var attackBoost = sidekickWep1.itmAttack + sidekickWep2.itmAttack;
+    // var defBoost = sidekickWep1.itmDefense + sidekickWep2.itmDefense;
+    // var intBoost = sidekickWep1.itmIntellect + sidekickWep2.itmIntellect;
     
     charArr.splice(0,1,Sidekick);
-    Sidekick.attack += attackBoost;
-    Sidekick.defense +=defBoost; 
-    Sidekick.intellect += intBoost;
+    // Sidekick.attack += attackBoost;
+    // Sidekick.defense +=defBoost; 
+    // Sidekick.intellect += intBoost;
 
     console.log(charArr);
     event.preventDefault();
 });
 selectShadowtaken.on("click", function (event) {
-    var attackBoost = shadowtakenWep1.itmAttack + shadowtakenWep2.itmAttack;
-    var defBoost = shadowtakenWep1.itmDefense + shadowtakenWep2.itmDefense;
-    var intBoost = shadowtakenWep1.itmIntellect + shadowtakenWep2.itmIntellect;
+    // var attackBoost = shadowtakenWep1.itmAttack + shadowtakenWep2.itmAttack;
+    // var defBoost = shadowtakenWep1.itmDefense + shadowtakenWep2.itmDefense;
+    // var intBoost = shadowtakenWep1.itmIntellect + shadowtakenWep2.itmIntellect;
    
     charArr.splice(0,1,Shadowtaken);
-    Shadowtaken.attack += attackBoost;
-    Shadowtaken.defense +=defBoost; 
-    Shadowtaken.intellect += intBoost;
+    // Shadowtaken.attack += attackBoost;
+    // Shadowtaken.defense +=defBoost; 
+    // Shadowtaken.intellect += intBoost;
 
     console.log(charArr);
     event.preventDefault();
 });
 selectMothman.on("click", function (event) {
-    var attackBoost = mothmanWep1.itmAttack + mothmanWep2.itmAttack;
-    var defBoost = mothmanWep1.itmDefense + mothmanWep2.itmDefense;
-    var intBoost = mothmanWep1.itmIntellect + mothmanWep2.itmIntellect;
+    // var attackBoost = mothmanWep1.itmAttack + mothmanWep2.itmAttack;
+    // var defBoost = mothmanWep1.itmDefense + mothmanWep2.itmDefense;
+    // var intBoost = mothmanWep1.itmIntellect + mothmanWep2.itmIntellect;
     
     charArr.splice(0,1,Mothman);
    
-    Mothman.attack += attackBoost;
-    Mothman.defense +=defBoost; 
-    Mothman.intellect += intBoost;
+    // Mothman.attack += attackBoost;
+    // Mothman.defense +=defBoost; 
+    // Mothman.intellect += intBoost;
     console.log(charArr);
     event.preventDefault();
 })
 
 //lets a button be active for when we input data?
 
-var header = document.getElementById("myID");
-var btns = header.getElementsByClassName("btn");
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function() {
-    var current = document.getElementsByClassName("active");
-    current[0].className = current[0].className.replace(" active", "");
-    this.className += " active";
-  });
+// var header = document.getElementById("myID");
+// var btns = header.getElementsByClassName("btns");
+// for (var i = 0; i < btns.length; i++) {
+//   btns[i].addEventListener("click", function() {
+//     var current = document.getElementsByClassName("active");
+//     current[0].className = current[0].className.replace(" active", "");
+//     this.className += " active";
+//   });
+// }
+
+// Code for the start up screen.
+var hideWelcome = function() {
+    $("#welcomeScreen").addClass("hidden");
 }
 
+var hideCredentials = function() {
+    $("#enterCredentials").addClass("hidden");
+}
+
+var hideCharSelect = function() {
+    $("#createUser").addClass("hidden");
+}
 
 $(function() {
     //continue game
     $("#continueGame").on("click", function(event) {
+        event.preventDefault();
         hideWelcome();
         $("#userInfo").removeClass("hidden");
-        $("#userInfo").addClass("fadeInUp animated")
+        $("#userInfo").addClass("fadeInUp animated");
     });
     //create a new game
     $("#newGame").on("click", function(event) {
+        event.preventDefault();
         hideWelcome();
-        $("#createUser").removeClass("hidden");
-        $("#createUser").addClass("fadeInUp animated")
+        $("#enterCredentials").removeClass("hidden");
+        $("#enterCredentials").addClass("fadeInUp animated");
     });
+    //create a new game
+    $("#submitCredentials").on("click", function(event) {
+        event.preventDefault();
+        hideCredentials();
+        $("#createUser").removeClass("hidden");
+        $("#createUser").addClass("fadeInUp animated");
+    });
+     //back to User Credentials
+     $("#backToUser").on("click", function(event) {
+        event.preventDefault();
+        hideWelcome();
+        hideCharSelect();
+        $("#enterCredentials").removeClass("hidden");
+        $("#enterCredentials").addClass("fadeInUp animated");
+    });   
+
 
     $("#submitUser").on("click", function(event) {
         //prevent page from reloading
@@ -195,19 +219,15 @@ $(function() {
         $.ajax("/createuser", {
             type: "POST",
             data: userdata
-        }).then(
-            function(data){
+        }).then( function(data) {
             console.log(data);
-            window.location = "/api";
-            }
-        )
-
+            window.location = "/gamepage";
+            })
     });
 
-    $("#backHome").on("click", function(){
+    $(".backHome").on("click", function(){
         event.preventDefault();
         window.location.href = ("/");
-
     })
 
 });

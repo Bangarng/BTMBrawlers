@@ -1,23 +1,81 @@
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
 
+/* Bootstrap 4.0 Container */
+.container {
+    width: 99%;
+    height: 99%;
+}
+
+/* Press Start Font */
+.pressStart {
+    font-family: 'Press Start 2P', cursive;
+    color: yellow;
+}
+
+/* Bootstrap Body Stuff */
 html {
     position: relative;
     min-height: 100%;
 }
-
 body {
     background-color: black;
     margin-bottom: 45px; /* Margin bottom by footer height */
 }
-
 .hidden {
     display: none;
 }
 
-.homepage-header {
+/* Enter Credentials Stuff */
+#enterCredentials {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 6% 0%;
+}
+.create-form {
+    margin-top: 8%;
+    font-size: 1.3em;
+    padding-bottom: 8%;
+}
+
+.create-form textarea {
+    text-align: left;
+}
+
+/* Next, Back Home Buttons */
+.backNext {
+    margin: 8% 0;
+}
+
+#submitCredentials, .backHome, #backToUser, #submitUser {
+    font-family: 'Press Start 2P', cursive;
+    margin: auto;
+    font-size: 1em;
+    padding: 13px;
+    color: #F1DA28;
+    background-color: #494D7C;
+    box-shadow: 5px 5px lightgrey;
+    transition: all .1s ease-in-out;
+    padding: 10px 15px;
+    margin: 0 1%;
+}
+
+#submitCredentials:hover, .backHome:hover, #backToUser:hover, #submitUser:hover {
+    transform: scale(1.05);
+}
+
+#submitCredentials:active, .backHome:active, #backToUser:active, #submitUser:active {
+    transform: scale(1.00);
+}
+
+/* Page Titles */
+.homepage-header, .char-select-head {
     margin: auto;
     display: block;
     padding-top: 3%;
+    width:90%
+}
+
+.char-select-head {
+    padding-top: 2%;
 }
 
 #newGame, #continueGame {
@@ -39,6 +97,9 @@ body {
 #newGame:active, #continueGame:active {
     transform: scale(1.00);
 }
+
+
+
 
 .submit:focus, .startButton:focus {
     outline:none;
@@ -63,18 +124,19 @@ body {
 .main-screen {
 	background-image: url("../images/Hero-and-Sidekick.png"), url("../images/Front-Buildings.png"), url("../images/Rear-Buildings.png"), url("../images/Clouds-and-Moon.png");
     background-repeat: no-repeat, no-repeat, repeat-x;
-    background-size: 100%, 100%, 100%;
+    background-size: 100%, 100%, 100%, 100%;
     min-height:575px;
 }
 
 @keyframes animateCity {
-	from { background-position: 0px 30px, 0px 40px, 0px -20px, 0px -30px; }
-	to { background-position: 130px -130px, 0px -50px, 0px -50px, 0px -30px; }
+	from { background-position: 0px 30px, 0px 120px, 0px 50px, 0px -30px; }
+	to { background-position: 20px -50px, 0px 20px, 0px -20px, 0px -30px; }
 }
 		
 .main-screen { 
-    animation: animateCity 3s linear;
+    animation: animateCity 2.5s linear;
     animation-fill-mode: forwards;
+    background-color: black;
 }
 
 .footer {
@@ -82,8 +144,6 @@ body {
     font-size: .8em;
     color: white;
     text-align: center;
-    position: ;
-    /* bottom: 17px; */
     margin-left: -16px;
     width: 103%;
     height: 45px; /* Set the fixed height of the footer here */
@@ -92,3 +152,80 @@ body {
     margin-top: 180px;
 }
 
+#createUser {
+    background: rgba(0, 0, 0, 0.8);
+    width: 95%;
+    margin: auto;
+}
+
+/* Character Select */
+.charNames {
+    font-family: 'Press Start 2P', cursive;
+    background: -webkit-linear-gradient(rgb(78, 85, 194), #eee, rgb(78, 85, 194));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    word-spacing: 3em;
+}
+
+.charSelect {
+    margin:auto;
+    display:block;
+}
+
+.charSelect button {
+    margin: 0 1% 0 1%;
+}
+
+.heroCharacter, .sidekickCharacter, .shadowtakenCharacter, .mothmanCharacter {
+    width: 12%;
+    border: 3px solid white;
+    border-radius: 5px;
+    margin: 0 3%;
+    transition: all 1s ease-in-out;
+}
+
+.flash:hover {
+    opacity: 1;
+    -webkit-animation: flash .9s infinite;
+    animation: flash 1.2s infinite;
+}
+
+@-webkit-keyframes flash {
+    50% { opacity: 1; }
+    100% { opacity: 1; }
+   }
+@keyframes flash {
+50% { opacity: 1; }
+100% { opacity: 1; }
+}
+
+/* Character Stats */
+.heroStats-img {
+    width: 45%;
+    margin:5% -10% 0 0;
+    transition: all 1s ease-in-out;
+}
+
+.heroStats-text {
+    margin-top:5%;
+    margin-left: -2%;
+    font-size: 1.1em;
+}
+
+.heroStats-text p span {
+    color: rgb(196, 190, 93) !important;
+}
+
+.heroStats-text p {
+    font-family: 'Press Start 2P', cursive;
+    background: -webkit-linear-gradient(rgb(78, 85, 194), #eee, rgb(78, 85, 194));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: left;
+}
+
+.yellow {
+    background: #F3EA23;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
