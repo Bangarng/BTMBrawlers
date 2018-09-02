@@ -154,12 +154,22 @@ $(function() {
         $("#enterCredentials").removeClass("hidden");
         $("#enterCredentials").addClass("fadeInUp animated");
     });
-    //create a new game
+    //Load the Character Select
     $("#submitCredentials").on("click", function(event) {
         event.preventDefault();
         hideCredentials();
         $("#createUser").removeClass("hidden");
         $("#createUser").addClass("fadeInUp animated");
+        var themeSong = $(".themeMusic");
+        themeSong.stop();
+        var obj = document.createElement("audio");
+        var site = window.location;
+        obj.src = site + "/public/assets/music/BTM Character Select.mp3";
+        obj.autoPlay = false;
+        obj.preLoad = true;
+        obj.controls = false;
+        obj.loop = true;
+        obj.play();
     });
      //back to User Credentials
      $("#backToUser").on("click", function(event) {
