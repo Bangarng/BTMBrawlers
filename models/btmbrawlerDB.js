@@ -33,6 +33,27 @@ var brawlerdb = sequelize.define("userInfo", //this is the table stupid <3 <3//
     intellect:{
         type: Sequelize.INTEGER,
     },
+    itemOne: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        validate:{
+            len: [1,50]
+        }
+    },
+    itemTwo: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        validate:{
+            len: [1,50]
+        }
+    },
+    itemThree: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        validate:{
+            len: [1,50]
+        }
+    }
 },
 {
     freezeTableName: true,
