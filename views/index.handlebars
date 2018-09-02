@@ -1,4 +1,9 @@
 <div class="container main-screen">
+{{!-- does work in chrome because they know it's annoying lol --}}
+{{!-- <audio class="themeMusic" preload="auto" autoplay>
+    <source src="../public/assets/music/BTM Theme (Fon.Leman - Lynx Eye).mp3" type="audio/mpeg">
+</audio> --}}
+
 <section>
     <div id = "welcomeScreen">
         <img class="homepage-header col-md-12" src="../public/assets/images/Header.png"/>
@@ -38,10 +43,11 @@
             <img id="shadowtakenCharacter" class="img img-responsive shadowtakenCharacter flash" src="../public/assets/images/charSelect/ShadowtakenSelect.png" />
             <img id="mothmanCharacter" class="img img-responsive mothmanCharacter flash" src="../public/assets/images/charSelect/MothmanSelect.png" />      
             <div class="container">
+                {{!-- Hero Stats --}}
                 <div class="row">
-                        <div class="col-md-4 heroStats">
-                            <img class="img img-responsive heroStats-img" src="../public/assets/images/charSelect/HeroStats.png"/>
-                        </div>
+                    <div class="col-md-4 heroStats">
+                        <img class="img img-responsive heroStats-img" src="../public/assets/images/charSelect/HeroStats.png"/>
+                    </div>
                     <div class="col-md-8 heroStats-text">
                         <p>Name: <span class="yellow">Hero</span></p>
                         <p>Class: <span class="yellow">Brawler</span></p>
@@ -57,6 +63,43 @@
                     </div>
                     
                     
+                </div>
+                {{!-- Sidekick Stats --}}
+                <div class="row">
+                    <div class="col-md-4 heroStats">
+                        <img class="img img-responsive heroStats-img" src="../public/assets/images/charSelect/SidekickStats.png"/>
+                    </div>
+                    <div class="col-md-8 heroStats-text">
+                        <p>Name: <span class="yellow">Sidekick</span></p>
+                        <p>Class: <span class="yellow">Tech</span></p>
+                        <p>Strength: <span class="yellow">15</span></p>
+                        <p>Defense: <span class="yellow">20</span></p>
+                        <P>Intelligence: <span class="yellow">25</span></P>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 heroStats">
+                        <img class="img img-responsive heroStats-img" src="../public/assets/images/charSelect/ShadowtakenStats.png"/>
+                    </div>
+                    <div class="col-md-8 heroStats-text">
+                        <p>Name: <span class="yellow">Shadowtaken</span></p>
+                        <p>Class: <span class="yellow">Martial Arts</span></p>
+                        <p>Strength: <span class="yellow">30</span></p>
+                        <p>Defense: <span class="yellow">15</span></p>
+                        <P>Intelligence: <span class="yellow">15</span></P>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 heroStats">
+                        <img class="img img-responsive heroStats-img" src="../public/assets/images/charSelect/MothmanStats.png"/>
+                    </div>
+                    <div class="col-md-8 heroStats-text">
+                        <p>Name: <span class="yellow">Mothman</span></p>
+                        <p>Class: <span class="yellow">???</span></p>
+                        <p>Strength: <span class="yellow">10</span></p>
+                        <p>Defense: <span class="yellow">40</span></p>
+                        <P>Intelligence: <span class="yellow">10</span></P>
+                    </div>
                 </div>
             </div>
                 {{!-- <button class="btns flash active" id = "heroCharacter">
