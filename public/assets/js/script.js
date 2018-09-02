@@ -63,9 +63,9 @@ selectHero.on("click", function (event) {
     var defBoost = heroWep1.itmDefense + heroWep2.itmDefense;
     var intBoost = heroWep1.itmIntellect + heroWep2.itmIntellect;
 
-    for(vari=0; i<heroArr.length; i++){
-       var item1= $("testbutton").html(heroArr[i]);
-    }
+    // for(vari=0; i<heroArr.length; i++){
+    //    var item1= $("testbutton").html(heroArr[i]);
+    // }
 
     charArr.splice(0,1,Hero);
     Hero.attack += attackBoost;
@@ -114,6 +114,51 @@ selectMothman.on("click", function (event) {
     event.preventDefault();
 })
 
+// Show, hide the character stats when hovering
+$("#heroCharacter").hover(function() {
+    $(".hero-DIV").removeClass("hidden");
+    $('.blankStats').addClass('hidden');
+});
+
+$("#sidekickCharacter").hover(function() {
+    $(".sidekick-DIV").removeClass("hidden");
+    $('.blankStats').addClass('hidden');
+});
+
+$("#shadowtakenCharacter").hover(function() {
+    $(".shadowtaken-DIV").removeClass("hidden");
+    $('.blankStats').addClass('hidden');
+});
+
+$("#mothmanCharacter").hover(function() {
+    $(".mothman-DIV").removeClass("hidden");
+    $('.blankStats').addClass('hidden');
+});
+
+$("#heroCharacter, #sidekickCharacter, #shadowtakenCharacter, #mothmanCharacter").on('mouseleave', function() {
+    $('.blankStats').removeClass('hidden');
+    $(".hero-DIV").addClass("hidden");
+    $(".sidekick-DIV").addClass("hidden");
+    $(".shadowtaken-DIV").addClass("hidden");
+    $(".mothman-DIV").addClass("hidden");
+ });
+
+//ModalBox for CharSelect
+// $('#myModal').on('shown.bs.modal', function () {
+//     $('#myInput').trigger('focus')
+//   })
+
+// Get the modal
+var modal = $('.char-sel-modal');
+
+// Get the button that opens the modal
+var btn = $("#heroCharacter, #sidekickCharacter, #shadowtakenCharacter, #mothmanCharacter");
+
+// When the user clicks on the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
 //lets a button be active for when we input data?
 
 // var header = document.getElementById("myID");
@@ -125,6 +170,11 @@ selectMothman.on("click", function (event) {
 //     this.className += " active";
 //   });
 // }
+$(".heroCharacter").on("mouseenter", function() {
+    $(".hero-DIV").show();
+}).on("mouseleave", function() {
+    $(".hero-DIV").hide();
+});
 
 // Code for the start up screen.
 var hideWelcome = function() {
@@ -161,15 +211,22 @@ $(function() {
         $("#createUser").removeClass("hidden");
         $("#createUser").addClass("fadeInUp animated");
         var themeSong = $(".themeMusic");
-        themeSong.stop();
-        var obj = document.createElement("audio");
+        var charSelSong = document.createElement("audio");
         var site = window.location;
-        obj.src = site + "/public/assets/music/BTM Character Select.mp3";
-        obj.autoPlay = false;
-        obj.preLoad = true;
-        obj.controls = false;
-        obj.loop = true;
-        obj.play();
+        charSelSong.src = site + "/public/assets/music/BTM Character Select.mp3";
+        charSelSong.autoPlay = false;
+        charSelSong.preLoad = true;
+        charSelSong.controls = false;
+        charSelSong.loop = true;
+        charSelSong.duration = 0;
+        if (charSelSong.duration > 0 && !myAudio.paused) {
+            themeSong.stop();
+            console.log("Character Select Song is playing.");
+        } else {
+            charSelSong.play();
+            charSelSong.duration = 1;
+        }
+
     });
      //back to User Credentials
      $("#backToUser").on("click", function(event) {
@@ -179,7 +236,11 @@ $(function() {
         $("#enterCredentials").removeClass("hidden");
         $("#enterCredentials").addClass("fadeInUp animated");
     });   
-
+    //Homepage, restart app
+    $(".backHome").on("click", function(){
+        event.preventDefault();
+        window.location.href = ("/");
+    });
 
     $("#submitUser").on("click", function(event) {
         //prevent page from reloading
@@ -195,8 +256,8 @@ $(function() {
             bossOne: false,
             bossTwo: false, 
             bossThree: false
-        };
-
+    };
+       
         //here is the call from the controller
         $.ajax("/createuser", {
             type: "POST",
@@ -206,10 +267,5 @@ $(function() {
             window.location = "/gamepage";
             })
     });
-
-    $(".backHome").on("click", function(){
-        event.preventDefault();
-        window.location.href = ("/");
-    })
 
 });
