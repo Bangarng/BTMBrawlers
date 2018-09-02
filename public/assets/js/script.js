@@ -325,6 +325,11 @@ var hideCredentials = function() {
     $("#enterCredentials").addClass("hidden");
 }
 
+
+var itemSelection = function(){
+    $("#itemSelection").addClass("hidden");
+}
+
 var hideCharSelect = function() {
     $("#createUser").addClass("hidden");
 }
@@ -376,6 +381,17 @@ $(function() {
         $("#enterCredentials").removeClass("hidden");
         $("#enterCredentials").addClass("fadeInUp animated");
     });   
+
+    $("#itemScreen").on("click", function(){
+        event.preventDefault();
+        hideWelcome();
+        hideCharSelect();
+        $("#itemSelection").removeClass("hidden");
+        $("#itemSelection").addClass("fadeInUp animated");
+
+
+
+    })
     //Homepage, restart app
     $(".backHome").on("click", function(){
         event.preventDefault();
@@ -398,7 +414,7 @@ $(function() {
             bossThree: false
     };
 
-    
+
        
         //here is the call from the controller
         $.ajax("/createuser", {
