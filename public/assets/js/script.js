@@ -43,10 +43,11 @@ var Mothman = new characterMaker("Mothman", 10, 40, 10); //can fly, speaks gibbe
 
 //this will hold the variable that are pushed in here to be called by the submit onclic
 var charArr = ["holder"];
-var heroArr = [heroWep1, heroWep2];
-var sidekickArr = [sidekickWep1, sidekickWep2];
-var shadowtakenArr = [shadowtakenWep1, shadowtakenWep2];
-var mothmanArr = [mothmanWep1, mothmanWep2];
+var itemArr = ["holder"];
+// var heroArr = [heroWep1, heroWep2];
+// var sidekickArr = [sidekickWep1, sidekickWep2];
+// var shadowtakenArr = [shadowtakenWep1, shadowtakenWep2];
+// var mothmanArr = [mothmanWep1, mothmanWep2];
 
 console.log(charArr);
 
@@ -56,63 +57,201 @@ var selectShadowtaken = $("#shadowtakenCharacter");
 var selectMothman = $("#mothmanCharacter");
 console.log(heroWep1);
 
+
+/************************************************************************
+ These functions below will be placed in each on click to load the items
+*************************************************************************/
+function heroItems(){
+
+    $.ajax("/itemAPI", {
+        type: "GET",
+    }).then( function(data) {
+
+        for(i=0; i<data.length; i++){
+            if(data[i].charName==="Hero"){
+            console.log(data[i]);
+            $("#heroButtons").append("<button id='itembuttons'>" + data[i].itemName +"</button>");
+            }
+
+        }
+        
+    })
+
+    $("#heroButtons").empty();
+    $("#heroButtons").show();
+    $("#sidekickButtons").hide();
+    $("#shadowtakenButtons").hide();
+    $("#mothmanButtons").hide();
+
+}
+
+
+
+
+function sidekickItems(){
+
+    $.ajax("/itemAPI", {
+        type: "GET",
+    }).then( function(data) {
+
+        for(i=0; i<data.length; i++){
+            if(data[i].charName==="Sidekick"){
+
+            console.log(data[i]);
+            $("#sidekickButtons").append("<button id='itembuttons'>" + data[i].itemName +"</button>");
+            }
+
+        }
+        
+    })
+    $('#sidekickButtons').empty();
+    $("#heroButtons").hide();
+    $("#sidekickButtons").show();
+    $("#shadowtakenButtons").hide();
+    $("#mothmanButtons").hide();
+
+}
+
+
+
+
+function shadowtakenItems(){
+
+    $.ajax("/itemAPI", {
+        type: "GET",
+    }).then( function(data) {
+
+        for(i=0; i<data.length; i++){
+            if(data[i].charName==="Shadowtaken"){
+            console.log(data[i]);
+            $("#shadowtakenButtons").append("<button id='itembuttons'>" + data[i].itemName +"</button>");
+            }
+
+        }
+        
+    })
+
+    $("#shadowtakenButtons").empty();
+    $("#heroButtons").hide();
+    $("#sidekickButtons").hide();
+    $("#shadowtakenButtons").show();
+    $("#mothmanButtons").hide();
+
+
+}
+
+
+
+
+
+
+function mothmanItems(){
+
+    $.ajax("/itemAPI", {
+        type: "GET",
+    }).then( function(data) {
+
+        for(i=0; i<data.length; i++){
+            if(data[i].charName==="Mothman"){
+            console.log(data[i]);
+            $("#mothmanButtons").append("<button id='itembuttons'>" + data[i].itemName +"</button>");
+            }
+
+        }
+        
+    })
+
+
+    $("#mothmanButtons").empty();
+    $("#heroButtons").hide();
+    $("#sidekickButtons").hide();
+    $("#shadowtakenButtons").hide();
+    $("#mothmanButtons").show();
+
+}
+
+/****************************************
+ END FUNCTIONS FOR CREATING ITEM BUTTONS
+*****************************************/
+
 //this takes a onclick, grabs the variable of the character and pushes it to the charArr
 selectHero.on("click", function (event) {
     
-    var attackBoost = heroWep1.itmAttack + heroWep2.itmAttack;
-    var defBoost = heroWep1.itmDefense + heroWep2.itmDefense;
-    var intBoost = heroWep1.itmIntellect + heroWep2.itmIntellect;
+    // var attackBoost = heroWep1.itmAttack + heroWep2.itmAttack;
+    // var defBoost = heroWep1.itmDefense + heroWep2.itmDefense;
+    // var intBoost = heroWep1.itmIntellect + heroWep2.itmIntellect;
 
-    // for(vari=0; i<heroArr.length; i++){
-    //    var item1= $("testbutton").html(heroArr[i]);
-    // }
+   heroItems();
+
+
 
     charArr.splice(0,1,Hero);
-    Hero.attack += attackBoost;
-    Hero.defense +=defBoost; 
-    Hero.intellect += intBoost;
+   
+ 
+    // Hero.attack += attackBoost;
+    // Hero.defense +=defBoost; 
+    // Hero.intellect += intBoost;
     console.log(charArr);
     event.preventDefault();
 });
+
 selectSidekick.on("click", function (event) {
-    var attackBoost = sidekickWep1.itmAttack + sidekickWep2.itmAttack;
-    var defBoost = sidekickWep1.itmDefense + sidekickWep2.itmDefense;
-    var intBoost = sidekickWep1.itmIntellect + sidekickWep2.itmIntellect;
+    // var attackBoost = sidekickWep1.itmAttack + sidekickWep2.itmAttack;
+    // var defBoost = sidekickWep1.itmDefense + sidekickWep2.itmDefense;
+    // var intBoost = sidekickWep1.itmIntellect + sidekickWep2.itmIntellect;
+
+
+   
+
+     sidekickItems();
+
+
+
     
     charArr.splice(0,1,Sidekick);
-    Sidekick.attack += attackBoost;
-    Sidekick.defense +=defBoost; 
-    Sidekick.intellect += intBoost;
+    // Sidekick.attack += attackBoost;
+    // Sidekick.defense +=defBoost; 
+    // Sidekick.intellect += intBoost;
 
     console.log(charArr);
     event.preventDefault();
 });
 selectShadowtaken.on("click", function (event) {
-    var attackBoost = shadowtakenWep1.itmAttack + shadowtakenWep2.itmAttack;
-    var defBoost = shadowtakenWep1.itmDefense + shadowtakenWep2.itmDefense;
-    var intBoost = shadowtakenWep1.itmIntellect + shadowtakenWep2.itmIntellect;
+    // var attackBoost = shadowtakenWep1.itmAttack + shadowtakenWep2.itmAttack;
+    // var defBoost = shadowtakenWep1.itmDefense + shadowtakenWep2.itmDefense;
+    // var intBoost = shadowtakenWep1.itmIntellect + shadowtakenWep2.itmIntellect;
+
    
+
+
+
+   shadowtakenItems();
     charArr.splice(0,1,Shadowtaken);
-    Shadowtaken.attack += attackBoost;
-    Shadowtaken.defense +=defBoost; 
-    Shadowtaken.intellect += intBoost;
+    // Shadowtaken.attack += attackBoost;
+    // Shadowtaken.defense +=defBoost; 
+    // Shadowtaken.intellect += intBoost;
 
     console.log(charArr);
     event.preventDefault();
 });
 selectMothman.on("click", function (event) {
-    var attackBoost = mothmanWep1.itmAttack + mothmanWep2.itmAttack;
-    var defBoost = mothmanWep1.itmDefense + mothmanWep2.itmDefense;
-    var intBoost = mothmanWep1.itmIntellect + mothmanWep2.itmIntellect;
+    // var attackBoost = mothmanWep1.itmAttack + mothmanWep2.itmAttack;
+    // var defBoost = mothmanWep1.itmDefense + mothmanWep2.itmDefense;
+    // var intBoost = mothmanWep1.itmIntellect + mothmanWep2.itmIntellect;
     
+
+
+
+     mothmanItems();
     charArr.splice(0,1,Mothman);
    
-    Mothman.attack += attackBoost;
-    Mothman.defense +=defBoost; 
-    Mothman.intellect += intBoost;
+    // Mothman.attack += attackBoost;
+    // Mothman.defense +=defBoost; 
+    // Mothman.intellect += intBoost;
     console.log(charArr);
     event.preventDefault();
 })
+
 
 // Show, hide the character stats when hovering
 $("#heroCharacter").hover(function() {
@@ -175,6 +314,7 @@ $(".heroCharacter").on("mouseenter", function() {
 }).on("mouseleave", function() {
     $(".hero-DIV").hide();
 });
+
 
 // Code for the start up screen.
 var hideWelcome = function() {

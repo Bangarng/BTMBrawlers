@@ -1,1 +1,13 @@
 <h2>Welcome</h2>
+
+ {{#each brawler}}
+                <tr>
+                    <th class="bg-warning"scope="row">{{this.id}}</th>
+                    <td class="bg-info">{{this.userName}}</td>
+                    <td class="bg-warning">{{this.charName}}</td>
+                    <td class="bg-info">{{this.attack}}</td>
+                    <td class="bg-warning">{{this.defense}}</td>
+                    <td class="bg-info">{{this.intellect}}</td>
+                    <td class="bg-danger"><strong>Continue the Fight?</strong></td>
+                </tr>
+{{/each}}

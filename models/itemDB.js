@@ -26,6 +26,15 @@ var itemDB =sequelize.define("items",{
     lvlUnlock:{
         type: Sequelize.BOOLEAN,
     },
+
+    charName:{
+        type: Sequelize.STRING,
+        allowNull: false,
+        validate:
+        {
+            len: [1, 50]
+        }
+    }
 },
 {
     freezeTableName: true,
