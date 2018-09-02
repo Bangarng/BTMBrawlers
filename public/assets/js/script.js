@@ -15,20 +15,20 @@ var itemMaker = function(itemName, itmAttack, itmDefense, itmIntellect){
 };
 //creating the different constructors of characters
 //tech glasses give defense - can anticipate enemy moves gives boosted defense, cape of strength increases dmgs
-var heroWep1 = new itemMaker("Tech Glasses", 0, 15, 4);
-var heroWep2 = new itemMaker("Cape of Strength", 10, 0, 0);
+// var heroWep1 = new itemMaker("Tech Glasses", 0, 15, 4);
+// var heroWep2 = new itemMaker("Cape of Strength", 10, 0, 0);
 
-//drainer helm - takes intellect from enemy and increases sidekicks intellect, grapple guns increases speed, increasing his defense because he is harder to hit
-var sidekickWep1 = new itemMaker("Drainer Helm", 0, 0, 20);
-var sidekickWep2 = new itemMaker("Dual Grapple Guns", 0, 15, 0);
+// //drainer helm - takes intellect from enemy and increases sidekicks intellect, grapple guns increases speed, increasing his defense because he is harder to hit
+// var sidekickWep1 = new itemMaker("Drainer Helm", 0, 0, 20);
+// var sidekickWep2 = new itemMaker("Dual Grapple Guns", 0, 15, 0);
 
-//black belt - increases all stats in attack dmg, defense, and hit(int), passive skill of melee strength
-var shadowtakenWep1 = new itemMaker("Black Belt", 10, 10, 10);
-var shadowtakenWep2 = new itemMaker("Increased Melee Prowness - Passive", 15, 0, 0);
+// //black belt - increases all stats in attack dmg, defense, and hit(int), passive skill of melee strength
+// var shadowtakenWep1 = new itemMaker("Black Belt", 10, 10, 10);
+// var shadowtakenWep2 = new itemMaker("Increased Melee Prowness - Passive", 15, 0, 0);
 
-//Moth wings - gives flight and increases defense, Moth vision - anticipates enemy attacks, granting mothman hit chance and defense
-var mothmanWep1 = new itemMaker("Moth Wings", 0, 30,0 );
-var mothmanWep2 = new itemMaker("Moth Vision Goggles", 0, 10, 10);
+// //Moth wings - gives flight and increases defense, Moth vision - anticipates enemy attacks, granting mothman hit chance and defense
+// var mothmanWep1 = new itemMaker("Moth Wings", 0, 30,0 );
+// var mothmanWep2 = new itemMaker("Moth Vision Goggles", 0, 10, 10);
 
 
 //this is the static characters
@@ -55,7 +55,7 @@ var selectHero = $("#heroCharacter");
 var selectSidekick = $("#sidekickCharacter");
 var selectShadowtaken = $("#shadowtakenCharacter");
 var selectMothman = $("#mothmanCharacter");
-console.log(heroWep1);
+// console.log(heroWep1);
 
 
 /************************************************************************
@@ -397,6 +397,8 @@ $(function() {
             bossTwo: false, 
             bossThree: false
     };
+
+    
        
         //here is the call from the controller
         $.ajax("/createuser", {
