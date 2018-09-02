@@ -1,7 +1,7 @@
 var sequelize = require("sequelize");
 
 
-var sequelize = new sequelize("users_db", "root", "NotAnother1",{
+var sequelize = new sequelize("users_db", "root", "samM1994",{
 
     host: "localhost",
     port: 3306,

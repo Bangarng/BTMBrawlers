@@ -45,7 +45,7 @@ body {
     margin: 8% 0;
 }
 
-#submitCredentials, .backHome, #backToUser, #submitUser {
+#submitCredentials, .backHome,#itembuttons, #backToUser, #submitUser {
     font-family: 'Press Start 2P', cursive;
     margin: auto;
     font-size: 1em;
