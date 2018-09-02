@@ -58,19 +58,121 @@ var selectMothman = $("#mothmanCharacter");
 console.log(heroWep1);
 
 
+/************************************************************************
+ These functions below will be placed in each on click to load the items
+*************************************************************************/
+function heroItems(){
 
+    $.ajax("/itemAPI", {
+        type: "GET",
+    }).then( function(data) {
 
-// function renderHeroButtons(){
-//     for(var i=0; i<heroArr.length; i++){
-//         $("#itembuttons").append("<button>"+heroArr[i].itemName+"</button>");
+        for(i=0; i<data.length; i++){
+            if(data[i].charName==="Hero"){
+            console.log(data[i]);
+            $("#heroButtons").append("<button id='itembuttons'>" + data[i].itemName +"</button>");
+            }
+
+        }
         
-//                 event.preventDefault();
-//                 console.log(heroArr[i]);
+    })
 
-// })
-// }
+    $("#heroButtons").empty();
+    $("#heroButtons").show();
+    $("#sidekickButtons").hide();
+    $("#shadowtakenButtons").hide();
+    $("#mothmanButtons").hide();
 
-  
+}
+
+
+
+
+function sidekickItems(){
+
+    $.ajax("/itemAPI", {
+        type: "GET",
+    }).then( function(data) {
+
+        for(i=0; i<data.length; i++){
+            if(data[i].charName==="Sidekick"){
+
+            console.log(data[i]);
+            $("#sidekickButtons").append("<button id='itembuttons'>" + data[i].itemName +"</button>");
+            }
+
+        }
+        
+    })
+    $('#sidekickButtons').empty();
+    $("#heroButtons").hide();
+    $("#sidekickButtons").show();
+    $("#shadowtakenButtons").hide();
+    $("#mothmanButtons").hide();
+
+}
+
+
+
+
+function shadowtakenItems(){
+
+    $.ajax("/itemAPI", {
+        type: "GET",
+    }).then( function(data) {
+
+        for(i=0; i<data.length; i++){
+            if(data[i].charName==="Shadowtaken"){
+            console.log(data[i]);
+            $("#shadowtakenButtons").append("<button id='itembuttons'>" + data[i].itemName +"</button>");
+            }
+
+        }
+        
+    })
+
+    $("#shadowtakenButtons").empty();
+    $("#heroButtons").hide();
+    $("#sidekickButtons").hide();
+    $("#shadowtakenButtons").show();
+    $("#mothmanButtons").hide();
+
+
+}
+
+
+
+
+
+
+function mothmanItems(){
+
+    $.ajax("/itemAPI", {
+        type: "GET",
+    }).then( function(data) {
+
+        for(i=0; i<data.length; i++){
+            if(data[i].charName==="Mothman"){
+            console.log(data[i]);
+            $("#mothmanButtons").append("<button id='itembuttons'>" + data[i].itemName +"</button>");
+            }
+
+        }
+        
+    })
+
+
+    $("#mothmanButtons").empty();
+    $("#heroButtons").hide();
+    $("#sidekickButtons").hide();
+    $("#shadowtakenButtons").hide();
+    $("#mothmanButtons").show();
+
+}
+
+/****************************************
+ END FUNCTIONS FOR CREATING ITEM BUTTONS
+*****************************************/
 
 //this takes a onclick, grabs the variable of the character and pushes it to the charArr
 selectHero.on("click", function (event) {
@@ -79,21 +181,11 @@ selectHero.on("click", function (event) {
     // var defBoost = heroWep1.itmDefense + heroWep2.itmDefense;
     // var intBoost = heroWep1.itmIntellect + heroWep2.itmIntellect;
 
-  
+   heroItems();
 
-    
-    console.log(heroArr);  
+
     charArr.splice(0,1,Hero);
-    for(var i=0; i<heroArr.length; i++){
-        $("#itembuttons").append("<button>"+heroArr[i].itemName+"</button>");
-        
-                event.preventDefault();
-                console.log(heroArr[i]);
-            
-           
-       
-
-    }
+   
  
     // Hero.attack += attackBoost;
     // Hero.defense +=defBoost; 
@@ -106,6 +198,14 @@ selectSidekick.on("click", function (event) {
     // var attackBoost = sidekickWep1.itmAttack + sidekickWep2.itmAttack;
     // var defBoost = sidekickWep1.itmDefense + sidekickWep2.itmDefense;
     // var intBoost = sidekickWep1.itmIntellect + sidekickWep2.itmIntellect;
+
+
+   
+
+     sidekickItems();
+
+
+
     
     charArr.splice(0,1,Sidekick);
     // Sidekick.attack += attackBoost;
@@ -119,7 +219,12 @@ selectShadowtaken.on("click", function (event) {
     // var attackBoost = shadowtakenWep1.itmAttack + shadowtakenWep2.itmAttack;
     // var defBoost = shadowtakenWep1.itmDefense + shadowtakenWep2.itmDefense;
     // var intBoost = shadowtakenWep1.itmIntellect + shadowtakenWep2.itmIntellect;
+
    
+
+
+
+   shadowtakenItems();
     charArr.splice(0,1,Shadowtaken);
     // Shadowtaken.attack += attackBoost;
     // Shadowtaken.defense +=defBoost; 
@@ -133,6 +238,10 @@ selectMothman.on("click", function (event) {
     // var defBoost = mothmanWep1.itmDefense + mothmanWep2.itmDefense;
     // var intBoost = mothmanWep1.itmIntellect + mothmanWep2.itmIntellect;
     
+
+
+
+     mothmanItems();
     charArr.splice(0,1,Mothman);
    
     // Mothman.attack += attackBoost;
@@ -143,17 +252,6 @@ selectMothman.on("click", function (event) {
 })
 
 
-//lets a button be active for when we input data?
-
-// var header = document.getElementById("myID");
-// var btns = header.getElementsByClassName("btns");
-// for (var i = 0; i < btns.length; i++) {
-//   btns[i].addEventListener("click", function() {
-//     var current = document.getElementsByClassName("active");
-//     current[0].className = current[0].className.replace(" active", "");
-//     this.className += " active";
-//   });
-// }
 
 // Code for the start up screen.
 var hideWelcome = function() {
@@ -186,16 +284,6 @@ $(function() {
     //create a new game
     $("#submitCredentials").on("click", function(event) {      
         event.preventDefault();
-        
-        //creating form validation to ensure it is not left empty
-        // var userName = $("#userNameInput");
-        // var passInfo = $("#passwordInput");
-    
-        // if(userName=="" || passInfo==""){
-    
-        //     alert("Please enter username and password");
-        //     return false;
-        // }
         hideCredentials();
         $("#createUser").removeClass("hidden");
         $("#createUser").addClass("fadeInUp animated");
