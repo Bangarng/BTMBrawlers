@@ -12,7 +12,12 @@ VALUES("PowerFist", 30, 0, 1, false);
 INSERT INTO items (itemName, attack, defense, intellect, lvlUnlock) 
 VALUES("SnipeyGun", 20, 0, 10, false);
 
+/*********************************************
+USERDB SEEDS
+*********************************************/
 
+INSERT INTO userInfo (userName, pass, charName, attack, defense, intellect, itemOne, itemTwo, itemThree, bossOne, bossTwo, bossThree) 
+VALUES ('Smarcus4','sam12345','Sidekick', 15, 2, 10, 'none', 'none', 'none', false, false, false);
 
 /*********************************************
 ITEMSDB SEEDS

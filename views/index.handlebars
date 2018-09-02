@@ -195,6 +195,9 @@
                 <th class="bg-info"scope = "col">Attack Power</th>
                 <th class="bg-warning"scope = "col">Defense Health</th>
                 <th class="bg-info"scope = "col">Intellect Prowless</th>
+                <th class="bg-warning"scope = "col">Item UNO</th>
+                <th class="bg-info"scope = "col">Item DUO</th>
+                <th class="bg-warning"scope = "col">Item TRE</th>
                 <tr>
             </thead>
             <tbody>
@@ -206,11 +209,16 @@
                     <td class="bg-info">{{this.attack}}</td>
                     <td class="bg-warning">{{this.defense}}</td>
                     <td class="bg-info">{{this.intellect}}</td>
-                    <td class="bg-danger"><strong>Continue the Fight?</strong></td>
+                    <td class="bg-warning">{{this.itemOne}}</td>
+                    <td class="bg-info">{{this.itemTwo}}</td>
+                    <td class="bg-warning">{{this.itemThree}}</td>
+                    <td class=""><button class = "btn btn-danger continuethefight">Continue the Fight?</button></td>
                 </tr>
             {{/each}}
             </tbody>
         </table>
+        <br><br>
+        <button class="backHome btn">Home</button>
     </div>
 
     {{!-- <div class="footer">
