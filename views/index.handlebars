@@ -33,7 +33,7 @@
     </div>
 
     {{!-- Create User Screen --}}
-    <div id = "createUser" class = "hidden">
+    <div id = "createUser" class="hidden">
         <img class="char-select-head col-md-12" src="../public/assets/images/Character-Select.png"/>
         <div id="myID" class="charSelect text-center">
             <br>
@@ -43,8 +43,9 @@
             <img id="shadowtakenCharacter" class="img img-responsive shadowtakenCharacter flash" src="../public/assets/images/charSelect/ShadowtakenSelect.png" />
             <img id="mothmanCharacter" class="img img-responsive mothmanCharacter flash" src="../public/assets/images/charSelect/MothmanSelect.png" />      
             <div class="container">
+                <div class="row blankStats"></div>
                 {{!-- Hero Stats --}}
-                <div class="row">
+                <div class="row  hero-DIV hidden">
                     <div class="col-md-4 heroStats">
                         <img class="img img-responsive heroStats-img" src="../public/assets/images/charSelect/HeroStats.png"/>
                     </div>
@@ -65,31 +66,31 @@
                     
                 </div>
                 {{!-- Sidekick Stats --}}
-                <div class="row">
+                <div class="row sidekick-DIV hidden">
                     <div class="col-md-4 heroStats">
                         <img class="img img-responsive heroStats-img" src="../public/assets/images/charSelect/SidekickStats.png"/>
                     </div>
                     <div class="col-md-8 heroStats-text">
                         <p>Name: <span class="yellow">Sidekick</span></p>
-                        <p>Class: <span class="yellow">Tech</span></p>
+                        <p>Class: <span class="yellow">Engineer</span></p>
                         <p>Strength: <span class="yellow">15</span></p>
                         <p>Defense: <span class="yellow">20</span></p>
                         <P>Intelligence: <span class="yellow">25</span></P>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row shadowtaken-DIV hidden">
                     <div class="col-md-4 heroStats">
                         <img class="img img-responsive heroStats-img" src="../public/assets/images/charSelect/ShadowtakenStats.png"/>
                     </div>
                     <div class="col-md-8 heroStats-text">
                         <p>Name: <span class="yellow">Shadowtaken</span></p>
-                        <p>Class: <span class="yellow">Martial Arts</span></p>
+                        <p>Class: <span class="yellow">Martial Artist</span></p>
                         <p>Strength: <span class="yellow">30</span></p>
                         <p>Defense: <span class="yellow">15</span></p>
                         <P>Intelligence: <span class="yellow">15</span></P>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row mothman-DIV hidden">
                     <div class="col-md-4 heroStats">
                         <img class="img img-responsive heroStats-img" src="../public/assets/images/charSelect/MothmanStats.png"/>
                     </div>
@@ -102,6 +103,48 @@
                     </div>
                 </div>
             </div>
+            {{!-- MODAL BOX
+            <div class="char-sel-modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Are you sure?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Modal body text goes here.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+                </div>
+            </div>
+            </div> --}}
+
+            <!-- Modal -->
+            <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Modal Header</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Some text in the modal.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+                </div>
+
+            </div>
+            </div>
+
                 {{!-- <button class="btns flash active" id = "heroCharacter">
                     <img class="heroCharacter" src="../public/assets/images/charSelect/HeroSelect.png" width="150"/>
                 </button>
