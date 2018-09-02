@@ -382,6 +382,11 @@ $(function() {
         window.location.href = ("/");
     });
 
+    $(".continuethefight").on("click", function() {
+        event.preventDefault();
+        window.location.href = ("/gamepage");
+    });
+
     $("#submitUser").on("click", function(event) {
         //prevent page from reloading
         event.preventDefault();
@@ -393,10 +398,13 @@ $(function() {
             attack: charArr[0].attack,
             defense: charArr[0].defense,
             intellect: charArr[0].defense,
+            itemOne: 'none',
+            itemTwo: 'none',
+            itemThree: 'none',
             bossOne: false,
             bossTwo: false, 
             bossThree: false
-    };
+        };
 
     
        
@@ -407,7 +415,7 @@ $(function() {
         }).then( function(data) {
             console.log(data);
             window.location = "/gamepage";
-            })
+        })
     });
 
 });
