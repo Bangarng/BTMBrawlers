@@ -32,6 +32,25 @@
         </form>
     </div>
 
+    {{!-- item screen --}}
+{{!-- Creates the page for item selection where I will be inputting all the data from itemsDB --}}
+    <div id = "itemSelection" class = "hidden">
+        <img class="char-select-head col-md-12" src="../public/assets/images/Enter-Credentials.png"/>
+        <table>
+            <tr>
+                <tbody id="items"></tbody>
+            </tr>
+        </table>
+          
+         
+        <br><br><br>
+        <div class="backNext">
+            <button id="charCreation" class="btn">Back To Character Creation</button>
+            <button id="submitUser" class="btn">Submit</button>
+        </div>
+             
+    </div>  
+
     {{!-- Create User Screen --}}
     <div id = "createUser" class="hidden">
         <img class="char-select-head col-md-12" src="../public/assets/images/Character-Select.png"/>
@@ -55,7 +74,7 @@
                         <p>Strength: <span class="yellow">20</span></p>
                         <p>Defense: <span class="yellow">20</span></p>
                         <P>Intelligence: <span class="yellow">20</span></P>
-                        <div id="heroButtons" ></div>
+                        {{!-- <div id="heroButtons" ></div> --}}
                         
                     </div>
                     
@@ -72,7 +91,7 @@
                         <p>Strength: <span class="yellow">15</span></p>
                         <p>Defense: <span class="yellow">20</span></p>
                         <P>Intelligence: <span class="yellow">25</span></P>
-                        <div id="sidekickButtons"></div>
+                        {{!-- <div id="sidekickButtons"></div> --}}
                     </div>
                 </div>
                 <div class="row shadowtaken-DIV hidden">
@@ -85,7 +104,7 @@
                         <p>Strength: <span class="yellow">30</span></p>
                         <p>Defense: <span class="yellow">15</span></p>
                         <P>Intelligence: <span class="yellow">15</span></P>
-                         <div id="shadowtakenButtons"></div>
+                         {{!-- <div id="shadowtakenButtons"></div> --}}
                     </div>
                 </div>
                 <div class="row mothman-DIV hidden">
@@ -98,28 +117,16 @@
                         <p>Strength: <span class="yellow">10</span></p>
                         <p>Defense: <span class="yellow">40</span></p>
                         <P>Intelligence: <span class="yellow">10</span></P>
-                        <div id="mothmanButtons"></div>
+                        {{!-- <div id="mothmanButtons"></div> --}}
                     </div>
                 </div>
-                <button id="itemScreen" class="btn">Next</button>
+                <button id="itemScreen" class="btn">Next: Item Selection</button>
             </div>
 
 
 
 
-        <div id = "itemSelection" class = "hidden">
-        <img class="char-select-head col-md-12" src="../public/assets/images/Enter-Credentials.png"/>
         
-          <h2>Data will go here</h2>
-            <div class="backNext">
-                <button class="btn backHome">Back</button>
-            </div>
-        {{!-- <button id="submitUser">Submit</button>
-        <button class="backHome">Home Page</button> --}}
-        
-
-        
-         </div>  
             {{!-- MODAL BOX
             <div class="char-sel-modal" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
