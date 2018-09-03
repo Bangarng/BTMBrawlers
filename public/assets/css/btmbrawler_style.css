@@ -52,7 +52,7 @@ body {
     margin: 8% 0;
 }
 
-#submitCredentials, .backHome,#itembuttons, #backToUser, #submitUser,#itemScreen,#charCreation {
+#submitCredentials, .backHome,#itembuttons, #backToUser, #submitUser, #itemScreen, #charCreation, #pickItem, #modal-close {
     font-family: 'Press Start 2P', cursive;
     margin: auto;
     font-size: 1em;
@@ -65,11 +65,11 @@ body {
     margin: 0 1%;
 }
 
-#submitCredentials:hover, .backHome:hover, #backToUser:hover, #charCreation:hover, #submitUser:hover {
+#submitCredentials:hover, .backHome:hover, #backToUser:hover, #charCreation:hover, #submitUser:hover, #itemScreen:hover, #modal-close:hover {
     transform: scale(1.05);
 }
 
-#submitCredentials:active, .backHome:active, #backToUser:active, #submitUser:active {
+#submitCredentials:active, .backHome:active, #backToUser:active, #submitUser:active, #itemScreen:active, #modal-close:active {
     transform: scale(1.00);
 }
 
@@ -241,4 +241,19 @@ body {
     background: #F3EA23;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+/* Modal Box */
+.modal-dialog {
+    margin-top: 10%;
+}
+.modal-content {
+    border: 3px solid #1F3E60;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.9);
+}
+
+/* Item Table */
+.item-table {
+    margin-top: 3%;
 }
