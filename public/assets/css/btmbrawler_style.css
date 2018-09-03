@@ -30,6 +30,13 @@ body {
     background: rgba(0, 0, 0, 0.8);
     padding: 6% 0%;
 }
+
+#itemSelection{
+
+    background: rgba(0, 0, 0, 0.8);
+    padding: 6% 0%;
+
+}
 .create-form {
     margin-top: 8%;
     font-size: 1.3em;
@@ -45,7 +52,7 @@ body {
     margin: 8% 0;
 }
 
-#submitCredentials, .backHome,#itembuttons, #backToUser, #submitUser {
+#submitCredentials, .backHome,#itembuttons, #backToUser, #submitUser,#itemScreen,#charCreation {
     font-family: 'Press Start 2P', cursive;
     margin: auto;
     font-size: 1em;
@@ -58,7 +65,7 @@ body {
     margin: 0 1%;
 }
 
-#submitCredentials:hover, .backHome:hover, #backToUser:hover, #submitUser:hover {
+#submitCredentials:hover, .backHome:hover, #backToUser:hover, #charCreation:hover, #submitUser:hover {
     transform: scale(1.05);
 }
 
