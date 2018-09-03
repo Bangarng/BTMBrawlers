@@ -27,29 +27,8 @@
             </div>
         {{!-- <button id="submitUser">Submit</button>
         <button class="backHome">Home Page</button> --}}
-        
-
         </form>
     </div>
-
-    {{!-- item screen --}}
-{{!-- Creates the page for item selection where I will be inputting all the data from itemsDB --}}
-    <div id = "itemSelection" class = "hidden">
-        <img class="char-select-head col-md-12" src="../public/assets/images/Enter-Credentials.png"/>
-        <table>
-            <tr>
-                <tbody id="items"></tbody>
-            </tr>
-        </table>
-          
-         
-        <br><br><br>
-        <div class="backNext">
-            <button id="charCreation" class="btn">Back To Character Creation</button>
-            <button id="submitUser" class="btn">Submit</button>
-        </div>
-             
-    </div>  
 
     {{!-- Create User Screen --}}
     <div id = "createUser" class="hidden">
@@ -57,7 +36,7 @@
         <div id="myID" class="charSelect text-center">
             <br>
             {{!-- <div class="col-xs-12 charNames">Hero&nbsp; Sidekick Shadowtaken Mothman</div> --}}
-            <img id="heroCharacter" class="img img-responsive heroCharacter flash" src="../public/assets/images/charSelect/HeroSelect.png" />
+            <img id="heroCharacter" class="img img-responsive heroCharacter flash" data-toggle="modal" data=target="#char-sel-modal" src="../public/assets/images/charSelect/HeroSelect.png" />
             <img id="sidekickCharacter" class="img img-responsive sidekickCharacter flash" src="../public/assets/images/charSelect/SidekickSelect.png" />
             <img id="shadowtakenCharacter" class="img img-responsive shadowtakenCharacter flash" src="../public/assets/images/charSelect/ShadowtakenSelect.png" />
             <img id="mothmanCharacter" class="img img-responsive mothmanCharacter flash" src="../public/assets/images/charSelect/MothmanSelect.png" />      
@@ -74,11 +53,8 @@
                         <p>Strength: <span class="yellow">20</span></p>
                         <p>Defense: <span class="yellow">20</span></p>
                         <P>Intelligence: <span class="yellow">20</span></P>
-                        {{!-- <div id="heroButtons" ></div> --}}
-                        
-                    </div>
-                    
-                    
+                        {{!-- <div id="heroButtons" ></div> --}}   
+                    </div>              
                 </div>
                 {{!-- Sidekick Stats --}}
                 <div class="row sidekick-DIV hidden">
@@ -122,34 +98,9 @@
                 </div>
                 <button id="itemScreen" class="btn">Next: Item Selection</button>
             </div>
-
-
-
-
         
-            {{!-- MODAL BOX
-            <div class="char-sel-modal" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Are you sure?</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>Modal body text goes here.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-                </div>
-            </div>
-            </div> --}}
-
-            <!-- Modal -->
-            <div id="myModal" class="modal fade" role="dialog">
+            {{!-- MODAL BOX --}}
+            <div id="char-sel-modal" class="modal fade" role="dialog">
             <div class="modal-dialog">
 
                 <!-- Modal content-->
@@ -190,6 +141,23 @@
         </div>
     </div>
 
+    {{!-- item screen --}}
+{{!-- Creates the page for item selection where I will be inputting all the data from itemsDB --}}
+    <div id = "itemSelection" class = " text-center hidden">
+        <img class="char-select-head col-md-12" src="../public/assets/images/Enter-Credentials.png"/>
+        <table>
+            <tr>
+                <tbody id="items"></tbody>
+            </tr>
+        </table>
+          
+         
+        <br><br><br>
+        <div class="backNext text-center">
+            <button id="charCreation" class="btn">Character Creation</button>
+            <button id="submitUser" class="btn">Submit</button>
+        </div>       
+    </div>  
 
 <div id = "userInfo" class = "hidden">
     <div class = "container">
