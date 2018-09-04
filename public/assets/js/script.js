@@ -1,3 +1,5 @@
+
+
 //this constructo makes our static characters
 var characterMaker = function(charName, attack, defense, intellect) {
     this.charName =  charName;
@@ -441,7 +443,6 @@ $(function() {
     });
 
 
-
-
         
 });
+

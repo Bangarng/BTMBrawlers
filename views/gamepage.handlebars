@@ -1,13 +1,22 @@
-<h2>Welcome</h2>
+<h2>GAMEPAGE</h2>
 
- {{#each brawler}}
-    <span>
-        <th class="bg-warning"scope="row">{{this.id}}</th>
-        <td class="bg-info">{{this.userName}}</td>
-        <td class="bg-warning">{{this.charName}}</td>
-        <td class="bg-info">{{this.attack}}</td>
-        <td class="bg-warning">{{this.defense}}</td>
-        <td class="bg-info">{{this.intellect}}</td>
-        <td class="bg-danger"><strong>Continue the Fight?</strong></td>
-    </span>
+<form>
+  PASSWORD<br>
+  <textarea id="passwordYo"rows="1" cols="40"></textarea>
+  <button id="submitPassword" class="btn">Submit</button>
+</form> 
+
+{{#each brawler}}
+    <div>
+        <h6>{{this.id}}</h6>
+        <h6>{{this.userName}}</h6>
+        <h6>{{this.charName}}</h6>
+        <h6>{{this.attack}}</h6>
+        <h6>{{this.defense}}</h6>
+        <h6>{{this.intellect}}</h6>
+        <h6>{{this.itemOne}}</h6>
+        <h6>{{this.itemTwo}}</h6>
+        <h6>{{this.itemThree}}</h6>
+    </div>
 {{/each}}
+
