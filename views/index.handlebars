@@ -33,21 +33,46 @@
     {{!-- item screen --}}
 {{!-- Creates the page for item selection where I will be inputting all the data from itemsDB --}}
     <div id = "itemSelection" class = "hidden">
-        <img class="char-select-head col-md-12" src="../public/assets/images/Enter-Credentials.png"/>
-        <table>
+        <img class="char-select-head col-md-12" src="../public/assets/images/Pick-An-Item.png"/>
+        <table class="item-table" align="center">
             <tr>
                 <tbody id="items"></tbody>
             </tr>
         </table>
-          
-         
         <br><br><br>
-        <div class="backNext">
+        <div class="backNext text-center">
             <button id="charCreation" class="btn">Back To Character Creation</button>
             <button id="submitUser" class="btn">Submit</button>
         </div>
              
     </div>  
+
+    {{!-- Create User Modal Box --}}
+        <!-- The Modal -->
+        <div class="modal" id="char-sel-modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+            <!-- Modal Header -->
+            {{!-- <div class="modal-header">
+                <h4 class="modal-title">Modal Heading</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div> --}}
+
+            <!-- Modal body -->
+            <div class="modal-body pressStart">
+                Are you sure?
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button id="modal-close" class="btn" data-dismiss="modal">No</button>
+                <button id="itemScreen"  class="btn" data-dismiss="modal">Yes</button>
+            </div>
+
+            </div>
+        </div>
+        </div>
 
     {{!-- Create User Screen --}}
     <div id = "createUser" class="hidden">
@@ -55,10 +80,10 @@
         <div id="myID" class="charSelect text-center">
             <br>
             {{!-- <div class="col-xs-12 charNames">Hero&nbsp; Sidekick Shadowtaken Mothman</div> --}}
-            <img id="heroCharacter" class="img img-responsive heroCharacter flash" src="../public/assets/images/charSelect/HeroSelect.png" />
-            <img id="sidekickCharacter" class="img img-responsive sidekickCharacter flash" src="../public/assets/images/charSelect/SidekickSelect.png" />
-            <img id="shadowtakenCharacter" class="img img-responsive shadowtakenCharacter flash" src="../public/assets/images/charSelect/ShadowtakenSelect.png" />
-            <img id="mothmanCharacter" class="img img-responsive mothmanCharacter flash" src="../public/assets/images/charSelect/MothmanSelect.png" />      
+            <img id="heroCharacter" class="img img-responsive heroCharacter flash" data-toggle="modal" data-target="#char-sel-modal" src="../public/assets/images/charSelect/HeroSelect.png" />
+            <img id="sidekickCharacter" class="img img-responsive sidekickCharacter flash" data-toggle="modal" data-target="#char-sel-modal" src="../public/assets/images/charSelect/SidekickSelect.png" />
+            <img id="shadowtakenCharacter" class="img img-responsive shadowtakenCharacter flash" data-toggle="modal" data-target="#char-sel-modal" src="../public/assets/images/charSelect/ShadowtakenSelect.png" />
+            <img id="mothmanCharacter" class="img img-responsive mothmanCharacter flash" data-toggle="modal" data-target="#char-sel-modal" src="../public/assets/images/charSelect/MothmanSelect.png" />      
             <div class="container">
                 <div class="row blankStats"></div>
                 {{!-- Hero Stats --}}
@@ -75,6 +100,7 @@
                         {{!-- <div id="heroButtons" ></div> --}}
                         
                     </div>
+
                 </div>
                 {{!-- Sidekick Stats --}}
                 <div class="row sidekick-DIV hidden">
@@ -116,6 +142,24 @@
                         {{!-- <div id="mothmanButtons"></div> --}}
                     </div>
                 </div>
+
+                {{!-- <button id="itemScreen" class="btn">Next: Item Selection</button> --}}
+            </div>
+
+            {{!-- <button class="btns flash active" id = "heroCharacter">
+                <img class="heroCharacter" src="../public/assets/images/charSelect/HeroSelect.png" width="150"/>
+            </button>
+            <button class="btns flash" id = "sidekickCharacter">
+                <img src="../public/assets/images/charSelect/SidekickSelect.png" width="150" />
+            </button>
+            <button class="btns flash" id = "shadowtakenCharacter">
+                <img src="../public/assets/images/charSelect/ShadowtakenSelect.png" width="150" />
+            </button>
+            <button class="btns flash" id = "mothmanCharacter">
+                <img src="../public/assets/images/charSelect/MothmanSelect.png" width="150" />
+            </button> --}}
+            <br>
+
                 <button id="itemScreen" class="btn">Next: Item Selection</button>
             </div>
 
@@ -176,10 +220,11 @@
                     <img src="../public/assets/images/charSelect/MothmanSelect.png" width="150" />
                 </button> --}}
                 <br>
+
         <div>
             <button class="backHome btn">Home</button>
             <button id="backToUser" class="btn">User Credentials</button>
-            <button id="submitUser" class="btn">Submit</button>
+            {{!-- <button id="submitUser" class="btn">Submit</button> --}}
         </div>
         </div>
     </div>
@@ -226,4 +271,3 @@
     </div> --}}
 </section>    
 </div>
-
