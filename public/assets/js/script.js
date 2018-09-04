@@ -64,26 +64,32 @@ var selectMothman = $("#mothmanCharacter");
 /************************************************************************
  These functions below will be placed in each on click to load the items
 *************************************************************************/
+// function heroitemclicking(){
 
+
+// }
 
 function heroItems(){
     $("#items").empty();
     $.ajax("/itemAPI", {
         type: "GET",
     }).then( function(data) {
+     
 
         for(i=0; i<data.length; i++){
             if(data[i].charName==="Hero" && !data[i].lvlUnlock){
             console.log(data[i]);
        
-           var button =$("<td><button id='itembuttons'>" + data[i].itemName +"</button></td>");
-         
-            $("#items").append(button);
-            console.log(button);
-           
-          
+           var buttons =$("<td><button id='itembuttons'>" + data[i].itemName +"</button></td>");
+                buttons.attr(data[i].attack);
+            $("#items").append(buttons);
+                  
             }
         } 
+        //recognizes the buttons and will console
+        for(var j; j<buttons.length; j++){
+            console.log(buttons[j].itemNames);
+        }    
        
     });
 
