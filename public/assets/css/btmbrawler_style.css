@@ -65,7 +65,7 @@ body {
     margin: 0 1%;
 }
 
-#submitCredentials:hover, .backHome:hover, #backToUser:hover, #charCreation:hover, #submitUser:hover, #itemScreen:hover, #modal-close:hover {
+#submitCredentials:hover, .backHome:hover, #backToUser:hover,#itembuttons:hover, #charCreation:hover, #submitUser:hover, #itemScreen:hover, #modal-close:hover {
     transform: scale(1.05);
 }
 
