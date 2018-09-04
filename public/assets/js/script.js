@@ -116,7 +116,7 @@ function sidekickItems(){
     $("#mothmanButtons").hide();
 
         
-    })
+    
     // $('#sidekickButtons').empty();
     // $("#heroButtons").hide();
     // $("#sidekickButtons").show();
