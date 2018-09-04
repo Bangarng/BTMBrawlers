@@ -13,6 +13,7 @@ var itemMaker = function(itemName, itmAttack, itmDefense, itmIntellect){
     this.itmDefense = itmDefense;
     this.itmIntellect = itmIntellect;
 };
+
 //creating the different constructors of characters
 //tech glasses give defense - can anticipate enemy moves gives boosted defense, cape of strength increases dmgs
 // var heroWep1 = new itemMaker("Tech Glasses", 0, 15, 4);
@@ -78,10 +79,8 @@ function heroItems(){
             $("#itembuttons").attr("intellect", data[i].intellect)
           
             }
-
-        }
-        
-    })
+        } 
+    });
 
     // $("#heroButtons").empty();
     // $("#heroButtons").show();
@@ -90,9 +89,6 @@ function heroItems(){
     // $("#mothmanButtons").hide();
 
 }
-
-
-
 
 function sidekickItems(){
     $("#items").empty();
@@ -108,8 +104,15 @@ function sidekickItems(){
            
             $("#items").append("<button id='itembuttons'>" + data[i].itemName +"</button>");
             }
-
         }
+
+    });
+    $('#sidekickButtons').empty();
+    $("#heroButtons").hide();
+    $("#sidekickButtons").show();
+    $("#shadowtakenButtons").hide();
+    $("#mothmanButtons").hide();
+
         
     })
     // $('#sidekickButtons').empty();
@@ -119,9 +122,6 @@ function sidekickItems(){
     // $("#mothmanButtons").hide();
 
 }
-
-
-
 
 function shadowtakenItems(){
 
@@ -138,10 +138,8 @@ function shadowtakenItems(){
             
             $("#items").append("<button id='itembuttons'>" + data[i].itemName +"</button>");
             }
-
         }
-        
-    })
+    });
 
     // $("#shadowtakenButtons").empty();
     // $("#heroButtons").hide();
@@ -149,13 +147,7 @@ function shadowtakenItems(){
     // $("#shadowtakenButtons").show();
     // $("#mothmanButtons").hide();
 
-
 }
-
-
-
-
-
 
 function mothmanItems(){
 
@@ -171,11 +163,8 @@ function mothmanItems(){
            
             $("#items").append("<button id='itembuttons'>" + data[i].itemName +"</button>");
             }
-
         }
-        
-    })
-
+    });
 
     // $("#mothmanButtons").empty();
     // $("#heroButtons").hide();
@@ -198,10 +187,7 @@ selectHero.on("click", function (event) {
 
    heroItems();
 
-
-
     charArr.splice(0,1,Hero);
-   
  
     // Hero.attack += attackBoost;
     // Hero.defense +=defBoost; 
@@ -215,13 +201,7 @@ selectSidekick.on("click", function (event) {
     // var defBoost = sidekickWep1.itmDefense + sidekickWep2.itmDefense;
     // var intBoost = sidekickWep1.itmIntellect + sidekickWep2.itmIntellect;
 
-
-   
-
-     sidekickItems();
-
-
-
+    sidekickItems();
     
     charArr.splice(0,1,Sidekick);
     // Sidekick.attack += attackBoost;
@@ -235,10 +215,6 @@ selectShadowtaken.on("click", function (event) {
     // var attackBoost = shadowtakenWep1.itmAttack + shadowtakenWep2.itmAttack;
     // var defBoost = shadowtakenWep1.itmDefense + shadowtakenWep2.itmDefense;
     // var intBoost = shadowtakenWep1.itmIntellect + shadowtakenWep2.itmIntellect;
-
-   
-
-
 
    shadowtakenItems();
     charArr.splice(0,1,Shadowtaken);
