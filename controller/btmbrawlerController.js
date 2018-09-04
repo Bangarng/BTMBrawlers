@@ -10,12 +10,14 @@ router.get("/", function(req, res){
 });
 
 router.get("/gamepage", function(req, res){
-    db.findAll({}).then(function(results) {
-        res.render("gamepage", {brawler: results}); 
+    // db.findAll({}).then(function(results) {
+    //     res.render("gamepage", {brawler: results}); 
+    // });
+    db.findOne({
+       where: {pass: "sam12345"}
+    }).then(function(results) {
+       res.render("gamepage", {brawler: results}); 
     });
-//    db.findOne({where: ({userName: req.params.userName})}).then(function(results) {
-//        res.render("gamepage", {brawler: results}); 
-//    });
 });
 
 router.get("/item", function(req, res){
