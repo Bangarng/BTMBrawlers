@@ -65,7 +65,7 @@ body {
     margin: 0 1%;
 }
 
-#submitCredentials:hover, .backHome:hover, #backToUser:hover, #charCreation:hover, #submitUser:hover, #itemScreen:hover, #modal-close:hover {
+#submitCredentials:hover, .backHome:hover, #backToUser:hover,#itembuttons:hover, #charCreation:hover, #submitUser:hover, #itemScreen:hover, #modal-close:hover {
     transform: scale(1.05);
 }
 
@@ -137,7 +137,7 @@ body {
 
 @keyframes animateCity {
 	from { background-position: 0 30px, 0 120px, -450px 50px, 0 30px, 0 -30px; }
-	to { background-position: 20px -50px, 0 95px, -375px 65px, 0 0, 0 -30px; }
+	to { background-position: 20px -50px, 0 110px, -375px 65px, 0 0, 0 -30px; }
 }
 		
 .main-screen { 

@@ -36,7 +36,9 @@
         <img class="char-select-head col-md-12" src="../public/assets/images/Pick-An-Item.png"/>
         <table class="item-table" align="center">
             <tr>
-                <tbody id="items"></tbody>
+                <tbody>
+                <td id="items"></tbody>
+                </tbody>
             </tr>
         </table>
         <br><br><br>
@@ -61,7 +63,7 @@
 
             <!-- Modal body -->
             <div class="modal-body pressStart">
-                Are you sure?
+                <p>Are you sure you want to play as:</p><p id="thisname">??</p>
             </div>
 
             <!-- Modal footer -->
@@ -97,7 +99,6 @@
                         <p>Strength: <span class="yellow">20</span></p>
                         <p>Defense: <span class="yellow">20</span></p>
                         <P>Intelligence: <span class="yellow">20</span></P>
-                        {{!-- <div id="heroButtons" ></div> --}}
                         
                     </div>
 
@@ -113,7 +114,6 @@
                         <p>Strength: <span class="yellow">15</span></p>
                         <p>Defense: <span class="yellow">20</span></p>
                         <P>Intelligence: <span class="yellow">25</span></P>
-                        {{!-- <div id="sidekickButtons"></div> --}}
                     </div>
                 </div>
                 <div class="row shadowtaken-DIV hidden">
@@ -126,7 +126,6 @@
                         <p>Strength: <span class="yellow">30</span></p>
                         <p>Defense: <span class="yellow">15</span></p>
                         <P>Intelligence: <span class="yellow">15</span></P>
-                         {{!-- <div id="shadowtakenButtons"></div> --}}
                     </div>
                 </div>
                 <div class="row mothman-DIV hidden">
@@ -139,7 +138,6 @@
                         <p>Strength: <span class="yellow">10</span></p>
                         <p>Defense: <span class="yellow">40</span></p>
                         <P>Intelligence: <span class="yellow">10</span></P>
-                        {{!-- <div id="mothmanButtons"></div> --}}
                     </div>
                 </div>
 
@@ -158,10 +156,7 @@
             <button class="btns flash" id = "mothmanCharacter">
                 <img src="../public/assets/images/charSelect/MothmanSelect.png" width="150" />
             </button> --}}
-            <br>
-
-                <button id="itemScreen" class="btn">Next: Item Selection</button>
-            </div>
+           
 
 
 

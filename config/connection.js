@@ -1,6 +1,7 @@
 var sequelize = require("sequelize");
 
 
+
 var sequelize = new sequelize("users_db", "root", "Jjb117jjB",{
 
     host: "localhost",

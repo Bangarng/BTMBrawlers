@@ -11,6 +11,7 @@ router.get("/api/", function(req, res) {
 });
 
 router.get("/itemAPI", function(req, res){
+  itemName: req
   itemDB.findAll({}).then(function(itemDB){
     res.json(itemDB);
   })

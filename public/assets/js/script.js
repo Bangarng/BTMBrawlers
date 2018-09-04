@@ -36,7 +36,7 @@ var itemMaker = function(itemName, itmAttack, itmDefense, itmIntellect){
 
 //this is the static characters
 
-console.log(Sidekick);
+
 //stats total 60
 var Hero = new characterMaker("Hero", 20, 20, 20); //full stack brawler
 var Sidekick = new characterMaker("Sidekick", 15, 20, 25); //duel grapple guns, intellect, reach
@@ -64,6 +64,8 @@ var selectMothman = $("#mothmanCharacter");
 /************************************************************************
  These functions below will be placed in each on click to load the items
 *************************************************************************/
+
+
 function heroItems(){
     $("#items").empty();
     $.ajax("/itemAPI", {
@@ -71,17 +73,18 @@ function heroItems(){
     }).then( function(data) {
 
         for(i=0; i<data.length; i++){
-            if(data[i].charName==="Hero"){
+            if(data[i].charName==="Hero" && !data[i].lvlUnlock){
             console.log(data[i]);
        
+           var button =$("<td><button id='itembuttons'>" + data[i].itemName +"</button></td>");
+         
+            $("#items").append(button);
+            console.log(button);
            
-            $("#items").append("<td><button id='itembuttons'>" + data[i].itemName +"</button></td>");
-            $("#itembuttons").attr("attack", data[i].attack);
-            $("#itembuttons").attr("defense", data[i].defense)
-            $("#itembuttons").attr("intellect", data[i].intellect)
           
             }
         } 
+       
     });
 
     // $("#heroButtons").empty();
@@ -100,11 +103,12 @@ function sidekickItems(){
     }).then( function(data) {
 
         for(i=0; i<data.length; i++){
-            if(data[i].charName==="Sidekick"){
+            if(data[i].charName==="Sidekick" && !data[i].lvlUnlock){
 
             console.log(data[i]);
-           
-            $("#items").append("<button id='itembuttons'>" + data[i].itemName +"</button>");
+            var button =$("<td><button id='itembuttons'>" + data[i].itemName +"</button></td>");
+         
+            $("#items").append(button);
             }
         }
 
@@ -135,10 +139,12 @@ function shadowtakenItems(){
     }).then( function(data) {
 
         for(i=0; i<data.length; i++){
-            if(data[i].charName==="Shadowtaken"){
+            if(data[i].charName==="Shadowtaken" && !data[i].lvlUnlock){
             console.log(data[i]);
             
-            $("#items").append("<button id='itembuttons'>" + data[i].itemName +"</button>");
+            var button =$("<td><button id='itembuttons'>" + data[i].itemName +"</button></td>");
+         
+            $("#items").append(button);
             }
         }
     });
@@ -151,7 +157,10 @@ function shadowtakenItems(){
 
 }
 
+
 function mothmanItems(){
+
+
 
     $("#items").empty();
 
@@ -160,12 +169,17 @@ function mothmanItems(){
     }).then( function(data) {
 
         for(i=0; i<data.length; i++){
-            if(data[i].charName==="Mothman"){
+            if(data[i].charName==="Mothman" && !data[i].lvlUnlock){
             console.log(data[i]);
            
-            $("#items").append("<button id='itembuttons'>" + data[i].itemName +"</button>");
+            var button =$("<td><button id='itembuttons'>" + data[i].itemName +"</button></td>");
+         
+            $("#items").append(button);
             }
         }
+
+
+        
     });
 
     // $("#mothmanButtons").empty();
@@ -175,6 +189,8 @@ function mothmanItems(){
     // $("#mothmanButtons").show();
 
 }
+
+
 
 /****************************************
  END FUNCTIONS FOR CREATING ITEM BUTTONS
@@ -190,6 +206,9 @@ selectHero.on("click", function (event) {
    heroItems();
 
     charArr.splice(0,1,Hero);
+    $("#thisname").empty();
+    $("#thisname").append(charArr[0].charName);
+
  
     // Hero.attack += attackBoost;
     // Hero.defense +=defBoost; 
@@ -203,9 +222,13 @@ selectSidekick.on("click", function (event) {
     // var defBoost = sidekickWep1.itmDefense + sidekickWep2.itmDefense;
     // var intBoost = sidekickWep1.itmIntellect + sidekickWep2.itmIntellect;
 
+
+    
     sidekickItems();
     
     charArr.splice(0,1,Sidekick);
+    $("#thisname").empty();
+    $("#thisname").append(charArr[0].charName);
     // Sidekick.attack += attackBoost;
     // Sidekick.defense +=defBoost; 
     // Sidekick.intellect += intBoost;
@@ -223,6 +246,8 @@ selectShadowtaken.on("click", function (event) {
     // Shadowtaken.attack += attackBoost;
     // Shadowtaken.defense +=defBoost; 
     // Shadowtaken.intellect += intBoost;
+    $("#thisname").empty();
+    $("#thisname").append(charArr[0].charName);
 
     console.log(charArr);
     event.preventDefault();
@@ -237,7 +262,9 @@ selectMothman.on("click", function (event) {
     
      
     charArr.splice(0,1,Mothman);
-   
+    $("#thisname").empty();
+    $("#thisname").append(charArr[0].charName);
+
     // Mothman.attack += attackBoost;
     // Mothman.defense +=defBoost; 
     // Mothman.intellect += intBoost;
