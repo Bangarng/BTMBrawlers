@@ -15,6 +15,7 @@ var itemMaker = function(itemName, itmAttack, itmDefense, itmIntellect){
     this.itmDefense = itmDefense;
     this.itmIntellect = itmIntellect;
 };
+
 //creating the different constructors of characters
 //tech glasses give defense - can anticipate enemy moves gives boosted defense, cape of strength increases dmgs
 // var heroWep1 = new itemMaker("Tech Glasses", 0, 15, 4);
@@ -64,7 +65,7 @@ var selectMothman = $("#mothmanCharacter");
  These functions below will be placed in each on click to load the items
 *************************************************************************/
 function heroItems(){
-
+    $("#items").empty();
     $.ajax("/itemAPI", {
         type: "GET",
     }).then( function(data) {
@@ -72,25 +73,27 @@ function heroItems(){
         for(i=0; i<data.length; i++){
             if(data[i].charName==="Hero"){
             console.log(data[i]);
-            $("#heroButtons").append("<button id='itembuttons'>" + data[i].itemName +"</button>");
+       
+           
+            $("#items").append("<td><button id='itembuttons'>" + data[i].itemName +"</button></td>");
+            $("#itembuttons").attr("attack", data[i].attack);
+            $("#itembuttons").attr("defense", data[i].defense)
+            $("#itembuttons").attr("intellect", data[i].intellect)
+          
             }
+        } 
+    });
 
-        }
-        
-    })
-
-    $("#heroButtons").empty();
-    $("#heroButtons").show();
-    $("#sidekickButtons").hide();
-    $("#shadowtakenButtons").hide();
-    $("#mothmanButtons").hide();
+    // $("#heroButtons").empty();
+    // $("#heroButtons").show();
+    // $("#sidekickButtons").hide();
+    // $("#shadowtakenButtons").hide();
+    // $("#mothmanButtons").hide();
 
 }
 
-
-
-
 function sidekickItems(){
+    $("#items").empty();
 
     $.ajax("/itemAPI", {
         type: "GET",
@@ -100,24 +103,32 @@ function sidekickItems(){
             if(data[i].charName==="Sidekick"){
 
             console.log(data[i]);
-            $("#sidekickButtons").append("<button id='itembuttons'>" + data[i].itemName +"</button>");
+           
+            $("#items").append("<button id='itembuttons'>" + data[i].itemName +"</button>");
             }
-
         }
-        
-    })
+
+    });
     $('#sidekickButtons').empty();
     $("#heroButtons").hide();
     $("#sidekickButtons").show();
     $("#shadowtakenButtons").hide();
     $("#mothmanButtons").hide();
 
+        
+    })
+    // $('#sidekickButtons').empty();
+    // $("#heroButtons").hide();
+    // $("#sidekickButtons").show();
+    // $("#shadowtakenButtons").hide();
+    // $("#mothmanButtons").hide();
+
 }
 
-
-
-
 function shadowtakenItems(){
+
+
+    $("#items").empty();
 
     $.ajax("/itemAPI", {
         type: "GET",
@@ -126,28 +137,23 @@ function shadowtakenItems(){
         for(i=0; i<data.length; i++){
             if(data[i].charName==="Shadowtaken"){
             console.log(data[i]);
-            $("#shadowtakenButtons").append("<button id='itembuttons'>" + data[i].itemName +"</button>");
+            
+            $("#items").append("<button id='itembuttons'>" + data[i].itemName +"</button>");
             }
-
         }
-        
-    })
+    });
 
-    $("#shadowtakenButtons").empty();
-    $("#heroButtons").hide();
-    $("#sidekickButtons").hide();
-    $("#shadowtakenButtons").show();
-    $("#mothmanButtons").hide();
-
+    // $("#shadowtakenButtons").empty();
+    // $("#heroButtons").hide();
+    // $("#sidekickButtons").hide();
+    // $("#shadowtakenButtons").show();
+    // $("#mothmanButtons").hide();
 
 }
 
-
-
-
-
-
 function mothmanItems(){
+
+    $("#items").empty();
 
     $.ajax("/itemAPI", {
         type: "GET",
@@ -156,19 +162,17 @@ function mothmanItems(){
         for(i=0; i<data.length; i++){
             if(data[i].charName==="Mothman"){
             console.log(data[i]);
-            $("#mothmanButtons").append("<button id='itembuttons'>" + data[i].itemName +"</button>");
+           
+            $("#items").append("<button id='itembuttons'>" + data[i].itemName +"</button>");
             }
-
         }
-        
-    })
+    });
 
-
-    $("#mothmanButtons").empty();
-    $("#heroButtons").hide();
-    $("#sidekickButtons").hide();
-    $("#shadowtakenButtons").hide();
-    $("#mothmanButtons").show();
+    // $("#mothmanButtons").empty();
+    // $("#heroButtons").hide();
+    // $("#sidekickButtons").hide();
+    // $("#shadowtakenButtons").hide();
+    // $("#mothmanButtons").show();
 
 }
 
@@ -185,10 +189,7 @@ selectHero.on("click", function (event) {
 
    heroItems();
 
-
-
     charArr.splice(0,1,Hero);
-   
  
     // Hero.attack += attackBoost;
     // Hero.defense +=defBoost; 
@@ -202,13 +203,7 @@ selectSidekick.on("click", function (event) {
     // var defBoost = sidekickWep1.itmDefense + sidekickWep2.itmDefense;
     // var intBoost = sidekickWep1.itmIntellect + sidekickWep2.itmIntellect;
 
-
-   
-
-     sidekickItems();
-
-
-
+    sidekickItems();
     
     charArr.splice(0,1,Sidekick);
     // Sidekick.attack += attackBoost;
@@ -222,10 +217,6 @@ selectShadowtaken.on("click", function (event) {
     // var attackBoost = shadowtakenWep1.itmAttack + shadowtakenWep2.itmAttack;
     // var defBoost = shadowtakenWep1.itmDefense + shadowtakenWep2.itmDefense;
     // var intBoost = shadowtakenWep1.itmIntellect + shadowtakenWep2.itmIntellect;
-
-   
-
-
 
    shadowtakenItems();
     charArr.splice(0,1,Shadowtaken);
@@ -241,10 +232,10 @@ selectMothman.on("click", function (event) {
     // var defBoost = mothmanWep1.itmDefense + mothmanWep2.itmDefense;
     // var intBoost = mothmanWep1.itmIntellect + mothmanWep2.itmIntellect;
     
+    mothmanItems();
 
-
-
-     mothmanItems();
+    
+     
     charArr.splice(0,1,Mothman);
    
     // Mothman.attack += attackBoost;
@@ -327,6 +318,11 @@ var hideCredentials = function() {
     $("#enterCredentials").addClass("hidden");
 }
 
+
+var itemSelection = function(){
+    $("#itemSelection").addClass("hidden");
+}
+
 var hideCharSelect = function() {
     $("#createUser").addClass("hidden");
 }
@@ -335,6 +331,7 @@ $(function() {
     //continue game
     $("#continueGame").on("click", function(event) {
         event.preventDefault();
+        itemSelection();
         hideWelcome();
         $("#userInfo").removeClass("hidden");
         $("#userInfo").addClass("fadeInUp animated");
@@ -343,6 +340,8 @@ $(function() {
     $("#newGame").on("click", function(event) {
         event.preventDefault();
         hideWelcome();
+        itemSelection();
+
         $("#enterCredentials").removeClass("hidden");
         $("#enterCredentials").addClass("fadeInUp animated");
     });
@@ -350,6 +349,8 @@ $(function() {
     $("#submitCredentials").on("click", function(event) {
         event.preventDefault();
         hideCredentials();
+        itemSelection();
+
         $("#createUser").removeClass("hidden");
         $("#createUser").addClass("fadeInUp animated");
         var themeSong = $(".themeMusic");
@@ -374,10 +375,31 @@ $(function() {
      $("#backToUser").on("click", function(event) {
         event.preventDefault();
         hideWelcome();
+        itemSelection();
         hideCharSelect();
         $("#enterCredentials").removeClass("hidden");
         $("#enterCredentials").addClass("fadeInUp animated");
     });   
+
+    $("#charCreation").on("click",function(){
+        hideWelcome();
+        itemSelection();
+        hideCredentials();
+        $("#createUser").removeClass("hidden");
+        $("#createUser").addClass("fadeInUp animated");
+    })
+
+    $("#itemScreen").on("click", function(){
+        event.preventDefault();
+        hideWelcome();
+        hideCredentials();
+        hideCharSelect();
+        $("#itemSelection").removeClass("hidden");
+        $("#itemSelection").addClass("fadeInUp animated");
+
+
+
+    })
     //Homepage, restart app
     $(".backHome").on("click", function(){
         event.preventDefault();
@@ -408,7 +430,7 @@ $(function() {
             bossThree: false
         };
 
-    
+
        
         //here is the call from the controller
         $.ajax("/createuser", {
@@ -420,5 +442,7 @@ $(function() {
         })
     });
 
+
+        
 });
 
