@@ -30,6 +30,25 @@
         </form>
     </div>
 
+    {{!-- item screen --}}
+{{!-- Creates the page for item selection where I will be inputting all the data from itemsDB --}}
+    <div id = "itemSelection" class = "hidden">
+        <img class="char-select-head col-md-12" src="../public/assets/images/Enter-Credentials.png"/>
+        <table>
+            <tr>
+                <tbody id="items"></tbody>
+            </tr>
+        </table>
+          
+         
+        <br><br><br>
+        <div class="backNext">
+            <button id="charCreation" class="btn">Back To Character Creation</button>
+            <button id="submitUser" class="btn">Submit</button>
+        </div>
+             
+    </div>  
+
     {{!-- Create User Screen --}}
     <div id = "createUser" class="hidden">
         <img class="char-select-head col-md-12" src="../public/assets/images/Character-Select.png"/>
@@ -53,12 +72,8 @@
                         <p>Strength: <span class="yellow">20</span></p>
                         <p>Defense: <span class="yellow">20</span></p>
                         <P>Intelligence: <span class="yellow">20</span></P>
-
-                        <h2>ITEMS:</h2>
-                        <div id="heroButtons" ></div>
-                        <div id="sidekickButtons"></div>
-                        <div id="shadowtakenButtons"></div>
-                        <div id="mothmanButtons"></div>
+                        {{!-- <div id="heroButtons" ></div> --}}
+                        
                     </div>
                 </div>
                 {{!-- Sidekick Stats --}}
@@ -72,6 +87,7 @@
                         <p>Strength: <span class="yellow">15</span></p>
                         <p>Defense: <span class="yellow">20</span></p>
                         <P>Intelligence: <span class="yellow">25</span></P>
+                        {{!-- <div id="sidekickButtons"></div> --}}
                     </div>
                 </div>
                 <div class="row shadowtaken-DIV hidden">
@@ -84,6 +100,7 @@
                         <p>Strength: <span class="yellow">30</span></p>
                         <p>Defense: <span class="yellow">15</span></p>
                         <P>Intelligence: <span class="yellow">15</span></P>
+                         {{!-- <div id="shadowtakenButtons"></div> --}}
                     </div>
                 </div>
                 <div class="row mothman-DIV hidden">
@@ -96,9 +113,16 @@
                         <p>Strength: <span class="yellow">10</span></p>
                         <p>Defense: <span class="yellow">40</span></p>
                         <P>Intelligence: <span class="yellow">10</span></P>
+                        {{!-- <div id="mothmanButtons"></div> --}}
                     </div>
                 </div>
+                <button id="itemScreen" class="btn">Next: Item Selection</button>
             </div>
+
+
+
+
+        
             {{!-- MODAL BOX
             <div class="char-sel-modal" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
@@ -171,6 +195,9 @@
                 <th class="bg-info"scope = "col">Attack Power</th>
                 <th class="bg-warning"scope = "col">Defense Health</th>
                 <th class="bg-info"scope = "col">Intellect Prowless</th>
+                <th class="bg-warning"scope = "col">Item UNO</th>
+                <th class="bg-info"scope = "col">Item DUO</th>
+                <th class="bg-warning"scope = "col">Item TRE</th>
                 <tr>
             </thead>
             <tbody>
@@ -182,11 +209,16 @@
                     <td class="bg-info">{{this.attack}}</td>
                     <td class="bg-warning">{{this.defense}}</td>
                     <td class="bg-info">{{this.intellect}}</td>
-                    <td class="bg-danger"><strong>Continue the Fight?</strong></td>
+                    <td class="bg-warning">{{this.itemOne}}</td>
+                    <td class="bg-info">{{this.itemTwo}}</td>
+                    <td class="bg-warning">{{this.itemThree}}</td>
+                    <td class=""><button class = "btn btn-danger continuethefight">Continue the Fight?</button></td>
                 </tr>
             {{/each}}
             </tbody>
         </table>
+        <br><br>
+        <button class="backHome btn">Home</button>
     </div>
 
     {{!-- <div class="footer">
