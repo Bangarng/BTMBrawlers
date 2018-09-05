@@ -16,25 +16,6 @@ var itemMaker = function(itemName, itmAttack, itmDefense, itmIntellect){
     this.itmIntellect = itmIntellect;
 };
 
-//creating the different constructors of characters
-//tech glasses give defense - can anticipate enemy moves gives boosted defense, cape of strength increases dmgs
-// var heroWep1 = new itemMaker("Tech Glasses", 0, 15, 4);
-// var heroWep2 = new itemMaker("Cape of Strength", 10, 0, 0);
-
-// //drainer helm - takes intellect from enemy and increases sidekicks intellect, grapple guns increases speed, increasing his defense because he is harder to hit
-// var sidekickWep1 = new itemMaker("Drainer Helm", 0, 0, 20);
-// var sidekickWep2 = new itemMaker("Dual Grapple Guns", 0, 15, 0);
-
-// //black belt - increases all stats in attack dmg, defense, and hit(int), passive skill of melee strength
-// var shadowtakenWep1 = new itemMaker("Black Belt", 10, 10, 10);
-// var shadowtakenWep2 = new itemMaker("Increased Melee Prowness - Passive", 15, 0, 0);
-
-// //Moth wings - gives flight and increases defense, Moth vision - anticipates enemy attacks, granting mothman hit chance and defense
-// var mothmanWep1 = new itemMaker("Moth Wings", 0, 30,0 );
-// var mothmanWep2 = new itemMaker("Moth Vision Goggles", 0, 10, 10);
-
-
-//this is the static characters
 
 
 //stats total 60
@@ -64,10 +45,7 @@ var selectMothman = $("#mothmanCharacter");
 /************************************************************************
  These functions below will be placed in each on click to load the items
 *************************************************************************/
-// function heroitemclicking(){
 
-
-// }
 
 
 
@@ -81,18 +59,20 @@ function heroItems(){
 
         for(i=0; i<data.length; i++){
             if(data[i].charName==="Hero" && !data[i].lvlUnlock){
-            console.log(data[i]);
-       
-           var button =$("<td><button id='itembuttons'>" + data[i].itemName +"</button></td>");
-                button.attr(data[i].charName);
-            $("#items").append(button);
+                console.log(data[i]);
+                if(data[i].itemName === "Tech Goggles"){
+                    $("#items").append("<tr><td class='itemBox'><p class='pressStart'>" + data[i].itemName + "</p><img img data-attribute='" + data[i].itemName + "' id='itembuttons' class='img img-responsive flash' src='../public/assets/images/items/hero/Tech-Goggles.png'/></tr></td>");
+                }
+                if(data[i].itemName === "Cape of Strength"){
+                    $("#items").append("<tr><td class='itemBox'><p class='pressStart'>" + data[i].itemName + "</p><img img data-attribute='" + data[i].itemName + "' id='itembuttons' class='img img-responsive flash' src='../public/assets/images/items/hero/Cape-of-Strength.png'/></tr></td>");
+                }    
+                if(data[i].itemName === "Passive: Brawler Might"){
+                    $("#items").append("<tr><td class='itemBox'><p class='pressStart'>" + data[i].itemName + "</p><img img data-attribute='" + data[i].itemName + "' id='itembuttons' class='img img-responsive flash' src='../public/assets/images/items/hero/Brawler-Might.png'/></tr></td>");
+                }
                   
             }
         } 
-        //recognizes the buttons and will console
-        for(var j; j<buttons.length; j++){
-            console.log(buttons[j].itemNames);
-        }    
+     
        
     });
 
@@ -116,13 +96,17 @@ function sidekickItems(){
 
         for(i=0; i<data.length; i++){
             if(data[i].charName==="Sidekick" && !data[i].lvlUnlock){
+                console.log(data[i]);
 
-            console.log(data[i]);
-            
-            var button =$("<td><button id='itembuttons'>" + data[i].itemName +"</button></td>");
-         
-            $("#items").append(button);
-           
+                if(data[i].itemName === "Drainer Helm"){
+                    $("#items").append("<tr><td class='itemBox'><p class='pressStart'>" + data[i].itemName + "</p><img img data-attribute='" + data[i].itemName + "' id='itembuttons' class='img img-responsive flash' src='../public/assets/images/items/sidekick/Drainer-Helm.png'/></tr></td>");
+                }
+                if(data[i].itemName === "Dual Grapple Guns"){
+                    $("#items").append("<tr><td class='itemBox'><p class='pressStart'>" + data[i].itemName + "</p><img img data-attribute='" + data[i].itemName + "' id='itembuttons' class='img img-responsive flash' src='../public/assets/images/items/sidekick/Dual-Grapple-Guns.png'/></tr></td>");
+                }    
+                if(data[i].itemName === "Passive: Steady Aim"){
+                    $("#items").append("<tr><td class='itemBox'><p class='pressStart'>" + data[i].itemName + "</p><img img data-attribute='" + data[i].itemName + "' id='itembuttons' class='img img-responsive flash' src='../public/assets/images/items/sidekick/Steady-Aim.png'/></tr></td>");
+                }
             }
         }
 
@@ -152,7 +136,7 @@ function shadowtakenItems(){
     }).then( function(data) {
 
         for(i=0; i<data.length; i++){
-            if(data[i].charName==="Shadowtaken"){
+            if(data[i].charName==="Shadowtaken" && !data[i].lvlUnlock){
             console.log(data[i]);
                 
                 if(data[i].itemName === "Black Belt"){
@@ -187,9 +171,15 @@ function mothmanItems(){
             if(data[i].charName==="Mothman" && !data[i].lvlUnlock){
             console.log(data[i]);
            
-            var button =$("<td><button id='itembuttons'>" + data[i].itemName +"</button></td>");
-         
-            $("#items").append(button);
+            if(data[i].itemName === "Insect Wings"){
+                $("#items").append("<tr><td class='itemBox'><p class='pressStart'>" + data[i].itemName + "</p><img img data-attribute='" + data[i].itemName +data[i].attack+data[i].defense+data[i].intellect+ "' id='itembuttons' class='img img-responsive flash' src='../public/assets/images/items/mothman/Insect-Wings.png'/></tr></td>");
+            }
+            if(data[i].itemName === "Moth Vision Goggles"){
+                $("#items").append("<tr><td class='itemBox'><p class='pressStart'>" + data[i].itemName + "</p><img img data-attribute='" + data[i].itemName + "' id='itembuttons' class='img img-responsive flash' src='../public/assets/images/items/mothman/Moth-Vision-Goggles.png'/></tr></td>");
+            }    
+            if(data[i].itemName === "Wingstorm Wind Strike"){
+                $("#items").append("<tr><td class='itemBox'><p class='pressStart'>" + data[i].itemName + "</p><img img data-attribute='" + data[i].itemName + "' id='itembuttons' class='img img-responsive flash' src='../public/assets/images/items/mothman/Wingstorm-Wind-Strike.png'/></tr></td>");
+            }   
             }
         }
 
@@ -279,12 +269,15 @@ selectMothman.on("click", function (event) {
     charArr.splice(0,1,Mothman);
     $("#thisname").empty();
     $("#thisname").append(charArr[0].charName);
+ 
 
     // Mothman.attack += attackBoost;
     // Mothman.defense +=defBoost; 
     // Mothman.intellect += intBoost;
     console.log(charArr);
+
     event.preventDefault();
+    
 })
 
 
@@ -369,7 +362,25 @@ var hideCharSelect = function() {
     $("#createUser").addClass("hidden");
 }
 
+
+   
+
 $(function() {
+//for clicking on items and updating them into the database
+    $('#items').on('click','#itembuttons', function(){
+
+      
+        var item1 = $(this).attr("data-attribute");
+        itemArr.splice(0,1 ,item1)
+        
+    if (charArr[0].charName ==="Hero"){
+        charArr[0].attack+=100;
+    }
+        console.log(itemArr);
+
+     
+         
+     });
     //continue game
     $("#continueGame").on("click", function(event) {
         event.preventDefault();
@@ -453,6 +464,7 @@ $(function() {
         window.location.href = ("/gamepage");
     });
 
+
     $("#submitUser").on("click", function(event) {
         //prevent page from reloading
         event.preventDefault();
@@ -464,7 +476,7 @@ $(function() {
             attack: charArr[0].attack,
             defense: charArr[0].defense,
             intellect: charArr[0].defense,
-            itemOne: 'none',
+            itemOne: itemArr[0],
             itemTwo: 'none',
             itemThree: 'none',
             bossOne: false,
@@ -483,8 +495,15 @@ $(function() {
             window.location = "/gamepage";
         })
     });
-
+    
+    
+ 
+  
+   
 
         
 });
+
+
+
 
