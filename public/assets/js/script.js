@@ -131,7 +131,6 @@ function sidekickItems(){
 
 function shadowtakenItems(){
 
-
     $("#items").empty();
 
     $.ajax("/itemAPI", {
@@ -139,12 +138,18 @@ function shadowtakenItems(){
     }).then( function(data) {
 
         for(i=0; i<data.length; i++){
-            if(data[i].charName==="Shadowtaken" && !data[i].lvlUnlock){
+            if(data[i].charName==="Shadowtaken"){
             console.log(data[i]);
-            
-            var button =$("<td><button id='itembuttons'>" + data[i].itemName +"</button></td>");
-         
-            $("#items").append(button);
+                
+                if(data[i].itemName === "Black Belt"){
+                    $("#items").append("<tr><td class='itemBox'><p class='pressStart'>" + data[i].itemName + "</p><img img data-attribute='" + data[i].itemName + "' id='itembuttons' class='img img-responsive flash' src='../public/assets/images/items/shadowtaken/black-belt.png'/></tr></td>");
+                }
+                if(data[i].itemName === "Melee Prowness"){
+                    $("#items").append("<tr><td class='itemBox'><p class='pressStart'>" + data[i].itemName + "</p><img img data-attribute='" + data[i].itemName + "' id='itembuttons' class='img img-responsive flash' src='../public/assets/images/items/shadowtaken/melee-prowness.png'/></tr></td>");
+                }    
+                if(data[i].itemName === "Crouching Tiger Hidden Chimera"){
+                    $("#items").append("<tr><td class='itemBox'><p class='pressStart'>" + data[i].itemName + "</p><img img data-attribute='" + data[i].itemName + "' id='itembuttons' class='img img-responsive flash' src='../public/assets/images/items/shadowtaken/crouching-tiger-hidden-chimera.png'/></tr></td>");
+                }                  
             }
         }
     });
@@ -154,13 +159,9 @@ function shadowtakenItems(){
     // $("#sidekickButtons").hide();
     // $("#shadowtakenButtons").show();
     // $("#mothmanButtons").hide();
-
 }
 
-
 function mothmanItems(){
-
-
 
     $("#items").empty();
 
