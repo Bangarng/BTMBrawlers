@@ -69,6 +69,9 @@ var selectMothman = $("#mothmanCharacter");
 
 // }
 
+
+
+
 function heroItems(){
     $("#items").empty();
     $.ajax("/itemAPI", {
@@ -80,9 +83,9 @@ function heroItems(){
             if(data[i].charName==="Hero" && !data[i].lvlUnlock){
             console.log(data[i]);
        
-           var buttons =$("<td><button id='itembuttons'>" + data[i].itemName +"</button></td>");
-                buttons.attr(data[i].attack);
-            $("#items").append(buttons);
+           var button =$("<td><button id='itembuttons'>" + data[i].itemName +"</button></td>");
+                button.attr(data[i].charName);
+            $("#items").append(button);
                   
             }
         } 
@@ -101,6 +104,9 @@ function heroItems(){
 
 }
 
+
+
+
 function sidekickItems(){
     $("#items").empty();
 
@@ -112,9 +118,11 @@ function sidekickItems(){
             if(data[i].charName==="Sidekick" && !data[i].lvlUnlock){
 
             console.log(data[i]);
+            
             var button =$("<td><button id='itembuttons'>" + data[i].itemName +"</button></td>");
          
             $("#items").append(button);
+           
             }
         }
 
