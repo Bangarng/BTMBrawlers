@@ -28,15 +28,14 @@ body {
 /* Enter Credentials Stuff */
 #enterCredentials {
     background: rgba(0, 0, 0, 0.8);
-    padding: 6% 0%;
 }
 
 #itemSelection{
-
     background: rgba(0, 0, 0, 0.8);
-    padding: 6% 0%;
-
+    width: 95%;
+    margin: auto;
 }
+
 .create-form {
     margin-top: 8%;
     font-size: 1.3em;
@@ -52,7 +51,7 @@ body {
     margin: 8% 0;
 }
 
-#submitCredentials, .backHome,#itembuttons, #backToUser, #submitUser, #itemScreen, #charCreation, #pickItem, #modal-close {
+#submitCredentials, .backHome, #backToUser, #submitUser, #itemScreen, #charCreation, #pickItem, #modal-close {
     font-family: 'Press Start 2P', cursive;
     margin: auto;
     font-size: 1em;
@@ -104,9 +103,6 @@ body {
 #newGame:active, #continueGame:active {
     transform: scale(1.00);
 }
-
-
-
 
 .submit:focus, .startButton:focus {
     outline:none;
@@ -183,12 +179,17 @@ body {
     margin: 0 1% 0 1%;
 }
 
-.heroCharacter, .sidekickCharacter, .shadowtakenCharacter, .mothmanCharacter {
+.heroCharacter, .sidekickCharacter, .shadowtakenCharacter, .mothmanCharacter, #itembuttons {
     width: 12%;
     border: 3px solid white;
     border-radius: 5px;
     margin: 0 3%;
     transition: all 1s ease-in-out;
+}
+
+#itembuttons {
+    width: 25%;
+    margin-bottom: 10px;
 }
 
 .flash:hover {
@@ -257,3 +258,4 @@ body {
 .item-table {
     margin-top: 3%;
 }
+

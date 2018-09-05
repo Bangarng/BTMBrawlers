@@ -7,7 +7,6 @@ var characterMaker = function(charName, attack, defense, intellect) {
 };
 
 var itemMaker = function(itemName, itmAttack, itmDefense, itmIntellect){
-
     this.itemName = itemName;
     this.itmAttack = itmAttack;
     this.itmDefense = itmDefense;
@@ -30,7 +29,6 @@ var itemMaker = function(itemName, itmAttack, itmDefense, itmIntellect){
 // var mothmanWep1 = new itemMaker("Moth Wings", 0, 30,0 );
 // var mothmanWep2 = new itemMaker("Moth Vision Goggles", 0, 10, 10);
 
-
 //this is the static characters
 
 console.log(Sidekick);
@@ -39,7 +37,6 @@ var Hero = new characterMaker("Hero", 20, 20, 20); //full stack brawler
 var Sidekick = new characterMaker("Sidekick", 15, 20, 25); //duel grapple guns, intellect, reach
 var Shadowtaken = new characterMaker("Shadowtaken", 30, 15, 15); //triple black belt with grapple gun
 var Mothman = new characterMaker("Mothman", 10, 40, 10); //can fly, speaks gibberish, here for the free spread
-
 
 //this will hold the variable that are pushed in here to be called by the submit onclic
 var charArr = ["holder"];
@@ -57,7 +54,6 @@ var selectShadowtaken = $("#shadowtakenCharacter");
 var selectMothman = $("#mothmanCharacter");
 // console.log(heroWep1);
 
-
 /************************************************************************
  These functions below will be placed in each on click to load the items
 *************************************************************************/
@@ -70,29 +66,21 @@ function heroItems(){
         for(i=0; i<data.length; i++){
             if(data[i].charName==="Hero"){
             console.log(data[i]);
-       
-           
+               
             $("#items").append("<td><button id='itembuttons'>" + data[i].itemName +"</button></td>");
             $("#itembuttons").attr("attack", data[i].attack);
             $("#itembuttons").attr("defense", data[i].defense)
-            $("#itembuttons").attr("intellect", data[i].intellect)
-          
+            $("#itembuttons").attr("intellect", data[i].intellect)         
             }
-
         }
-        
-    })
+    });
 
     // $("#heroButtons").empty();
     // $("#heroButtons").show();
     // $("#sidekickButtons").hide();
     // $("#shadowtakenButtons").hide();
     // $("#mothmanButtons").hide();
-
 }
-
-
-
 
 function sidekickItems(){
     $("#items").empty();
@@ -108,23 +96,17 @@ function sidekickItems(){
            
             $("#items").append("<button id='itembuttons'>" + data[i].itemName +"</button>");
             }
-
         }
-        
-    })
+    });
+
     // $('#sidekickButtons').empty();
     // $("#heroButtons").hide();
     // $("#sidekickButtons").show();
     // $("#shadowtakenButtons").hide();
     // $("#mothmanButtons").hide();
-
 }
 
-
-
-
 function shadowtakenItems(){
-
 
     $("#items").empty();
 
@@ -135,27 +117,26 @@ function shadowtakenItems(){
         for(i=0; i<data.length; i++){
             if(data[i].charName==="Shadowtaken"){
             console.log(data[i]);
-            
-            $("#items").append("<button id='itembuttons'>" + data[i].itemName +"</button>");
+                
+                if(data[i].itemName === "Black Belt"){
+                    $("#items").append("<tr><td class='itemBox'><p class='pressStart'>" + data[i].itemName + "</p><img img data-attribute='" + data[i].itemName + "' id='itembuttons' class='img img-responsive flash' src='../public/assets/images/items/shadowtaken/black-belt.png'/></tr></td>");
+                }
+                if(data[i].itemName === "Melee Prowness"){
+                    $("#items").append("<tr><td class='itemBox'><p class='pressStart'>" + data[i].itemName + "</p><img img data-attribute='" + data[i].itemName + "' id='itembuttons' class='img img-responsive flash' src='../public/assets/images/items/shadowtaken/melee-prowness.png'/></tr></td>");
+                }    
+                if(data[i].itemName === "Crouching Tiger Hidden Chimera"){
+                    $("#items").append("<tr><td class='itemBox'><p class='pressStart'>" + data[i].itemName + "</p><img img data-attribute='" + data[i].itemName + "' id='itembuttons' class='img img-responsive flash' src='../public/assets/images/items/shadowtaken/crouching-tiger-hidden-chimera.png'/></tr></td>");
+                }                  
             }
-
         }
-        
-    })
+    });
 
     // $("#shadowtakenButtons").empty();
     // $("#heroButtons").hide();
     // $("#sidekickButtons").hide();
     // $("#shadowtakenButtons").show();
     // $("#mothmanButtons").hide();
-
-
 }
-
-
-
-
-
 
 function mothmanItems(){
 
@@ -171,11 +152,8 @@ function mothmanItems(){
            
             $("#items").append("<button id='itembuttons'>" + data[i].itemName +"</button>");
             }
-
-        }
-        
-    })
-
+        }    
+    });
 
     // $("#mothmanButtons").empty();
     // $("#heroButtons").hide();
@@ -198,11 +176,8 @@ selectHero.on("click", function (event) {
 
    heroItems();
 
-
-
     charArr.splice(0,1,Hero);
-   
- 
+    
     // Hero.attack += attackBoost;
     // Hero.defense +=defBoost; 
     // Hero.intellect += intBoost;
@@ -215,13 +190,7 @@ selectSidekick.on("click", function (event) {
     // var defBoost = sidekickWep1.itmDefense + sidekickWep2.itmDefense;
     // var intBoost = sidekickWep1.itmIntellect + sidekickWep2.itmIntellect;
 
-
-   
-
      sidekickItems();
-
-
-
     
     charArr.splice(0,1,Sidekick);
     // Sidekick.attack += attackBoost;
@@ -235,10 +204,6 @@ selectShadowtaken.on("click", function (event) {
     // var attackBoost = shadowtakenWep1.itmAttack + shadowtakenWep2.itmAttack;
     // var defBoost = shadowtakenWep1.itmDefense + shadowtakenWep2.itmDefense;
     // var intBoost = shadowtakenWep1.itmIntellect + shadowtakenWep2.itmIntellect;
-
-   
-
-
 
    shadowtakenItems();
     charArr.splice(0,1,Shadowtaken);
@@ -255,8 +220,6 @@ selectMothman.on("click", function (event) {
     // var intBoost = mothmanWep1.itmIntellect + mothmanWep2.itmIntellect;
     
     mothmanItems();
-
-    
      
     charArr.splice(0,1,Mothman);
    
@@ -266,7 +229,6 @@ selectMothman.on("click", function (event) {
     console.log(charArr);
     event.preventDefault();
 })
-
 
 // Show, hide the character stats when hovering
 $("#heroCharacter").hover(function() {
@@ -329,7 +291,6 @@ $(".heroCharacter").on("mouseenter", function() {
 }).on("mouseleave", function() {
     $(".hero-DIV").hide();
 });
-
 
 // Code for the start up screen.
 var hideWelcome = function() {
@@ -419,8 +380,6 @@ $(function() {
         $("#itemSelection").removeClass("hidden");
         $("#itemSelection").addClass("fadeInUp animated");
 
-
-
     })
     //Homepage, restart app
     $(".backHome").on("click", function(){
@@ -452,8 +411,6 @@ $(function() {
             bossThree: false
         };
 
-
-       
         //here is the call from the controller
         $.ajax("/createuser", {
             type: "POST",
@@ -463,9 +420,5 @@ $(function() {
             window.location = "/gamepage";
         })
     });
-
-
-
-
         
 });
