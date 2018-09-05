@@ -27,9 +27,11 @@ $("#submitPassword").on("click", function(event) {
         }
     })
     $("#passwordform").addClass("fadeOutUp animated hidden");
-    $("#startbossone").removeClass("hidden")
-    $("#startbosstwo").removeClass("hidden")
-    $("#startbossthree").removeClass("hidden")
+
+    $("#gamePage").removeClass("hidden")
+    // $("#startbossone").removeClass("hidden")
+    // $("#startbosstwo").removeClass("hidden")
+    // $("#startbossthree").removeClass("hidden")
 });
 
 $("#startbossone").on("click", function(event) {
