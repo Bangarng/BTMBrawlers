@@ -1,12 +1,18 @@
-<h2>GAMEPAGE</h2>
-
-<div id = "passwordform" class = "">
-    <form>
-        PASSWORD<br>
-        <textarea id="passwordYo"rows="1" cols="20"></textarea>
+{{!-- <h2>GAMEPAGE</h2> --}}
+<div class="container game-screen">
+<section>
+<div id="passwordform">
+    <img class="char-select-head col-md-12" src="../public/assets/images/headers/enter-your-password.png"/>
+    <form class="text-center password-form">
+        <textarea id="passwordYo" rows="1" cols="60"></textarea>
         <button id="submitPassword" class="btn">Submit</button>
     </form> 
+    <br><br>
+    <div class="text-center">
+        <button class="backHome btn">Home</button>
+    </div>
 </div>
+
 
 <h6>{{brawler.userName}}</h6>
 
@@ -21,19 +27,35 @@
     <h4 class = "usernamedisplay">Player</h4>
     <br>
     <button id= "playerButtonb1">Break the Thug</button>
-    <br>
-    <h6 class = "playerattack">attack</h6>
-    <h6 class = "playerdefense">defense</h6>
-    <h6 class = "playerintellect">intellect</h6>
-    <h4 class = "playerattackstat">pending action</h4>
 
-    <h2 class = "bossnamedisplay">Boss</h2>
+<div id="gamePage" class="hidden">
+    <img class="char-select-head col-md-12" src="../public/assets/images/headers/Game-Page.png"/>
+    <h6>{{brawler.userName}}</h6>
+
+    <button id="startbossone">Thug</button>
+    <button id="startbosstwo">Gunslinger</button>
+    <button id="startbossthree">Giant Robot</button>
+
     <br>
-    <h6 class = "bossattack">attack</h6>
-    <h6 class = "bossdefense">defense</h6>
-    <h6 class = "bossintellect">intellect</h6>
-    <h4 class = "bossattackstat">pending action</h4>
-</div>
+    <div id = "bossonescreen" class = "hidden">
+        <h2 class = "charnamedisplay">Player</h2>
+        <h4 class = "usernamedisplay">Player</h4>
+        <br>
+        <button id= "playerButton">Break the Thug</button>
+        <br>
+        <h6 class = "playerattack">attack</h6>
+        <h6 class = "playerdefense">defense</h6>
+        <h6 class = "playerintellect">intellect</h6>
+        <h4 class = "playerattackstat">pending action</h4>
+
+        <h2 class = "bossnamedisplay">Boss</h2>
+        <br>
+        <h6 class = "bossattack">attack</h6>
+        <h6 class = "bossdefense">defense</h6>
+        <h6 class = "bossintellect">intellect</h6>
+        <h4 class = "bossattackstat">pending action</h4>
+    </div>
+
 
 <br>
 <div id = "bosstwoscreen" class = "bossdiv hidden">
@@ -41,19 +63,27 @@
     <h4 class = "usernamedisplay">Player</h4>
     <br>
     <button id= "playerButtonb2">Takedown the Gunslinger</button>
-    <br>
-    <h6 class = "playerattack">attack</h6>
-    <h6 class = "playerdefense">defense</h6>
-    <h6 class = "playerintellect">intellect</h6>
-    <h4 class = "playerattackstat">pending action</h4>
 
-    <h2 class = "bossnamedisplay">Boss</h2>
     <br>
-    <h6 class = "bossattack">attack</h6>
-    <h6 class = "bossdefense">defense</h6>
-    <h6 class = "bossintellect">intellect</h6>
-    <h4 class = "bossattackstat">pending action</h4>
-</div>
+    <div id = "bosstwoscreen" class = "hidden">
+        <h2 class = "charnamedisplay">Player</h2>
+        <h4 class = "usernamedisplay">Player</h4>
+        <br>
+        <button id= "playerButton">Takedown the Gunslinger</button>
+        <br>
+        <h6 class = "playerattack">attack</h6>
+        <h6 class = "playerdefense">defense</h6>
+        <h6 class = "playerintellect">intellect</h6>
+        <h4 class = "playerattackstat">pending action</h4>
+
+        <h2 class = "bossnamedisplay">Boss</h2>
+        <br>
+        <h6 class = "bossattack">attack</h6>
+        <h6 class = "bossdefense">defense</h6>
+        <h6 class = "bossintellect">intellect</h6>
+        <h4 class = "bossattackstat">pending action</h4>
+    </div>
+
 
 <br>
 <div id = "bossthreescreen" class = "bossdiv hidden">
@@ -67,18 +97,32 @@
     <h6 class = "playerintellect">intellect</h6>
     <h4 class = "playerattackstat">pending action</h4>
 
-    <h2 class = "bossnamedisplay">Boss</h2>
     <br>
-    <h6 class = "bossattack">attack</h6>
-    <h6 class = "bossdefense">defense</h6>
-    <h6 class = "bossintellect">intellect</h6>
-    <h4 class = "bossattackstat">pending action</h4>
+    <div id = "bossthreescreen" class = "hidden">
+        <h2 class = "charnamedisplay">Player</h2>
+        <h4 class = "usernamedisplay">Player</h4>
+        <br>
+        <button id= "playerButton">Strike the Robot</button>
+        <br>
+        <h6 class = "playerattack">attack</h6>
+        <h6 class = "playerdefense">defense</h6>
+        <h6 class = "playerintellect">intellect</h6>
+        <h4 class = "playerattackstat">pending action</h4>
+
+
+        <h2 class = "bossnamedisplay">Boss</h2>
+        <br>
+        <h6 class = "bossattack">attack</h6>
+        <h6 class = "bossdefense">defense</h6>
+        <h6 class = "bossintellect">intellect</h6>
+        <h4 class = "bossattackstat">pending action</h4>
+    </div>
+
+    <div id = "winlosediv" class = "hidden">
+        <h1 id = "winlosetext"></h1>
+    </div>
+</div>    
+</section>
 </div>
-
-<div id = "winlosediv" class = "hidden">
-    <h1 id = "winlosetext"></h1>
-</div>
-
-
 
 

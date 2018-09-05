@@ -26,17 +26,10 @@ body {
 }
 
 /* Enter Credentials Stuff */
-#enterCredentials {
+#enterCredentials, #itemSelection {
     background: rgba(0, 0, 0, 0.8);
-    padding: 6% 0%;
 }
 
-#itemSelection{
-
-    background: rgba(0, 0, 0, 0.8);
-    padding: 6% 0%;
-
-}
 .create-form {
     margin-top: 8%;
     font-size: 1.3em;
@@ -52,7 +45,7 @@ body {
     margin: 8% 0;
 }
 
-#submitCredentials, .backHome,#itembuttons, #backToUser, #submitUser, #itemScreen, #charCreation, #pickItem, #modal-close {
+#submitCredentials, .backHome, #backToUser, #submitUser, #itemScreen, #charCreation, #pickItem, #modal-close, #submitPassword {
     font-family: 'Press Start 2P', cursive;
     margin: auto;
     font-size: 1em;
@@ -65,11 +58,11 @@ body {
     margin: 0 1%;
 }
 
-#submitCredentials:hover, .backHome:hover, #backToUser:hover,#itembuttons:hover, #charCreation:hover, #submitUser:hover, #itemScreen:hover, #modal-close:hover {
+#submitCredentials:hover, .backHome:hover, #backToUser:hover, #charCreation:hover, #submitUser:hover, #itemScreen:hover, #modal-close:hover, #submitPassword:hover {
     transform: scale(1.05);
 }
 
-#submitCredentials:active, .backHome:active, #backToUser:active, #submitUser:active, #itemScreen:active, #modal-close:active {
+#submitCredentials:active, .backHome:active, #backToUser:active, #submitUser:active, #itemScreen:active, #modal-close:active, #submitPassword:hover {
     transform: scale(1.00);
 }
 
@@ -104,9 +97,6 @@ body {
 #newGame:active, #continueGame:active {
     transform: scale(1.00);
 }
-
-
-
 
 .submit:focus, .startButton:focus {
     outline:none;
@@ -146,6 +136,13 @@ body {
     background-color: black;
 }
 
+.game-screen {
+	background-image: url("../images/game-background.png");
+    background-repeat: no-repeat;
+    background-size: 90%;
+    min-height:575px;
+}
+
 .footer {
     font-family: 'Press Start 2P', cursive;
     font-size: .8em;
@@ -159,7 +156,7 @@ body {
     margin-top: 180px;
 }
 
-#createUser {
+#createUser, #userInfo, #passwordform, #gamePage {
     background: rgba(0, 0, 0, 0.8);
     width: 95%;
     margin: auto;
@@ -185,6 +182,14 @@ body {
 
 .heroCharacter, .sidekickCharacter, .shadowtakenCharacter, .mothmanCharacter {
     width: 12%;
+    border: 3px solid white;
+    border-radius: 5px;
+    margin: 0 3%;
+    transition: all 1s ease-in-out;
+}
+
+#itembuttons {
+    width: 20%;
     border: 3px solid white;
     border-radius: 5px;
     margin: 0 3%;
@@ -256,4 +261,26 @@ body {
 /* Item Table */
 .item-table {
     margin-top: 3%;
+}
+
+/* Continue Screen */
+.continue-table {
+    margin-top: 2%;
+    font-size: .75em;
+}
+
+.continue-table td:nth-child(even), .continue-table th:nth-child(even){
+    background-color: #1F3E60;
+  }
+.continue-table td:nth-child(odd), .continue-table th:nth-child(odd){
+    background-color: #396EB6;
+  }
+
+/* Password */
+.password-form {
+    margin-top: 5%;
+}
+
+#submitPassword {
+    margin-top: -1.6%;
 }

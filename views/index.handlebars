@@ -35,13 +35,8 @@
     <div id = "itemSelection" class = "hidden">
         <img class="char-select-head col-md-12" src="../public/assets/images/Pick-An-Item.png"/>
         <table class="item-table" align="center">
-            <tr>
-                <tbody>
-                <td id="items"></tbody>
-                </tbody>
-            </tr>
+                <tbody id="items" align="center"></tbody>
         </table>
-        <br><br><br>
         <div class="backNext text-center">
             <button id="charCreation" class="btn">Back To Character Creation</button>
             <button id="submitUser" class="btn">Submit</button>
@@ -138,6 +133,7 @@
                         <p>Strength: <span class="yellow">10</span></p>
                         <p>Defense: <span class="yellow">40</span></p>
                         <P>Intelligence: <span class="yellow">10</span></P>
+                        
                     </div>
                 </div>
 
@@ -157,11 +153,6 @@
                 <img src="../public/assets/images/charSelect/MothmanSelect.png" width="150" />
             </button> --}}
            
-
-
-
-
-        
             {{!-- MODAL BOX
             <div class="char-sel-modal" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
@@ -182,26 +173,6 @@
                 </div>
             </div>
             </div> --}}
-            <!-- Modal -->
-            <div id="myModal" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-
-                <!-- Modal content-->
-                <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Modal Header</h4>
-                </div>
-                <div class="modal-body">
-                    <p>Some text in the modal.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-                </div>
-
-            </div>
-            </div>
                 {{!-- <button class="btns flash active" id = "heroCharacter">
                     <img class="heroCharacter" src="../public/assets/images/charSelect/HeroSelect.png" width="150"/>
                 </button>
@@ -215,7 +186,6 @@
                     <img src="../public/assets/images/charSelect/MothmanSelect.png" width="150" />
                 </button> --}}
                 <br>
-
         <div>
             <button class="backHome btn">Home</button>
             <button id="backToUser" class="btn">User Credentials</button>
@@ -224,41 +194,58 @@
         </div>
     </div>
 
+    {{!-- Enter Credentials Screen
+    <div id = "enterCredentials" class = "hidden">
+        <img class="char-select-head col-md-12" src="../public/assets/images/Enter-Credentials.png"/>
+        <form class="create-form text-center">
+            <span class="pressStart">Username: </span><textarea id="userNameInput" rows="1" cols="40"></textarea>
+            </br>
+            <span class="pressStart">Password: </span><textarea id="passwordInput" rows="1" cols="40"></textarea>
+            <br>
+            <div class="backNext">
+                <button class="btn backHome">Back</button>
+                <button id="submitCredentials" class="btn">Next</button>
+    </div> --}}
+
 <div id = "userInfo" class = "hidden">
+    <img class="char-select-head col-md-12" src="../public/assets/images/headers/Continue.png"/>
     <div class = "container">
-        <table class = "table">
+        <table class = "table continue-table pressStart">
             <thead>
                 <tr>
-                <th class="bg-warning "scope = "col">#</th>
-                <th class="bg-info" scope = "col">Username</th>
-                <th class="bg-warning"scope = "col">Character</th>
-                <th class="bg-info"scope = "col">Attack Power</th>
-                <th class="bg-warning"scope = "col">Defense Health</th>
-                <th class="bg-info"scope = "col">Intellect Prowless</th>
-                <th class="bg-warning"scope = "col">Item UNO</th>
-                <th class="bg-info"scope = "col">Item DUO</th>
-                <th class="bg-warning"scope = "col">Item TRE</th>
+                <th scope = "col">#</th>
+                <th scope = "col">Username</th>
+                <th scope = "col">Character</th>
+                <th scope = "col">Attack Power</th>
+                <th scope = "col">Defense Health</th>
+                <th scope = "col">Intellect Prowless</th>
+                <th scope = "col">Item One</th>
+                <th scope = "col">Item Two</th>
+                <th scope = "col">Item Three</th>
+                <th scope = "col"></th>
                 <tr>
             </thead>
             <tbody>
             {{#each brawler}}
                 <tr>
-                    <th class="bg-warning"scope="row">{{this.id}}</th>
-                    <td class="bg-info">{{this.userName}}</td>
-                    <td class="bg-warning">{{this.charName}}</td>
-                    <td class="bg-info">{{this.attack}}</td>
-                    <td class="bg-warning">{{this.defense}}</td>
-                    <td class="bg-info">{{this.intellect}}</td>
-                    <td class="bg-warning">{{this.itemOne}}</td>
-                    <td class="bg-info">{{this.itemTwo}}</td>
-                    <td class="bg-warning">{{this.itemThree}}</td>
-                    <td class=""><button class = "btn btn-danger continuethefight">Continue the Fight?</button></td>
+                    <th scope="row">{{this.id}}</th>
+                    <td>{{this.userName}}</td>
+                    <td>{{this.charName}}</td>
+                    <td>{{this.attack}}</td>
+                    <td>{{this.defense}}</td>
+                    <td>{{this.intellect}}</td>
+                    <td>{{this.itemOne}}</td>
+                    <td>{{this.itemTwo}}</td>
+                    <td>{{this.itemThree}}</td>
+                    <td><button class = "btn btn-danger continuethefight">Continue?</button></td>
                 </tr>
             {{/each}}
             </tbody>
         </table>
         <br><br>
-        <button class="backHome btn">Home</button>
+        <div class="text-center">
+            <button class="backHome btn">Home</button>
+        </div>
     </div>
 
     {{!-- <div class="footer">
