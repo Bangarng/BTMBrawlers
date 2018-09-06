@@ -22,9 +22,12 @@ $("#submitPassword").on("click", function(event) {
         for(i=0; i<data.length; i++){
             if(data[i].pass===password){
                 var char = data[i];
-                arr.splice(0,1,char);
+                arr.splice(0,1,char, char.itemOne, char.itemTwo, char.itemThree);
             }
+            
         }
+        $("#passwordform").addClass("fadeIn animated hidden");
+
     })
     $("#passwordform").addClass("fadeOutUp animated hidden");
     $("#gamePage").removeClass("hidden")
@@ -146,6 +149,20 @@ var game1 = function() {
     $(".playerattack").text("\nATK: " + arr[0].attack);
     $(".playerdefense").text("\nDEF: " + playerDefense[0]);
     $(".playerintellect").text("\nINT: " + arr[0].intellect);
+    for(var i=0; i<arr.length; i++){
+        var item1 = arr[1];
+        var item2= arr[2];
+        var item3 = arr[3];
+        if(item1 !=="none"){
+            $(".itemsEquip").text("Equipping Item:\n" +item1+"\n")
+        }
+        if(item2 !=="none"){
+            $(".itemsEquip").text("Equipping Item:\n" +item2+"\n")
+        }
+        if(item3 !=="none"){
+            $(".itemsEquip").text("Equipping Item:\n" +item3+"\n")
+        }
+    }
 
     $(".bossattack").text("\nATK: " + arrBoss[0].attack);
     $(".bossdefense").text("\nDEF: " + bossDefense[0]);

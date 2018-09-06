@@ -35,13 +35,13 @@
     <div id = "itemSelection" class = "hidden">
         <img class="char-select-head col-md-12" src="../public/assets/images/Pick-An-Item.png"/>
         <table class="item-table" align="center">
-                <tbody id="items" align="center"></tbody>
+                <tbody id="items"data-toggle="modal" data-target="#item-sel-modal" align="center"></tbody>
         </table>
+        
         <div class="backNext text-center">
             <button id="charCreation" class="btn">Back To Character Creation</button>
-            <button id="submitUser" class="btn">Submit</button>
+            {{!-- <button id="submitUser" class="btn">Submit</button> --}}
         </div>
-             
     </div>  
 
     {{!-- Create User Modal Box --}}
@@ -70,6 +70,30 @@
             </div>
         </div>
         </div>
+
+
+
+        <div class="modal" id="item-sel-modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+          
+
+            <!-- Modal body -->
+            <div class="modal-body pressStart">
+                <p>Hit that yes if you want to take this item into battle:</p><p id="thisitemname"></p>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button id="modal-close" class="btn" data-dismiss="modal">No</button>
+                <button id="submitUser"  class="btn" data-dismiss="modal">Yes</button>
+            </div>
+
+            </div>
+        </div>
+        </div>
+
 
     {{!-- Create User Screen --}}
     <div id = "createUser" class="hidden">

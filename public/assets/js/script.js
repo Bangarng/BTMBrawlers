@@ -48,7 +48,7 @@ var selectMothman = $("#mothmanCharacter");
 
 
 
-function heroItems(){
+function heroItems(itemhere){
     $("#items").empty();
     $.ajax("/itemAPI", {
         type: "GET",
@@ -57,15 +57,23 @@ function heroItems(){
 
         for(i=0; i<data.length; i++){
             if(data[i].charName==="Hero" && !data[i].lvlUnlock){
+
                 console.log(data[i]);
                 if(data[i].itemName === "Tech Goggles"){
                     $("#items").append("<tr><td class='itemBox'><p class='pressStart'>" + data[i].itemName + "</p><img img data-attribute='" + data[i].itemName + "' id='itembuttons' class='img img-responsive flash' src='../public/assets/images/items/hero/Tech-Goggles.png'/></tr></td>");
+
+                    // itemArr.splice(0,1,data[i].itemName,data[i].attack,data[i].defense, data[i].intellect);
+                    
                 }
                 if(data[i].itemName === "Cape of Strength"){
                     $("#items").append("<tr><td class='itemBox'><p class='pressStart'>" + data[i].itemName + "</p><img img data-attribute='" + data[i].itemName + "' id='itembuttons' class='img img-responsive flash' src='../public/assets/images/items/hero/Cape-of-Strength.png'/></tr></td>");
+
+                    // itemArr.splice(0,1,data[i].itemName,data[i].attack,data[i].defense, data[i].intellect);
                 }    
                 if(data[i].itemName === "Passive: Brawler Might"){
                     $("#items").append("<tr><td class='itemBox'><p class='pressStart'>" + data[i].itemName + "</p><img img data-attribute='" + data[i].itemName + "' id='itembuttons' class='img img-responsive flash' src='../public/assets/images/items/hero/Brawler-Might.png'/></tr></td>");
+
+                    // itemArr.splice(0,1,data[i].itemName,data[i].attack,data[i].defense, data[i].intellect);
                 }
                   
             }
@@ -85,7 +93,7 @@ function heroItems(){
 
 
 
-function sidekickItems(){
+function sidekickItems(itemhere){
     $("#items").empty();
 
     $.ajax("/itemAPI", {
@@ -98,12 +106,18 @@ function sidekickItems(){
 
                 if(data[i].itemName === "Drainer Helm"){
                     $("#items").append("<tr><td class='itemBox'><p class='pressStart'>" + data[i].itemName + "</p><img img data-attribute='" + data[i].itemName + "' id='itembuttons' class='img img-responsive flash' src='../public/assets/images/items/sidekick/Drainer-Helm.png'/></tr></td>");
+
+                    // itemArr.splice(0,1,data[i].itemName,data[i].attack,data[i].defense, data[i].intellect);
                 }
                 if(data[i].itemName === "Dual Grapple Guns"){
                     $("#items").append("<tr><td class='itemBox'><p class='pressStart'>" + data[i].itemName + "</p><img img data-attribute='" + data[i].itemName + "' id='itembuttons' class='img img-responsive flash' src='../public/assets/images/items/sidekick/Dual-Grapple-Guns.png'/></tr></td>");
+
+                    // itemArr.splice(0,1,data[i].itemName,data[i].attack,data[i].defense, data[i].intellect);
                 }    
                 if(data[i].itemName === "Passive: Steady Aim"){
                     $("#items").append("<tr><td class='itemBox'><p class='pressStart'>" + data[i].itemName + "</p><img img data-attribute='" + data[i].itemName + "' id='itembuttons' class='img img-responsive flash' src='../public/assets/images/items/sidekick/Steady-Aim.png'/></tr></td>");
+
+                    // itemArr.splice(0,1,data[i].itemName,data[i].attack,data[i].defense, data[i].intellect);
                 }
             }
         }
@@ -117,15 +131,11 @@ function sidekickItems(){
 
         
     
-    // $('#sidekickButtons').empty();
-    // $("#heroButtons").hide();
-    // $("#sidekickButtons").show();
-    // $("#shadowtakenButtons").hide();
-    // $("#mothmanButtons").hide();
+   
 
 }
 
-function shadowtakenItems(){
+function shadowtakenItems(itemhere){
 
     $("#items").empty();
 
@@ -139,12 +149,18 @@ function shadowtakenItems(){
                 
                 if(data[i].itemName === "Black Belt"){
                     $("#items").append("<tr><td class='itemBox'><p class='pressStart'>" + data[i].itemName + "</p><img img data-attribute='" + data[i].itemName + "' id='itembuttons' class='img img-responsive flash' src='../public/assets/images/items/shadowtaken/black-belt.png'/></tr></td>");
+
+                    // itemArr.splice(0,1,data[i].itemName,data[i].attack,data[i].defense, data[i].intellect);
                 }
                 if(data[i].itemName === "Melee Prowness"){
                     $("#items").append("<tr><td class='itemBox'><p class='pressStart'>" + data[i].itemName + "</p><img img data-attribute='" + data[i].itemName + "' id='itembuttons' class='img img-responsive flash' src='../public/assets/images/items/shadowtaken/melee-prowness.png'/></tr></td>");
+
+                    // itemArr.splice(0,1,data[i].itemName,data[i].attack,data[i].defense, data[i].intellect);
                 }    
                 if(data[i].itemName === "Crouching Tiger Hidden Chimera"){
                     $("#items").append("<tr><td class='itemBox'><p class='pressStart'>" + data[i].itemName + "</p><img img data-attribute='" + data[i].itemName + "' id='itembuttons' class='img img-responsive flash' src='../public/assets/images/items/shadowtaken/crouching-tiger-hidden-chimera.png'/></tr></td>");
+
+                    // itemArr.splice(0,1,data[i].itemName,data[i].attack,data[i].defense, data[i].intellect);
                 }                  
             }
         }
@@ -157,7 +173,7 @@ function shadowtakenItems(){
     // $("#mothmanButtons").hide();
 }
 
-function mothmanItems(){
+function mothmanItems(itemhere){
 
     $("#items").empty();
 
@@ -170,26 +186,31 @@ function mothmanItems(){
             console.log(data[i]);
            
             if(data[i].itemName === "Insect Wings"){
-                $("#items").append("<tr><td class='itemBox'><p class='pressStart'>" + data[i].itemName + "</p><img img data-attribute='" + data[i].itemName +data[i].attack+data[i].defense+data[i].intellect+ "' id='itembuttons' class='img img-responsive flash' src='../public/assets/images/items/mothman/Insect-Wings.png'/></tr></td>");
+                $("#items").append("<tr><td class='itemBox'><p class='pressStart'>" + data[i].itemName + "</p><img img data-attribute='" + data[i].itemName +"' id='itembuttons' class='img img-responsive flash' src='../public/assets/images/items/mothman/Insect-Wings.png'/></tr></td>");
+
+                // itemArr.splice(0,1,data[i].itemName,data[i].attack,data[i].defense, data[i].intellect);
             }
             if(data[i].itemName === "Moth Vision Goggles"){
                 $("#items").append("<tr><td class='itemBox'><p class='pressStart'>" + data[i].itemName + "</p><img img data-attribute='" + data[i].itemName + "' id='itembuttons' class='img img-responsive flash' src='../public/assets/images/items/mothman/Moth-Vision-Goggles.png'/></tr></td>");
+         
+
+                // itemArr.splice(0,1,data[i].itemName,data[i].attack,data[i].defense, data[i].intellect);
             }    
             if(data[i].itemName === "Wingstorm Wind Strike"){
                 $("#items").append("<tr><td class='itemBox'><p class='pressStart'>" + data[i].itemName + "</p><img img data-attribute='" + data[i].itemName + "' id='itembuttons' class='img img-responsive flash' src='../public/assets/images/items/mothman/Wingstorm-Wind-Strike.png'/></tr></td>");
+                // itemArr.splice(0,1,data[i].itemName,data[i].attack,data[i].defense, data[i].intellect);
             }   
-            }
         }
+    } 
+    
+
+        
 
 
         
     });
 
-    // $("#mothmanButtons").empty();
-    // $("#heroButtons").hide();
-    // $("#sidekickButtons").hide();
-    // $("#shadowtakenButtons").hide();
-    // $("#mothmanButtons").show();
+    
 
 }
 
@@ -202,9 +223,7 @@ function mothmanItems(){
 //this takes a onclick, grabs the variable of the character and pushes it to the charArr
 selectHero.on("click", function (event) {
     
-    // var attackBoost = heroWep1.itmAttack + heroWep2.itmAttack;
-    // var defBoost = heroWep1.itmDefense + heroWep2.itmDefense;
-    // var intBoost = heroWep1.itmIntellect + heroWep2.itmIntellect;
+   
 
    heroItems();
 
@@ -212,18 +231,13 @@ selectHero.on("click", function (event) {
     $("#thisname").empty();
     $("#thisname").append(charArr[0].charName);
 
- 
-    // Hero.attack += attackBoost;
-    // Hero.defense +=defBoost; 
-    // Hero.intellect += intBoost;
+
     console.log(charArr);
     event.preventDefault();
 });
 
 selectSidekick.on("click", function (event) {
-    // var attackBoost = sidekickWep1.itmAttack + sidekickWep2.itmAttack;
-    // var defBoost = sidekickWep1.itmDefense + sidekickWep2.itmDefense;
-    // var intBoost = sidekickWep1.itmIntellect + sidekickWep2.itmIntellect;
+
 
 
     
@@ -232,23 +246,16 @@ selectSidekick.on("click", function (event) {
     charArr.splice(0,1,Sidekick);
     $("#thisname").empty();
     $("#thisname").append(charArr[0].charName);
-    // Sidekick.attack += attackBoost;
-    // Sidekick.defense +=defBoost; 
-    // Sidekick.intellect += intBoost;
+    
 
     console.log(charArr);
     event.preventDefault();
 });
 selectShadowtaken.on("click", function (event) {
-    // var attackBoost = shadowtakenWep1.itmAttack + shadowtakenWep2.itmAttack;
-    // var defBoost = shadowtakenWep1.itmDefense + shadowtakenWep2.itmDefense;
-    // var intBoost = shadowtakenWep1.itmIntellect + shadowtakenWep2.itmIntellect;
 
    shadowtakenItems();
     charArr.splice(0,1,Shadowtaken);
-    // Shadowtaken.attack += attackBoost;
-    // Shadowtaken.defense +=defBoost; 
-    // Shadowtaken.intellect += intBoost;
+
     $("#thisname").empty();
     $("#thisname").append(charArr[0].charName);
 
@@ -256,9 +263,7 @@ selectShadowtaken.on("click", function (event) {
     event.preventDefault();
 });
 selectMothman.on("click", function (event) {
-    // var attackBoost = mothmanWep1.itmAttack + mothmanWep2.itmAttack;
-    // var defBoost = mothmanWep1.itmDefense + mothmanWep2.itmDefense;
-    // var intBoost = mothmanWep1.itmIntellect + mothmanWep2.itmIntellect;
+
     
     mothmanItems();
 
@@ -269,9 +274,7 @@ selectMothman.on("click", function (event) {
     $("#thisname").append(charArr[0].charName);
  
 
-    // Mothman.attack += attackBoost;
-    // Mothman.defense +=defBoost; 
-    // Mothman.intellect += intBoost;
+  
     console.log(charArr);
 
     event.preventDefault();
@@ -315,6 +318,7 @@ $("#heroCharacter, #sidekickCharacter, #shadowtakenCharacter, #mothmanCharacter"
 
 // Get the modal
 var modal = $('.char-sel-modal');
+var modal2 = $('.item-sel-modal');
 
 // Get the button that opens the modal
 var btn = $("#heroCharacter, #sidekickCharacter, #shadowtakenCharacter, #mothmanCharacter");
@@ -323,6 +327,14 @@ var btn = $("#heroCharacter, #sidekickCharacter, #shadowtakenCharacter, #mothman
 btn.onclick = function() {
     modal.style.display = "block";
 }
+
+var btn2 = ("#items")
+
+btn2.onclick = function(){
+    modal.style.display = "block";
+}
+
+
 
 //lets a button be active for when we input data?
 
@@ -361,24 +373,80 @@ var hideCharSelect = function() {
 }
 
 
-   
+// function heroHover(x){
+//     $.ajax("/itemAPI", {
+//         type: "GET",
+//     }).then( function(data){
+
+//         for(i=0; i<data[i].length; i++){
+
+//             if(data[i].itemName===x){
+
+//                 console.log("this is a test for items");
+//                 console.log(data[i].itemName, data[i].attack);
+//                 itemArr.push(data[i].attack, data[i].defense);
+//             }
+
+//         }
+
+
+     
+//     });
+
+
+// }
+
+
+
 
 $(function() {
 //for clicking on items and updating them into the database
     $('#items').on('click','#itembuttons', function(){
+        event.preventDefault();
+        $("#thisitemname").empty();
+   
 
-      
+     
         var item1 = $(this).attr("data-attribute");
         itemArr.splice(0,1 ,item1)
-        
-    if (charArr[0].charName ==="Hero"){
-        charArr[0].attack+=100;
-    }
-        console.log(itemArr);
+         $.ajax("/itemAPI", {
+        type: "GET",
+    }).then( function(data) {
+        for(var i=0; i<data.length; i++){
+
+            if(itemArr[0]===data[i].itemName){
+                itemArr=["holder"];
+                itemArr.splice(0,1,data[i].itemName ,data[i].attack, data[i].defense, data[i].intellect);
+                console.log(itemArr);
+                $("#thisitemname").append("Item Name: "+itemArr[0] +"<br>"+ "Attack Power: " +itemArr[1] +"<br>"+"Defense Health: " + itemArr[2] +"<br>"+"Intellect: " + itemArr[3]);
+                
+               
+
+            }
+        }
+        // charArr[0].attack+=parseInt(itemArr[1]);
+        // charArr[0].defense+=parseInt(itemArr[2]);
+   
+        // charArr[0].intellect+=parseInt(itemArr[3]);
+   
+    })
+
+    console.log(charArr);
+    
+
+
 
      
          
-     });
+});
+
+
+  //CODE FOR ON HOVER TO SHOW STATS HERE
+
+   
+
+
+
     //continue game
     $("#continueGame").on("click", function(event) {
         event.preventDefault();
@@ -471,9 +539,9 @@ $(function() {
             userName: $("#userNameInput").val().trim(),
             password: $("#passwordInput").val().trim(),
             charName: charArr[0].charName,
-            attack: charArr[0].attack,
-            defense: charArr[0].defense,
-            intellect: charArr[0].defense,
+            attack: charArr[0].attack + parseInt(itemArr[1]),
+            defense: charArr[0].defense + parseInt(itemArr[2]),
+            intellect: charArr[0].intellect+parseInt(itemArr[3]),
             itemOne: itemArr[0],
             itemTwo: 'none',
             itemThree: 'none',
