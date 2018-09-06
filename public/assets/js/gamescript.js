@@ -43,17 +43,19 @@ $("#submitPassword").on("click", function(event) {
 // Custom Fonts for boss fights.
 function changeFont() {
     if(arr[0].charName === "Hero") {
-        $("#bossonescreen").addClass("hero-font");
+        // alert("hero");
+        $(".colorMeRad").addClass("hero-font");
     }
     if(arr[0].charName === "Sidekick") {
-        $("#bossonescreen").addClass("sidekick-font");
+        // alert("sidekick");
+        $(".colorMeRad").addClass("sidekick-font");
     }
     if(arr[0].charName === "ShadowTaken") {
-        alert("It's Shadowtaken!");
-        $("#bossonescreen").addClass("shadowtaken-font");
+        // alert("It's Shadowtaken!");
+        $(".colorMeRad").addClass("shadowtaken-font");
     }
     if(arr[0].charName === "Mothman") {
-        $("#bossonescreen").addClass("mothman-font");
+        $(".colorMeRad").addClass("mothman-font");
     }
 }
 
