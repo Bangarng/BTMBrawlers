@@ -27,8 +27,9 @@ $("#submitPassword").on("click", function(event) {
         }
     })
     $("#passwordform").addClass("fadeOutUp animated hidden");
-
+    $("#pagename").removeClass("hidden")
     $("#startbossone").removeClass("hidden")
+   
 
 
 
@@ -62,6 +63,8 @@ $("#startbosstwo").on("click", function(event) {
     var boss = new characterMaker("Gunslinger", 10, 80, 15);
     arrBoss.splice(0,1,boss);
     $(".bossnamedisplay").text(arrBoss[0].charName);
+    $(".playerattackstat").text("ON YOUR MARK!");
+    $(".bossattackstat").text("THEY GOT YOU IN THIER SIGHTS!!!!");
     console.log(arrBoss[0]);
     game2()
 });
@@ -76,6 +79,8 @@ $("#startbossthree").on("click", function(event) {
     var boss = new characterMaker("Giant Robot", 15, 100, 20);
     arrBoss.splice(0,1,boss);
     $(".bossnamedisplay").text(arrBoss[0].charName);
+    $(".playerattackstat").text("INSTALL MCCAFFEE ON THIS BITCH!!");
+    $(".bossattackstat").text("IT'S PENETRATING YOUR BACK FIREWALL");
     console.log(arrBoss[0]);
     game3()
 });
