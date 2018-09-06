@@ -68,7 +68,7 @@ function charImage(x) {
         $("#charnamedisplay").attr("src", "../public/assets/images/fight/heroes/sidekick-fight.png")
     }
     else if (x == "Hero") {
-        return $("#charnamedisplay").attr("src", "../public/assets/fight/heroes/hero-fight.png")
+        return $("#charnamedisplay").attr("src", "../public/assets/images/fight/heroes/hero-fight.png")
     }
     else if (x == "Shadowtaken") {
         $("#charnamedisplay").attr("src", "../public/assets/images/fight/heroes/shadowtaken-fight.png")
