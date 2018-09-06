@@ -42,19 +42,38 @@ $("#submitPassword").on("click", function(event) {
 
 // Custom Fonts for boss fights.
 function changeFont() {
-    if(arr[0].userName === "Hero") {
-        $("#bossonescreen").addClass("hero-font");
+    if(arr[0].charName === "Hero") {
+        $(".colorMeRad").addClass("hero-font");
     }
-    if(arr[0].userName === "Sidekick") {
-        $("#bossonescreen").addClass("sidekick-font");
+    if(arr[0].charName === "Sidekick") {
+        $(".colorMeRad").addClass("sidekick-font");
     }
-    if(arr[0].userName === "ShadowTaken") {
-        alert("It's Shadowtaken!");
-        $("#bossonescreen").addClass("shadowtaken-font");
+    if(arr[0].charName === "ShadowTaken") {
+        $(".colorMeRad").addClass("shadowtaken-font");
     }
-    if(arr[0].userName === "Mothman") {
-        $("#bossonescreen").addClass("mothman-font");
+    if(arr[0].charName === "Mothman") {
+        $(".colorMeRad").addClass("mothman-font");
     }
+}
+
+// Character image to display
+function charImage(x) {
+    if (x == "Mothman") {
+        $("#charnamedisplay").attr("src", "../public/assets/images/mothmanbio.png")
+    }
+    else if (x == "Sidekick") {
+        $("#charnamedisplay").attr("src", "../public/assets/images/sidekickbio.png")
+    }
+    else if (x == "Hero") {
+        return $("#charnamedisplay").attr("src", "../public/assets/images/herobio.png")
+    }
+    else if (x == "Shadowtaken") {
+        $("#charnamedisplay").attr("src", "../public/assets/images/shadowtakenbio.png")
+    }
+    else {
+        document.write('<img src="../public/assets/images/Roto-Bot.png"><br><h1>Wrong password idiot</h1>');    
+    }
+
 }
 
 
@@ -67,7 +86,8 @@ $("#startbossone").on("click", function(event) {
     $("#bossonescreen").removeClass("hidden fadeOutDown");
     $("#bossonescreen").addClass("fadeInUp animated");
     $("#gamePage").addClass("hidden");
-    $(".charnamedisplay").text(arr[0].charName);
+    charImage(arr[0].charName)
+    // $(".charnamedisplay").text(arr[0].charName);
     $(".usernamedisplay").text(arr[0].userName);
     var boss = new characterMaker("Bunch o' Thugs", 3, 60, 10);
     arrBoss.splice(0,1,boss);
