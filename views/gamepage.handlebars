@@ -17,7 +17,7 @@
     <img class="game-head col-md-12" src="../public/assets/images/headers/Game-Page.png"/>
     <div>
         <img class="boss-head col-md-12" src="../public/assets/images/headers/bosses-to-defeat.png"/>
-        <img id ="startbossone" class="hidden img img-responsive tada animated" src="../public/assets/images/bosses/Thugs.png"/>
+        <img id ="startbossone" class="hidden img img-responsive tada animated" src="../public/assets/images/fight/bosses/Thugs.png"/>
         <img id ="startbosstwo" class="hidden img img-responsive tada animated" src="../public/assets/images/bosses/Ninja-Three.png"/>
         <img id ="startbossthree" class="hidden img img-responsivetada animated" src="../public/assets/images/bosses/Robo-bot.png"/>
     </div>
@@ -26,13 +26,16 @@
     <img class="thugs-head col-md-12" src="../public/assets/images/headers/Thugs-Head.png"/>
     <div class="row">
         <div class="col-md-6 colorMeRad">
-            <img id ="charnamedisplay" class="img img-responsive" />
-            <h4 class = "usernamedisplay">Player</h4>
-            <h6 class = "playerattack">attack</h6>
-            <h6 class = "playerdefense">defense</h6>
-            <h6 class = "playerintellect">intellect</h6>
-            <h4 class = "playerattackstat">pending action</h4>
-            <h5 class = "itemsEquip"></h5>
+            <h3 class = "usernamedisplay">Player</h3>
+                <img id ="charnamedisplay" class="img img-responsive col-md-12" />
+                <div class="player1-box">
+                <h6 class = "playerattack">attack</h6>
+                <h6 class = "playerdefense">defense</h6>
+                <h6 class = "playerintellect">intellect</h6>
+                <h6 class = "itemsEquip"></h6>
+                <h4 class = "playerattackstat">pending action</h4>
+            </div>
+            
             <br>
             <button id= "playerButtonb1">Break the Thug</button>
             <br>
@@ -40,8 +43,8 @@
             <br>
         </div>
         <div class="col-md-6">
-            <h2 class = "bossnamedisplay boss1-text">Boss</h2>
-            <img class="thugs-head col-md-12" src="../public/assets/images/bosses/Thugs-Fight.png"/>
+            <h3 class = "bossnamedisplay boss1-text">Boss</h3>
+            <img class="col-md-12 boss-image" src="../public/assets/images/fight/bosses/Thugs-Fight.png"/>
             <br>
             <div class="boss1-box">
                 <h6 class = "bossattack boss1-text">attack</h6>

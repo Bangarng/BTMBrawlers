@@ -336,7 +336,7 @@ body {
 }
 .mothman-font {
     color: #9c2e21;
-    text-shadow: #f3ea21 1px 1px;
+    text-shadow: #771D14 1px 1px;
 }
 
 /* boss 1 */
@@ -350,7 +350,18 @@ body {
     width: 95%;
 }
 
+.player1-box {
+    border: 3px solid #376FB6;
+    border-radius: 5px;
+    width: 95%;
+}
+
 /* boss stuff */
-.bossattack {
+.bossattack, .playerattack {
     padding-top: 2%;
+}
+
+.playerattackstat, .bossattackstat {
+    color:white;
+    text-shadow: #1f3e60 2px 2px;
 }

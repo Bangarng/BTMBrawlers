@@ -62,16 +62,16 @@ function changeFont() {
 // Character image to display
 function charImage(x) {
     if (x == "Mothman") {
-        $("#charnamedisplay").attr("src", "../public/assets/images/mothmanbio.png")
+        $("#charnamedisplay").attr("src", "../public/assets/images/fight/heroes/mothman-fight.png")
     }
     else if (x == "Sidekick") {
-        $("#charnamedisplay").attr("src", "../public/assets/images/sidekickbio.png")
+        $("#charnamedisplay").attr("src", "../public/assets/images/fight/heroes/sidekick-fight.png")
     }
     else if (x == "Hero") {
-        return $("#charnamedisplay").attr("src", "../public/assets/images/herobio.png")
+        return $("#charnamedisplay").attr("src", "../public/assets/fight/heroes/hero-fight.png")
     }
     else if (x == "Shadowtaken") {
-        $("#charnamedisplay").attr("src", "../public/assets/images/shadowtakenbio.png")
+        $("#charnamedisplay").attr("src", "../public/assets/images/fight/heroes/shadowtaken-fight.png")
     }
     else {
         document.write('<img src="../public/assets/images/Roto-Bot.png"><br><h1>Wrong password idiot</h1>');    
@@ -154,13 +154,13 @@ var game1 = function() {
         var item2= arr[2];
         var item3 = arr[3];
         if(item1 !=="none"){
-            $(".itemsEquip").text("Equipping Item:\n" +item1+"\n")
+            $(".itemsEquip").text("Equipped Item:\n" +item1+"\n")
         }
         if(item2 !=="none"){
-            $(".itemsEquip").text("Equipping Item:\n" +item2+"\n")
+            $(".itemsEquip").text("Equipped Item:\n" +item2+"\n")
         }
         if(item3 !=="none"){
-            $(".itemsEquip").text("Equipping Item:\n" +item3+"\n")
+            $(".itemsEquip").text("Equipped Item:\n" +item3+"\n")
         }
     }
 
@@ -289,6 +289,8 @@ var game2 = function() {
         if ((Math.floor((Math.random() * 100) + 1)) <= intellect) {
             $(".playerattackstat").text("ATTACK!");
             $(".playerattackstat").addClass("tada animated");
+            $("charnamedisplay").addClass("bounce animated");
+            $(".boss-image").addClass("wobble animated");
             var damage = (bossDefense[0] - attack)
             bossDefense.splice(0, 1, damage);
             console.log("player attacked" + "\nboss hp:" + bossDefense);
@@ -300,6 +302,8 @@ var game2 = function() {
         else {
             $(".playerattackstat").text("MISSED!?");
             $(".playerattackstat").addClass("flip animated");
+            $("#charnamedisplay").addClass("pulse animated");
+            $(".boss-image").addClass("tada animated");
             console.log("player missed");
             bossAttack();
             return
