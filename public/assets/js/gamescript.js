@@ -40,6 +40,24 @@ $("#submitPassword").on("click", function(event) {
     // $("#startbossthree").removeClass("hidden")
 });
 
+// Custom Fonts for boss fights.
+function changeFont() {
+    if(arr[0].charName === "Hero") {
+        $("#bossonescreen").addClass("hero-font");
+    }
+    if(arr[0].charName === "Sidekick") {
+        $("#bossonescreen").addClass("sidekick-font");
+    }
+    if(arr[0].charName === "ShadowTaken") {
+        alert("It's Shadowtaken!");
+        $("#bossonescreen").addClass("shadowtaken-font");
+    }
+    if(arr[0].charName === "Mothman") {
+        $("#bossonescreen").addClass("mothman-font");
+    }
+}
+
+
 $("#startbossone").on("click", function(event) {
     event.preventDefault();
     $('#pricetag_overlay1').toggleClass("animated hinge",function(){
@@ -55,21 +73,10 @@ $("#startbossone").on("click", function(event) {
     arrBoss.splice(0,1,boss);
     $(".bossnamedisplay").text(arrBoss[0].charName);
     console.log(arrBoss[0]);
+    console.log("This is the arr[0].charName");
     console.log(arr[0].charName);
-    // Custom Fonts
-    // if(arr[0].charName === "Hero") {
-    //     $("#bossonescreen").addClass("hero-font");
-    // }
-    // if(arr[0].charName === "Sidekick") {
-    //     $("#bossonescreen").addClass("sidekick-font");
-    // }
-    // if(arr[0].charName === "ShadowTaken") {
-    //     $("#bossonescreen").addClass("shadowtaken-font");
-    // }
-    // if(arr[0].charName === "Mothman") {
-    //     $("#bossonescreen").addClass("mothman-font");
-    // }
-    game1()
+    changeFont();
+    game1();
 });
 
 $("#startbosstwo").on("click", function(event) {

@@ -45,7 +45,7 @@ body {
     margin: 8% 0;
 }
 
-#submitCredentials, .backHome, #backToUser, #submitUser, #itemScreen, #charCreation, #pickItem, #modal-close, #submitPassword {
+#submitCredentials, .backHome, #backToUser, #submitUser, #itemScreen, #charCreation, #pickItem, #modal-close, #submitPassword, #playerButtonb1 {
     font-family: 'Press Start 2P', cursive;
     margin: auto;
     font-size: 1em;
@@ -58,11 +58,11 @@ body {
     margin: 0 1%;
 }
 
-#submitCredentials:hover, .backHome:hover, #backToUser:hover, #charCreation:hover, #submitUser:hover, #itemScreen:hover, #modal-close:hover, #submitPassword:hover {
+#submitCredentials:hover, .backHome:hover, #backToUser:hover, #charCreation:hover, #submitUser:hover, #itemScreen:hover, #modal-close:hover, #submitPassword:hover, #playerButtonb1:hover {
     transform: scale(1.05);
 }
 
-#submitCredentials:active, .backHome:active, #backToUser:active, #submitUser:active, #itemScreen:active, #modal-close:active, #submitPassword:hover {
+#submitCredentials:active, .backHome:active, #backToUser:active, #submitUser:active, #itemScreen:active, #modal-close:active, #submitPassword:hover, #playerButtonb1:active {
     transform: scale(1.00);
 }
 

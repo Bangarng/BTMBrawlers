@@ -16,8 +16,6 @@ var itemMaker = function(itemName, itmAttack, itmDefense, itmIntellect){
     this.itmIntellect = itmIntellect;
 };
 
-
-
 //stats total 60
 var Hero = new characterMaker("Hero", 20, 20, 20); //full stack brawler
 var Sidekick = new characterMaker("Sidekick", 15, 20, 25); //duel grapple guns, intellect, reach
