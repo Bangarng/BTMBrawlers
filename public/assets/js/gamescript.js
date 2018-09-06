@@ -27,7 +27,7 @@ $("#submitPassword").on("click", function(event) {
         }
     })
     $("#passwordform").addClass("fadeOutUp animated hidden");
-    $("#pagename").removeClass("hidden")
+    $("#gamePage").removeClass("hidden")
     $("#startbossone").removeClass("hidden")
    
 
@@ -42,14 +42,33 @@ $("#submitPassword").on("click", function(event) {
 
 $("#startbossone").on("click", function(event) {
     event.preventDefault();
+    $('#pricetag_overlay1').toggleClass("animated hinge",function(){
+        $(this).remove();
+     });
+    $("#startbossone").addClass("rubberBand animated");
     $("#bossonescreen").removeClass("hidden fadeOutDown");
     $("#bossonescreen").addClass("fadeInUp animated");
+    $("#gamePage").addClass("hidden");
     $(".charnamedisplay").text(arr[0].charName);
     $(".usernamedisplay").text(arr[0].userName);
     var boss = new characterMaker("Big Thug", 3, 60, 10);
     arrBoss.splice(0,1,boss);
     $(".bossnamedisplay").text(arrBoss[0].charName);
     console.log(arrBoss[0]);
+    console.log(arr[0].charName);
+    // Custom Fonts
+    // if(arr[0].charName === "Hero") {
+    //     $("#bossonescreen").addClass("hero-font");
+    // }
+    // if(arr[0].charName === "Sidekick") {
+    //     $("#bossonescreen").addClass("sidekick-font");
+    // }
+    // if(arr[0].charName === "ShadowTaken") {
+    //     $("#bossonescreen").addClass("shadowtaken-font");
+    // }
+    // if(arr[0].charName === "Mothman") {
+    //     $("#bossonescreen").addClass("mothman-font");
+    // }
     game1()
 });
 

@@ -9,7 +9,7 @@
 /* Press Start Font */
 .pressStart {
     font-family: 'Press Start 2P', cursive;
-    color: yellow;
+    color: #f3ea21;
 }
 
 /* Bootstrap Body Stuff */
@@ -67,14 +67,14 @@ body {
 }
 
 /* Page Titles */
-.homepage-header, .char-select-head {
+.homepage-header, .char-select-head, .game-head {
     margin: auto;
     display: block;
     padding-top: 3%;
     width:90%
 }
 
-.char-select-head {
+.char-select-head, .game-head {
     padding-top: 2%;
 }
 
@@ -140,6 +140,7 @@ body {
 	background-image: url("../images/game-background.png");
     background-repeat: no-repeat;
     background-size: 90%;
+    background-position: center;
     min-height:575px;
 }
 
@@ -156,7 +157,7 @@ body {
     margin-top: 180px;
 }
 
-#createUser, #userInfo, #passwordform, #gamePage {
+#createUser, #userInfo, #passwordform, #gamePage, #bossonescreen {
     background: rgba(0, 0, 0, 0.8);
     width: 95%;
     margin: auto;
@@ -171,7 +172,7 @@ body {
     word-spacing: 3em;
 }
 
-.charSelect {
+.charSelect,  {
     margin:auto;
     display:block;
 }
@@ -276,11 +277,65 @@ body {
     background-color: #396EB6;
   }
 
-/* Password */
+/* Password */hero
+#passwordform img {
+    padding-top: 11%;
+}
 .password-form {
     margin-top: 5%;
 }
-
 #submitPassword {
     margin-top: -1.6%;
 }
+.password-home-btn {
+    margin-bottom: 14%;
+}
+
+/* Boss Page */
+.boss-head {
+    margin-top:2%;
+    width: 75%;
+}
+
+#startbossone, #startbosstwo, #startbossthree {
+width: 20%;
+border: 3px solid white;
+border-radius: 5px;
+margin: 3% 3%;
+transition: all .5s ease-in-out;
+}
+
+/* #startbossone:hover, #startbosstwo:hover, #startbossthree:hover {
+    transform: scale(1.1);
+} */
+
+/* BOSS ONE */
+#bossonescreen {
+    font-family: 'Press Start 2P', cursive;
+    color: #396eb6;
+    box-shadow: #f3ea21
+}
+
+.thugs-head {
+    margin-top:2%;
+    width: 75%;
+}
+
+/* Custom Fonts */
+.hero-font {
+    color: #396eb6;
+    box-shadow: #f3ea21 
+}
+.sidekick-font {
+    color: #502f83;
+    box-shadow: #f3ea21
+}
+.shadowtaken-font {
+    color: #2e2750;
+    box-shadow: #f3ea21
+}
+.mothman-font {
+    color: #9c2e21;
+    box-shadow: #f3ea21
+}
+
