@@ -59,6 +59,26 @@ function changeFont() {
     }
 }
 
+// Character image to display
+function charImage(x) {
+    if (x == "Mothman") {
+        $("#charnamedisplay").attr("src", "../public/assets/images/mothmanbio.png")
+    }
+    else if (x == "Sidekick") {
+        $("#charnamedisplay").attr("src", "../public/assets/images/sidekickbio.png")
+    }
+    else if (x == "Hero") {
+        return $("#charnamedisplay").attr("src", "../public/assets/images/herobio.png")
+    }
+    else if (x == "Shadowtaken") {
+        $("#charnamedisplay").attr("src", "../public/assets/images/shadowtakenbio.png")
+    }
+    else {
+        document.write('<img src="../public/assets/images/Roto-Bot.png"><br><h1>Wrong password idiot</h1>');    
+    }
+
+}
+
 
 $("#startbossone").on("click", function(event) {
     event.preventDefault();
@@ -69,7 +89,8 @@ $("#startbossone").on("click", function(event) {
     $("#bossonescreen").removeClass("hidden fadeOutDown");
     $("#bossonescreen").addClass("fadeInUp animated");
     $("#gamePage").addClass("hidden");
-    $(".charnamedisplay").text(arr[0].charName);
+    charImage(arr[0].charName)
+    // $(".charnamedisplay").text(arr[0].charName);
     $(".usernamedisplay").text(arr[0].userName);
     var boss = new characterMaker("Big Thug", 3, 60, 10);
     arrBoss.splice(0,1,boss);
