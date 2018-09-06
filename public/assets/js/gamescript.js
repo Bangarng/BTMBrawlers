@@ -68,7 +68,7 @@ function charImage(x) {
         $("#charnamedisplay").attr("src", "../public/assets/images/fight/heroes/sidekick-fight.png")
     }
     else if (x == "Hero") {
-        return $("#charnamedisplay").attr("src", "../public/assets/fight/heroes/hero-fight.png")
+        $("#charnamedisplay").attr("src", "../public/assets/images/fight/heroes/hero-fight.png")
     }
     else if (x == "Shadowtaken") {
         $("#charnamedisplay").attr("src", "../public/assets/images/fight/heroes/shadowtaken-fight.png")
@@ -79,6 +79,12 @@ function charImage(x) {
 
 }
 
+$("#backtogamepage").on("click", function(event) {
+    event.preventDefault();
+    $("#gamePage").removeClass("hidden");
+    $("#winlosediv").addClass("hidden");
+
+});
 
 $("#startbossone").on("click", function(event) {
     event.preventDefault();
@@ -107,6 +113,7 @@ $("#startbosstwo").on("click", function(event) {
     $("#winlosediv").addClass("hidden");
     $("#bosstwoscreen").removeClass("hidden fadeOutDown");
     $("#bosstwoscreen").addClass("fadeInUp animated");
+    $("#gamePage").addClass("hidden");
     $(".charnamedisplay").text(arr[0].charName);
     $(".usernamedisplay").text(arr[0].userName);
     var boss = new characterMaker("Ninja Three", 10, 80, 15);
@@ -123,12 +130,13 @@ $("#startbossthree").on("click", function(event) {
     $("#winlosediv").addClass("hidden");
     $("#bossthreescreen").removeClass("hidden fadeOutDown");
     $("#bossthreescreen").addClass("fadeInUp animated");
+    $("#gamePage").addClass("hidden");
     $(".charnamedisplay").text(arr[0].charName);
     $(".usernamedisplay").text(arr[0].userName);
     var boss = new characterMaker("Robo-Bot", 15, 100, 20);
     arrBoss.splice(0,1,boss);
     $(".bossnamedisplay").text(arrBoss[0].charName);
-    $(".playerattackstat").text("INSTALL MCCAFFEE ON THIS BITCH!!");
+    $(".playerattackstat").text("INSTALL McAFee ON THIS BITCH!!");
     $(".bossattackstat").text("IT'S PENETRATING YOUR BACK FIREWALL");
     console.log(arrBoss[0]);
     game3()
