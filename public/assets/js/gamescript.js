@@ -42,17 +42,17 @@ $("#submitPassword").on("click", function(event) {
 
 // Custom Fonts for boss fights.
 function changeFont() {
-    if(arr[0].charName === "Hero") {
+    if(arr[0].userName === "Hero") {
         $("#bossonescreen").addClass("hero-font");
     }
-    if(arr[0].charName === "Sidekick") {
+    if(arr[0].userName === "Sidekick") {
         $("#bossonescreen").addClass("sidekick-font");
     }
-    if(arr[0].charName === "ShadowTaken") {
+    if(arr[0].userName === "ShadowTaken") {
         alert("It's Shadowtaken!");
         $("#bossonescreen").addClass("shadowtaken-font");
     }
-    if(arr[0].charName === "Mothman") {
+    if(arr[0].userName === "Mothman") {
         $("#bossonescreen").addClass("mothman-font");
     }
 }
@@ -69,7 +69,7 @@ $("#startbossone").on("click", function(event) {
     $("#gamePage").addClass("hidden");
     $(".charnamedisplay").text(arr[0].charName);
     $(".usernamedisplay").text(arr[0].userName);
-    var boss = new characterMaker("Big Thug", 3, 60, 10);
+    var boss = new characterMaker("Bunch o' Thugs", 3, 60, 10);
     arrBoss.splice(0,1,boss);
     $(".bossnamedisplay").text(arrBoss[0].charName);
     console.log(arrBoss[0]);
@@ -86,7 +86,7 @@ $("#startbosstwo").on("click", function(event) {
     $("#bosstwoscreen").addClass("fadeInUp animated");
     $(".charnamedisplay").text(arr[0].charName);
     $(".usernamedisplay").text(arr[0].userName);
-    var boss = new characterMaker("Gunslinger", 10, 80, 15);
+    var boss = new characterMaker("Ninja Three", 10, 80, 15);
     arrBoss.splice(0,1,boss);
     $(".bossnamedisplay").text(arrBoss[0].charName);
     $(".playerattackstat").text("ON YOUR MARK!");
@@ -102,7 +102,7 @@ $("#startbossthree").on("click", function(event) {
     $("#bossthreescreen").addClass("fadeInUp animated");
     $(".charnamedisplay").text(arr[0].charName);
     $(".usernamedisplay").text(arr[0].userName);
-    var boss = new characterMaker("Giant Robot", 15, 100, 20);
+    var boss = new characterMaker("Robo-Bot", 15, 100, 20);
     arrBoss.splice(0,1,boss);
     $(".bossnamedisplay").text(arrBoss[0].charName);
     $(".playerattackstat").text("INSTALL MCCAFFEE ON THIS BITCH!!");
@@ -202,7 +202,7 @@ var game1 = function() {
             hideAllBossDivs();
             $("#winlosediv").removeClass("hidden");
             $("#winlosediv").addClass("fadeInUp animated");
-            $("#winlosetext").text("Boss has been defeated! Rejoice " + arr[0].userName);
+            $("#winlosetext").text("The boss has been defeated! Rejoice " + arr[0].userName);
             playerDefense = ["whatPlayer"];
             bossDefense = ["whatBoss"];
             console.log(playerDefense);
