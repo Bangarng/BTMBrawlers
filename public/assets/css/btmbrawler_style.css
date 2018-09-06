@@ -298,44 +298,58 @@ body {
 }
 
 #startbossone, #startbosstwo, #startbossthree {
-width: 20%;
-border: 3px solid white;
-border-radius: 5px;
-margin: 3% 3%;
-transition: all .5s ease-in-out;
+    width: 20%;
+    border: 3px solid white;
+    border-radius: 5px;
+    margin: 3% 3%;
+    transition: all .5s ease-in-out;
 }
 
-/* #startbossone:hover, #startbosstwo:hover, #startbossthree:hover {
-    transform: scale(1.1);
-} */
+#startbossone:hover, #startbosstwo:hover, #startbossthree:hover {
+    transform: scale(1.2);
+}
 
 /* BOSS ONE */
 #bossonescreen {
     font-family: 'Press Start 2P', cursive;
     color: #396eb6;
-    box-shadow: #f3ea21
+    text-shadow: #1f3e60 2px 2px;
 }
 
 .thugs-head {
-    margin-top:2%;
-    width: 75%;
+    width: 80%;
 }
 
 /* Custom Fonts */
 .hero-font {
     color: #396eb6;
-    box-shadow: #f3ea21 
+    text-shadow: #f3ea21 1px 1px;
 }
 .sidekick-font {
     color: #502f83;
-    box-shadow: #f3ea21
+    text-shadow: #f3ea21 1px 1px;
 }
 .shadowtaken-font {
     color: #2e2750;
-    box-shadow: #f3ea21
+    text-shadow: #f3ea21 1px 1px;
 }
 .mothman-font {
     color: #9c2e21;
-    box-shadow: #f3ea21
+    text-shadow: #f3ea21 1px 1px;
 }
 
+/* boss 1 */
+.boss1-text {
+    color: darkgray;
+    text-shadow: #1f3e60 2px 2px;
+}
+.boss1-box {
+    border: 3px solid red;
+    border-radius: 5px;
+    width: 95%;
+}
+
+/* boss stuff */
+.bossattack {
+    padding-top: 2%;
+}
