@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P|Acme');
 
 /* Bootstrap 4.0 Container */
 .container {
@@ -277,7 +277,9 @@ body {
 /* Continue Screen */
 .continue-table {
     margin-top: 2%;
-    font-size: .75em;
+    color: #f3ea21;
+    text-shadow: #1F3E60 3px 4px;
+    font-family: 'Acme', sans-serif;
 }
 
 .continue-table td:nth-child(even), .continue-table th:nth-child(even){
