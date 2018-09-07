@@ -443,7 +443,7 @@ $(function() {
 
   //CODE FOR ON HOVER TO SHOW STATS HERE
 
-   
+ 
 
 
 
@@ -466,7 +466,39 @@ $(function() {
     });
     //Load the Character Select
     $("#submitCredentials").on("click", function(event) {
+
+
+       
         event.preventDefault();
+        var user1 = $("#userNameInput").val().trim();
+        var pass1 = $("#passwordInput").val().trim();
+
+
+        $.ajax("/characterAPI", {
+            type: "GET",
+        }).then( function(data) {
+            console.log(data);
+
+            for(var i= 0; i<data.length; i++){
+           
+            if((user1==="" || pass1==="")){
+
+            alert("error, please enter a valid user name and password, no name= no brawling");
+    
+            itemSelection();
+            hideWelcome();
+            break;
+           
+            
+        }else if(user1===data[i].userName){
+
+            alert("ERROR, Another Brawler has that username!");
+            itemSelection();
+            hideWelcome();
+            break;
+
+
+        }else{    
         hideCredentials();
         itemSelection();
 
@@ -488,6 +520,8 @@ $(function() {
             charSelSong.play();
             charSelSong.duration = 1;
         }
+    }
+}
 
     });
      //back to User Credentials
@@ -516,7 +550,7 @@ $(function() {
         $("#itemSelection").removeClass("hidden");
         $("#itemSelection").addClass("fadeInUp animated");
 
-
+    })
 
     })
     //Homepage, restart app
@@ -534,6 +568,7 @@ $(function() {
     $("#submitUser").on("click", function(event) {
         //prevent page from reloading
         event.preventDefault();
+      
         //our user data that will be pushed. this is where the brawlercontroller will be grabbing
         var userdata = {
             userName: $("#userNameInput").val().trim(),
