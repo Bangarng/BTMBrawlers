@@ -247,7 +247,7 @@ var game1 = function() {
             hideAllBossDivs();
             $("#winlosediv").removeClass("hidden");
             $("#winlosediv").addClass("fadeInUp animated");
-            $("#winlosetext").text("The boss has been defeated! Rejoice " + arr[0].userName);
+            $("#winlosetext").text("Rejoice " + arr[0].userName);
             playerDefense = ["whatPlayer"];
             bossDefense = ["whatBoss"];
             console.log(playerDefense);

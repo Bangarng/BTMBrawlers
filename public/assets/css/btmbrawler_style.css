@@ -10,6 +10,7 @@
 .pressStart {
     font-family: 'Press Start 2P', cursive;
     color: #f3ea21;
+    text-shadow: #1F3E60 3px 4px;
 }
 
 /* Bootstrap Body Stuff */
@@ -45,7 +46,7 @@ body {
     margin: 8% 0;
 }
 
-#submitCredentials, .backHome, #backToUser, #submitUser, #itemScreen, #charCreation, #pickItem, #modal-close, #submitPassword, #playerButtonb1 {
+#submitCredentials, .backHome, #backToUser, #submitUser, #itemScreen, #charCreation, #pickItem, #modal-close, #submitPassword, #playerButtonb1, #playerButtonb2, #playerButtonb3, #backtogamepage {
     font-family: 'Press Start 2P', cursive;
     margin: auto;
     font-size: 1em;
@@ -58,12 +59,16 @@ body {
     margin: 0 1%;
 }
 
-#submitCredentials:hover, .backHome:hover, #backToUser:hover, #charCreation:hover, #submitUser:hover, #itemScreen:hover, #modal-close:hover, #submitPassword:hover, #playerButtonb1:hover {
+#submitCredentials:hover, .backHome:hover, #backToUser:hover, #charCreation:hover, #submitUser:hover, #itemScreen:hover, #modal-close:hover, #submitPassword:hover, #playerButtonb1:hover, #playerButtonb2:hover, #playerButtonb3:hover,  backtogamepage:hover {
     transform: scale(1.05);
 }
 
-#submitCredentials:active, .backHome:active, #backToUser:active, #submitUser:active, #itemScreen:active, #modal-close:active, #submitPassword:hover, #playerButtonb1:active {
+#submitCredentials:active, .backHome:active, #backToUser:active, #submitUser:active, #itemScreen:active, #modal-close:active, #submitPassword:hover, #playerButtonb1:active, #playerButtonb2:active, #playerButtonb3:active, backtogamepage:active {
     transform: scale(1.00);
+}
+
+#backtogamepage, #winlosetext {
+    margin-top: 2%;
 }
 
 /* Page Titles */
@@ -157,10 +162,14 @@ body {
     margin-top: 180px;
 }
 
-#createUser, #userInfo, #passwordform, #gamePage, #bossonescreen {
+#createUser, #userInfo, #passwordform, #gamePage, #bossonescreen, #bosstwoscreen, #bossthreescreen, #winlosediv {
     background: rgba(0, 0, 0, 0.8);
     width: 95%;
     margin: auto;
+}
+
+#winlosediv {
+    padding: 15% 0;
 }
 
 /* Character Select */
@@ -344,11 +353,18 @@ body {
     color: darkgray;
     text-shadow: #1f3e60 2px 2px;
 }
-.boss1-box {
-    border: 3px solid red;
+
+.boss2-text {
+    color: #798793;
+    text-shadow: #1f3e60 2px 2px;
+}
+
+.boss-box {
+    border: 3px solid #cc0000;
     border-radius: 5px;
     width: 95%;
 }
+
 
 .player1-box {
     border: 3px solid #376FB6;
