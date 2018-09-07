@@ -1,4 +1,5 @@
 var arr = ["holder"];
+itemsArr = ["holder"];
 var arrBoss = ["holder"];
 var characterMaker = function(charName, attack, defense, intellect) {
     this.charName =  charName;
@@ -14,6 +15,7 @@ $("#submitPassword").on("click", function(event) {
     // };
     // console.log(pleasework);
     var password = $("#passwordYo").val().trim()
+    
 
     $.ajax("/characterAPI", {
         type: "GET",
@@ -26,9 +28,19 @@ $("#submitPassword").on("click", function(event) {
             }
             
         }
+
+   
+    
         $("#passwordform").addClass("fadeIn animated hidden");
 
     })
+    
+   
+
+
+
+
+
     $("#passwordform").addClass("fadeOutUp animated hidden");
     $("#gamePage").removeClass("hidden")
     $("#startbossone").removeClass("hidden")
