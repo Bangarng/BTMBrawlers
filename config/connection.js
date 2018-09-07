@@ -1,5 +1,10 @@
 var sequelize = require("sequelize");
 
+var connection;
+if(process.env.JAWSDB_URL) {
+  //Heroku deployment
+    connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
 
 
 var sequelize = new sequelize("users_db", "root", "NotAnother1",{
@@ -15,5 +20,5 @@ var sequelize = new sequelize("users_db", "root", "NotAnother1",{
         }
 
 });
-
+}
 module.exports = sequelize;

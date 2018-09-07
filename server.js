@@ -1,6 +1,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var exphbs = require("express-handlebars");
+var db = require("./models");
 var app = express();
 
 var PORT = process.env.PORT || 1994;
@@ -19,6 +20,9 @@ app.set("view engine", "handlebars");
 app.use(controller);
 app.use(apiController);
 
-app.listen(PORT, function() {
-    console.log("PORT is listening at https://localhost: " + PORT);
-});
+
+db.sequelize.sync().then(function(){
+    app.listen(PORT, function() {
+        console.log("PORT is listening at https://localhost: " + PORT);
+    });
+})
