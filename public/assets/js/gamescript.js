@@ -86,7 +86,10 @@ function charImage(x) {
         $(".charnamedisplay").attr("src", "../public/assets/images/fight/heroes/shadowtaken-fight.png")
     }
     else {
-        document.write('<img src="../public/assets/images/Roto-Bot.png"><br><h1>Wrong password idiot</h1>');    
+        // document.write('<img src="../public/assets/images/Roto-Bot.png"><br><h1>Wrong password idiot</h1>');    
+        $('div').addClass('hidden');
+        $("#wrongPasswordContainer").removeClass('hidden')
+        $("#wrongPassword").removeClass('hidden')
     }
 
 }
