@@ -88,6 +88,12 @@ $("#backtogamepage").on("click", function(event) {
 
 });
 
+$(".ditchFight").on("click", function(event) {
+    event.preventDefault();
+    $("#gamePage").removeClass("hidden");
+    $("#winlosediv, #bossonescreen, #bosstwoscreen, #bossthreescreen").addClass("hidden");
+});
+
 $("#startbossone").on("click", function(event) {
     event.preventDefault();
     $("#startbossone").addClass("rubberBand animated");
@@ -113,7 +119,6 @@ $("#startbosstwo").on("click", function(event) {
     $("#bosstwoscreen").removeClass("hidden fadeOutDown");
     $("#bosstwoscreen").addClass("fadeInUp animated");
     $("#gamePage").addClass("hidden");
-    $(".game-screen").css("backgroundImage", "url(../public/assets/images/wrong-password.png)") //this is changing the background
     $(".charnamedisplay").text(arr[0].charName);
     $(".usernamedisplay").text(arr[0].userName);
     var boss = new characterMaker("Ninja Three", 10, 80, 15);
@@ -132,7 +137,6 @@ $("#startbossthree").on("click", function(event) {
     $("#bossthreescreen").removeClass("hidden fadeOutDown");
     $("#bossthreescreen").addClass("fadeInUp animated");
     $("#gamePage").addClass("hidden");
-    $(".game-screen").css("backgroundImage", "url(../public/assets/images/Hero-and-Sidekick.png)") //this is changing the background
     $(".charnamedisplay").text(arr[0].charName);
     $(".usernamedisplay").text(arr[0].userName);
     var boss = new characterMaker("Robo-Bot", 15, 100, 20);
@@ -254,6 +258,7 @@ var game1 = function() {
             console.log(playerDefense);
             console.log(bossDefense);
             $("#startbosstwo").removeClass("hidden");
+            $(".game-screen").css("backgroundImage", "url(../public/assets/images/levels/boss-fight-level-2.png)"); //this is changing the background
             return console.log("fight end and you won");
         }
     }
@@ -370,6 +375,7 @@ var game2 = function() {
             console.log(playerDefense);
             console.log(bossDefense);
             $("#startbossthree").removeClass("hidden");
+            $(".game-screen").css("backgroundImage", "url(../public/assets/images/levels/boss-fight-level-3.png)"); //this is changing the background
             return console.log("fight end and you won");
         }
     }
@@ -476,7 +482,7 @@ var game3 = function() {
             $("#winlosediv").removeClass("hidden");
             $("#winlosediv").addClass("fadeInUp animated");
             $("#defeatedBossImg").removeClass("hidden");
-            $("#winlosetext").text("YOU'VE SAVED THE CITY!");
+            $("#winlosetext").text("YOU'VE SAVED METRO CITY!");
             playerDefense = ["whatPlayer"];
             bossDefense = ["whatBoss"];
             console.log(playerDefense);
