@@ -1,5 +1,7 @@
 
 
+
+
 //this constructo makes our static characters
 var characterMaker = function(charName, attack, defense, intellect) {
     this.charName =  charName;
@@ -443,10 +445,6 @@ $(function() {
 
   //CODE FOR ON HOVER TO SHOW STATS HERE
 
- function hidePass(){
-     var getmypass = $("#passwordInput").val().trim();
-     getmypass.type = "password";
- }
 
 
 
@@ -463,7 +461,7 @@ $(function() {
         event.preventDefault();
         hideWelcome();
         itemSelection();
-        hidePass();
+        
 
         $("#enterCredentials").removeClass("hidden");
         $("#enterCredentials").addClass("fadeInUp animated");
@@ -480,54 +478,59 @@ $(function() {
 
         $.ajax("/characterAPI", {
             type: "GET",
-        }).then( function(data) {
-            console.log(data);
-
-            for(var i= 0; i<data.length; i++){
-           
-            if((user1==="" || pass1==="")){
-
-            alert("error, please enter a valid user name and password, no name= no brawling");
-    
+        }).then(function(data) {
+          
+       
+           if(user1!==""){ 
+            for(var i=0; i<data.length; i++){
+                if(data[i].userName===user1){
+                    alert("THAT USER NAME IS TAKEN YA FILTHY CASUAL");
+                  
+                   
+                }
+                
+            }
             itemSelection();
             hideWelcome();
             break;
-           
+        }else
             
-        }else if(user1===data[i].userName){
+             if((user1==="" || pass1==="")){
 
-            alert("ERROR, Another Brawler has that username!");
-            itemSelection();
-            hideWelcome();
-            break;
+                alert("error, please enter a valid user name and password, no name= no brawling");
+        
+                itemSelection();
+                hideWelcome();
+             
+        
+                
+            }
+             else {    
+                    hideCredentials();
+                    itemSelection();
 
-
-        }else{    
-        hideCredentials();
-        itemSelection();
-
-        $("#createUser").removeClass("hidden");
-        $("#createUser").addClass("fadeInUp animated");
-        var themeSong = $(".themeMusic");
-        var charSelSong = document.createElement("audio");
-        var site = window.location;
-        charSelSong.src = site + "/public/assets/music/BTM Character Select.mp3";
-        charSelSong.autoPlay = false;
-        charSelSong.preLoad = true;
-        charSelSong.controls = false;
-        charSelSong.loop = true;
-        charSelSong.duration = 0;
-        if (charSelSong.duration > 0 && !myAudio.paused) {
-            themeSong.stop();
-            console.log("Character Select Song is playing.");
-        } else {
-            charSelSong.play();
-            charSelSong.duration = 1;
-        }
-    }
-}
-
+                    $("#createUser").removeClass("hidden");
+                    $("#createUser").addClass("fadeInUp animated");
+                    var themeSong = $(".themeMusic");
+                    var charSelSong = document.createElement("audio");
+                    var site = window.location;
+                    charSelSong.src = site + "/public/assets/music/BTM Character Select.mp3";
+                    charSelSong.autoPlay = false;
+                    charSelSong.preLoad = true;
+                    charSelSong.controls = false;
+                    charSelSong.loop = true;
+                    charSelSong.duration = 0;
+                    if (charSelSong.duration > 0 && !myAudio.paused) {
+                        themeSong.stop();
+                        console.log("Character Select Song is playing.");
+                    } else {
+                        charSelSong.play();
+                        charSelSong.duration = 1;
+                    }
+            }
+        
     });
+      
      //back to User Credentials
      $("#backToUser").on("click", function(event) {
         event.preventDefault();
