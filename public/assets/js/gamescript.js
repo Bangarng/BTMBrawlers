@@ -73,7 +73,10 @@ function charImage(x) {
         $(".charnamedisplay").attr("src", "../public/assets/images/fight/heroes/shadowtaken-fight.png");
     }
     else {
-        document.write('<div id="wrongPassDIV" style="width:75%"><h1 style="text-align:center;">Wrong password brawler!<br></h1><img src="../public/assets/images/wrong-password.png"><br></div>');    
+        // document.write('<div id="wrongPassDIV" style="width:75%"><h1 style="text-align:center;">Wrong password brawler!<br></h1><img src="../public/assets/images/wrong-password.png"><br></div>');    
+        $('div').addClass('hidden');
+        $("#wrongPasswordContainer").removeClass('hidden')
+        $("#wrongPassword").removeClass('hidden')
     }
 
 }
@@ -110,6 +113,7 @@ $("#startbosstwo").on("click", function(event) {
     $("#bosstwoscreen").removeClass("hidden fadeOutDown");
     $("#bosstwoscreen").addClass("fadeInUp animated");
     $("#gamePage").addClass("hidden");
+    $(".game-screen").css("backgroundImage", "url(../public/assets/images/wrong-password.png)") //this is changing the background
     $(".charnamedisplay").text(arr[0].charName);
     $(".usernamedisplay").text(arr[0].userName);
     var boss = new characterMaker("Ninja Three", 10, 80, 15);
@@ -128,6 +132,7 @@ $("#startbossthree").on("click", function(event) {
     $("#bossthreescreen").removeClass("hidden fadeOutDown");
     $("#bossthreescreen").addClass("fadeInUp animated");
     $("#gamePage").addClass("hidden");
+    $(".game-screen").css("backgroundImage", "url(../public/assets/images/Hero-and-Sidekick.png)") //this is changing the background
     $(".charnamedisplay").text(arr[0].charName);
     $(".usernamedisplay").text(arr[0].userName);
     var boss = new characterMaker("Robo-Bot", 15, 100, 20);
@@ -242,6 +247,7 @@ var game1 = function() {
             hideAllBossDivs();
             $("#winlosediv").removeClass("hidden");
             $("#winlosediv").addClass("fadeInUp animated");
+            $("#defeatedBossImg").removeClass("hidden");
             $("#winlosetext").text("Rejoice " + arr[0].userName);
             playerDefense = ["whatPlayer"];
             bossDefense = ["whatBoss"];
@@ -257,8 +263,9 @@ var game1 = function() {
             hideAllBossDivs();
             $("#winlosediv").removeClass("hidden");
             $("#winlosediv").addClass("fadeInUp animated");
+            $("#defeatedBossImg").addClass("hidden");
             $("#winlosetext").text("Your life " + arr[0].userName + " will be forgotten");
-            $("#winlosetext").append("<br><br><button><a href = '/gamepage' style='text-decoration:none'>PICK YOURSELF UP CHUMP</a></button>");
+            $("#winlosetext").append("<br><br><button><a href = '/gamepage' style='text-decoration:none'>GET A NEW SLICE OF BOLONEY CHUMP</a></button>");
             console.log(playerDefense);
             console.log(bossDefense);
             return console.log("fight end and you loss");
@@ -356,6 +363,7 @@ var game2 = function() {
             hideAllBossDivs();
             $("#winlosediv").removeClass("hidden");
             $("#winlosediv").addClass("fadeInUp animated");
+            $("#defeatedBossImg").removeClass("hidden");
             $("#winlosetext").text("Boss has been defeated! Rejoice " + arr[0].userName);
             playerDefense = ["whatPlayer"];
             bossDefense = ["whatBoss"];
@@ -371,8 +379,9 @@ var game2 = function() {
             hideAllBossDivs();
             $("#winlosediv").removeClass("hidden");
             $("#winlosediv").addClass("fadeInUp animated");
+            $("#defeatedBossImg").addClass("hidden");
             $("#winlosetext").text("Your life " + arr[0].userName + " will be forgotten");
-            $("#winlosetext").append("<br><br><button><a href = '/gamepage' style='text-decoration:none'>PICK YOURSELF UP CHUMP</a></button>");
+            $("#winlosetext").append("<br><br><button><a href = '/gamepage' style='text-decoration:none'>GET A NEW SLICE OF BOLONEY CHUMP</a></button>");
             console.log(playerDefense);
             console.log(bossDefense);
             return console.log("fight end and you loss");
@@ -466,6 +475,7 @@ var game3 = function() {
             hideAllBossDivs();
             $("#winlosediv").removeClass("hidden");
             $("#winlosediv").addClass("fadeInUp animated");
+            $("#defeatedBossImg").removeClass("hidden");
             $("#winlosetext").text("YOU'VE SAVED THE CITY!");
             playerDefense = ["whatPlayer"];
             bossDefense = ["whatBoss"];
@@ -481,8 +491,9 @@ var game3 = function() {
             hideAllBossDivs();
             $("#winlosediv").removeClass("hidden");
             $("#winlosediv").addClass("fadeInUp animated");
+            $("#defeatedBossImg").addClass("hidden");
             $("#winlosetext").text("Your life " + arr[0].userName + " will be forgotten");
-            $("#winlosetext").append("<br><br><button><a href = '/gamepage' style='text-decoration:none'>PICK YOURSELF UP CHUMP</a></button>");
+            $("#winlosetext").append("<br><br><button><a href = '/gamepage' style='text-decoration:none'>GET A NEW SLICE OF BOLONEY CHUMP</a></button>");
 
             console.log(playerDefense);
             console.log(bossDefense);
