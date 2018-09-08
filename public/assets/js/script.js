@@ -443,7 +443,10 @@ $(function() {
 
   //CODE FOR ON HOVER TO SHOW STATS HERE
 
- 
+ function hidePass(){
+     var getmypass = $("#passwordInput").val().trim();
+     getmypass.type = "password";
+ }
 
 
 
@@ -460,6 +463,7 @@ $(function() {
         event.preventDefault();
         hideWelcome();
         itemSelection();
+        hidePass();
 
         $("#enterCredentials").removeClass("hidden");
         $("#enterCredentials").addClass("fadeInUp animated");
