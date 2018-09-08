@@ -86,7 +86,7 @@ function charImage(x) {
         $(".charnamedisplay").attr("src", "../public/assets/images/fight/heroes/shadowtaken-fight.png")
     }
     else {
-        document.write('<img src="../public/assets/images/Roto-Bot.png"><br><h1>Wrong password idiot</h1>');    
+        document.write('<div id="wrongPassDIV" style="width:75%"><h1 style="text-align:center;">Wrong password brawler!<br></h1><img src="../public/assets/images/wrong-password.png"><br></div>');    
     }
 
 }
@@ -100,9 +100,6 @@ $("#backtogamepage").on("click", function(event) {
 
 $("#startbossone").on("click", function(event) {
     event.preventDefault();
-    $('#pricetag_overlay1').toggleClass("animated hinge",function(){
-        $(this).remove();
-     });
     $("#startbossone").addClass("rubberBand animated");
     $("#bossonescreen").removeClass("hidden fadeOutDown");
     $("#bossonescreen").addClass("fadeInUp animated");
@@ -134,6 +131,7 @@ $("#startbosstwo").on("click", function(event) {
     $(".playerattackstat").text("ON YOUR MARK!");
     $(".bossattackstat").text("THEY GOT YOU IN THIER SIGHTS!!!!");
     console.log(arrBoss[0]);
+    changeFont();
     game2()
 });
 
@@ -151,6 +149,7 @@ $("#startbossthree").on("click", function(event) {
     $(".playerattackstat").text("INSTALL McAFee ON THIS BITCH!!");
     $(".bossattackstat").text("IT'S PENETRATING YOUR BACK FIREWALL");
     console.log(arrBoss[0]);
+    changeFont();
     game3()
 });
 
@@ -211,8 +210,7 @@ var game1 = function() {
             console.log("player missed");
             bossAttack();
             return
-        }
-        
+        }   
     }
 
     var bossAttack = function() {

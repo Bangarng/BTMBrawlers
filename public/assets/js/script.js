@@ -60,18 +60,18 @@ function heroItems(itemhere){
 
                 console.log(data[i]);
                 if(data[i].itemName === "Tech Goggles"){
-                    $("#items").append("<tr><td class='itemBox'><p class='pressStart'>" + data[i].itemName + "</p><img img data-attribute='" + data[i].itemName + "' id='itembuttons' class='img img-responsive flash' src='../public/assets/images/items/hero/Tech-Goggles.png'/></tr></td>");
+                    $("#items").append("<tr><td class='itemBox'><p class='pressStart'>" + data[i].itemName + "</p><img img data-attribute='" + data[i].itemName + "' id='itembuttons' class='img img-responsive spin' src='../public/assets/images/items/hero/Tech-Goggles.png'/></tr></td>");
 
                     // itemArr.splice(0,1,data[i].itemName,data[i].attack,data[i].defense, data[i].intellect);
                     
                 }
                 if(data[i].itemName === "Cape of Strength"){
-                    $("#items").append("<tr><td class='itemBox'><p class='pressStart'>" + data[i].itemName + "</p><img img data-attribute='" + data[i].itemName + "' id='itembuttons' class='img img-responsive flash' src='../public/assets/images/items/hero/Cape-of-Strength.png'/></tr></td>");
+                    $("#items").append("<tr><td class='itemBox'><p class='pressStart'>" + data[i].itemName + "</p><img img data-attribute='" + data[i].itemName + "' id='itembuttons' class='img img-responsive spin' src='../public/assets/images/items/hero/Cape-of-Strength.png'/></tr></td>");
 
                     // itemArr.splice(0,1,data[i].itemName,data[i].attack,data[i].defense, data[i].intellect);
                 }    
                 if(data[i].itemName === "Passive: Brawler Might"){
-                    $("#items").append("<tr><td class='itemBox'><p class='pressStart'>" + data[i].itemName + "</p><img img data-attribute='" + data[i].itemName + "' id='itembuttons' class='img img-responsive flash' src='../public/assets/images/items/hero/Brawler-Might.png'/></tr></td>");
+                    $("#items").append("<tr><td class='itemBox'><p class='pressStart'>" + data[i].itemName + "</p><img img data-attribute='" + data[i].itemName + "' id='itembuttons' class='img img-responsive spin' src='../public/assets/images/items/hero/Brawler-Might.png'/></tr></td>");
 
                     // itemArr.splice(0,1,data[i].itemName,data[i].attack,data[i].defense, data[i].intellect);
                 }
@@ -105,17 +105,17 @@ function sidekickItems(itemhere){
                 console.log(data[i]);
 
                 if(data[i].itemName === "Drainer Helm"){
-                    $("#items").append("<tr><td class='itemBox'><p class='pressStart'>" + data[i].itemName + "</p><img img data-attribute='" + data[i].itemName + "' id='itembuttons' class='img img-responsive flash' src='../public/assets/images/items/sidekick/Drainer-Helm.png'/></tr></td>");
+                    $("#items").append("<tr><td class='itemBox'><p class='pressStart'>" + data[i].itemName + "</p><img img data-attribute='" + data[i].itemName + "' id='itembuttons' class='img img-responsive spin' src='../public/assets/images/items/sidekick/Drainer-Helm.png'/></tr></td>");
 
                     // itemArr.splice(0,1,data[i].itemName,data[i].attack,data[i].defense, data[i].intellect);
                 }
                 if(data[i].itemName === "Dual Grapple Guns"){
-                    $("#items").append("<tr><td class='itemBox'><p class='pressStart'>" + data[i].itemName + "</p><img img data-attribute='" + data[i].itemName + "' id='itembuttons' class='img img-responsive flash' src='../public/assets/images/items/sidekick/Dual-Grapple-Guns.png'/></tr></td>");
+                    $("#items").append("<tr><td class='itemBox'><p class='pressStart'>" + data[i].itemName + "</p><img img data-attribute='" + data[i].itemName + "' id='itembuttons' class='img img-responsive spin' src='../public/assets/images/items/sidekick/Dual-Grapple-Guns.png'/></tr></td>");
 
                     // itemArr.splice(0,1,data[i].itemName,data[i].attack,data[i].defense, data[i].intellect);
                 }    
                 if(data[i].itemName === "Passive: Steady Aim"){
-                    $("#items").append("<tr><td class='itemBox'><p class='pressStart'>" + data[i].itemName + "</p><img img data-attribute='" + data[i].itemName + "' id='itembuttons' class='img img-responsive flash' src='../public/assets/images/items/sidekick/Steady-Aim.png'/></tr></td>");
+                    $("#items").append("<tr><td class='itemBox'><p class='pressStart'>" + data[i].itemName + "</p><img img data-attribute='" + data[i].itemName + "' id='itembuttons' class='img img-responsive spin' src='../public/assets/images/items/sidekick/Steady-Aim.png'/></tr></td>");
 
                     // itemArr.splice(0,1,data[i].itemName,data[i].attack,data[i].defense, data[i].intellect);
                 }
@@ -148,17 +148,17 @@ function shadowtakenItems(itemhere){
             console.log(data[i]);
                 
                 if(data[i].itemName === "Black Belt"){
-                    $("#items").append("<tr><td class='itemBox'><p class='pressStart'>" + data[i].itemName + "</p><img img data-attribute='" + data[i].itemName + "' id='itembuttons' class='img img-responsive flash' src='../public/assets/images/items/shadowtaken/black-belt.png'/></tr></td>");
+                    $("#items").append("<tr><td class='itemBox'><p class='pressStart'>" + data[i].itemName + "</p><img img data-attribute='" + data[i].itemName + "' id='itembuttons' class='img img-responsive spin' src='../public/assets/images/items/shadowtaken/black-belt.png'/></tr></td>");
 
                     // itemArr.splice(0,1,data[i].itemName,data[i].attack,data[i].defense, data[i].intellect);
                 }
                 if(data[i].itemName === "Melee Prowness"){
-                    $("#items").append("<tr><td class='itemBox'><p class='pressStart'>" + data[i].itemName + "</p><img img data-attribute='" + data[i].itemName + "' id='itembuttons' class='img img-responsive flash' src='../public/assets/images/items/shadowtaken/melee-prowness.png'/></tr></td>");
+                    $("#items").append("<tr><td class='itemBox'><p class='pressStart'>" + data[i].itemName + "</p><img img data-attribute='" + data[i].itemName + "' id='itembuttons' class='img img-responsive spin' src='../public/assets/images/items/shadowtaken/melee-prowness.png'/></tr></td>");
 
                     // itemArr.splice(0,1,data[i].itemName,data[i].attack,data[i].defense, data[i].intellect);
                 }    
                 if(data[i].itemName === "Crouching Tiger Hidden Chimera"){
-                    $("#items").append("<tr><td class='itemBox'><p class='pressStart'>" + data[i].itemName + "</p><img img data-attribute='" + data[i].itemName + "' id='itembuttons' class='img img-responsive flash' src='../public/assets/images/items/shadowtaken/crouching-tiger-hidden-chimera.png'/></tr></td>");
+                    $("#items").append("<tr><td class='itemBox'><p class='pressStart'>" + data[i].itemName + "</p><img img data-attribute='" + data[i].itemName + "' id='itembuttons' class='img img-responsive spin' src='../public/assets/images/items/shadowtaken/crouching-tiger-hidden-chimera.png'/></tr></td>");
 
                     // itemArr.splice(0,1,data[i].itemName,data[i].attack,data[i].defense, data[i].intellect);
                 }                  
@@ -186,18 +186,18 @@ function mothmanItems(itemhere){
             console.log(data[i]);
            
             if(data[i].itemName === "Insect Wings"){
-                $("#items").append("<tr><td class='itemBox'><p class='pressStart'>" + data[i].itemName + "</p><img img data-attribute='" + data[i].itemName +"' id='itembuttons' class='img img-responsive flash' src='../public/assets/images/items/mothman/Insect-Wings.png'/></tr></td>");
+                $("#items").append("<tr><td class='itemBox'><p class='pressStart'>" + data[i].itemName + "</p><img img data-attribute='" + data[i].itemName +"' id='itembuttons' class='img img-responsive spin' src='../public/assets/images/items/mothman/Insect-Wings.png'/></tr></td>");
 
                 // itemArr.splice(0,1,data[i].itemName,data[i].attack,data[i].defense, data[i].intellect);
             }
             if(data[i].itemName === "Moth Vision Goggles"){
-                $("#items").append("<tr><td class='itemBox'><p class='pressStart'>" + data[i].itemName + "</p><img img data-attribute='" + data[i].itemName + "' id='itembuttons' class='img img-responsive flash' src='../public/assets/images/items/mothman/Moth-Vision-Goggles.png'/></tr></td>");
+                $("#items").append("<tr><td class='itemBox'><p class='pressStart'>" + data[i].itemName + "</p><img img data-attribute='" + data[i].itemName + "' id='itembuttons' class='img img-responsive spin' src='../public/assets/images/items/mothman/Moth-Vision-Goggles.png'/></tr></td>");
          
 
                 // itemArr.splice(0,1,data[i].itemName,data[i].attack,data[i].defense, data[i].intellect);
             }    
             if(data[i].itemName === "Wingstorm Wind Strike"){
-                $("#items").append("<tr><td class='itemBox'><p class='pressStart'>" + data[i].itemName + "</p><img img data-attribute='" + data[i].itemName + "' id='itembuttons' class='img img-responsive flash' src='../public/assets/images/items/mothman/Wingstorm-Wind-Strike.png'/></tr></td>");
+                $("#items").append("<tr><td class='itemBox'><p class='pressStart'>" + data[i].itemName + "</p><img img data-attribute='" + data[i].itemName + "' id='itembuttons' class='img img-responsive spin' src='../public/assets/images/items/mothman/Wingstorm-Wind-Strike.png'/></tr></td>");
                 // itemArr.splice(0,1,data[i].itemName,data[i].attack,data[i].defense, data[i].intellect);
             }   
         }
@@ -432,14 +432,8 @@ $(function() {
     })
 
     console.log(charArr);
-    
 
-
-
-     
-         
 });
-
 
   //CODE FOR ON HOVER TO SHOW STATS HERE
 
@@ -447,8 +441,6 @@ $(function() {
      var getmypass = $("#passwordInput").val().trim();
      getmypass.type = "password";
  }
-
-
 
     //continue game
     $("#continueGame").on("click", function(event) {
@@ -470,9 +462,7 @@ $(function() {
     });
     //Load the Character Select
     $("#submitCredentials").on("click", function(event) {
-
-
-       
+    
         event.preventDefault();
         var user1 = $("#userNameInput").val().trim();
         var pass1 = $("#passwordInput").val().trim();
@@ -487,14 +477,13 @@ $(function() {
            
             if((user1==="" || pass1==="")){
 
-            alert("error, please enter a valid user name and password, no name= no brawling");
+            alert("error, please enter a valid user name and favorite color, no name= no brawling");
     
             itemSelection();
             hideWelcome();
             break;
-           
-            
-        }else if(user1===data[i].userName){
+                    
+        } else if(user1===data[i].userName){
 
             alert("ERROR, Another Brawler has that username!");
             itemSelection();
