@@ -25,30 +25,17 @@ $("#submitPassword").on("click", function(event) {
             if(data[i].pass===password){
                 var char = data[i];
                 arr.splice(0,1,char, char.itemOne, char.itemTwo, char.itemThree);
-            }
-            
+            }    
         }
 
-   
-    
         $("#passwordform").addClass("fadeIn animated hidden");
 
-    })
+    });
     
-   
-
-
-
-
-
     $("#passwordform").addClass("fadeOutUp animated hidden");
-    $("#gamePage").removeClass("hidden")
-    $("#startbossone").removeClass("hidden")
-   
-
-
-
-    $("#gamePage").removeClass("hidden")
+    $("#gamePage").removeClass("hidden");
+    $("#startbossone").removeClass("hidden");
+    $("#gamePage").removeClass("hidden");
     // $("#startbossone").removeClass("hidden")
     // $("#startbosstwo").removeClass("hidden")
 
@@ -74,16 +61,16 @@ function changeFont() {
 // Character image to display
 function charImage(x) {
     if (x == "Mothman") {
-        $(".charnamedisplay").attr("src", "../public/assets/images/fight/heroes/mothman-fight.png")
+        $(".charnamedisplay").attr("src", "../public/assets/images/fight/heroes/mothman-fight.png");
     }
     else if (x == "Sidekick") {
-        $(".charnamedisplay").attr("src", "../public/assets/images/fight/heroes/sidekick-fight.png")
+        $(".charnamedisplay").attr("src", "../public/assets/images/fight/heroes/sidekick-fight.png");
     }
     else if (x == "Hero") {
-        $(".charnamedisplay").attr("src", "../public/assets/images/fight/heroes/hero-fight.png")
+        $(".charnamedisplay").attr("src", "../public/assets/images/fight/heroes/hero-fight.png");
     }
     else if (x == "Shadowtaken") {
-        $(".charnamedisplay").attr("src", "../public/assets/images/fight/heroes/shadowtaken-fight.png")
+        $(".charnamedisplay").attr("src", "../public/assets/images/fight/heroes/shadowtaken-fight.png");
     }
     else {
         document.write('<div id="wrongPassDIV" style="width:75%"><h1 style="text-align:center;">Wrong password brawler!<br></h1><img src="../public/assets/images/wrong-password.png"><br></div>');    
@@ -173,21 +160,19 @@ var game1 = function() {
         var item2= arr[2];
         var item3 = arr[3];
         if(item1 !=="none"){
-            $(".itemsEquip").text("Equipped Item:\n" +item1+"\n")
+            $(".itemsEquip").text("Equipped Item:\n" +item1+"\n");
         }
         if(item2 !=="none"){
-            $(".itemsEquip").text("Equipped Item:\n" +item2+"\n")
+            $(".itemsEquip").text("Equipped Item:\n" +item2+"\n");
         }
         if(item3 !=="none"){
-            $(".itemsEquip").text("Equipped Item:\n" +item3+"\n")
+            $(".itemsEquip").text("Equipped Item:\n" +item3+"\n");
         }
     }
 
     $(".bossattack").text("\nATK: " + arrBoss[0].attack);
     $(".bossdefense").text("\nDEF: " + bossDefense[0]);
     $(".bossintellect").text("\nINT: " + arrBoss[0].intellect);
-
-
 
     var playerAttack = function() {
         var attack = arr[0].attack;
@@ -196,20 +181,20 @@ var game1 = function() {
         if ((Math.floor((Math.random() * 100) + 1)) <= intellect) {
             $(".playerattackstat").text("ATTACK!");
             $(".playerattackstat").addClass("tada animated");
-            var damage = (bossDefense[0] - attack)
+            var damage = (bossDefense[0] - attack);
             bossDefense.splice(0, 1, damage);
             console.log("player attacked" + "\nboss hp:" + bossDefense);
             $(".bossdefense").text("\nDEF: " + bossDefense[0]);
             ifBossDead();
             bossAttack();
-            return
+            return;
         }
         else {
             $(".playerattackstat").text("MISSED!?");
             $(".playerattackstat").addClass("flip animated");
             console.log("player missed");
             bossAttack();
-            return
+            return;
         }   
     }
 
@@ -262,7 +247,7 @@ var game1 = function() {
             bossDefense = ["whatBoss"];
             console.log(playerDefense);
             console.log(bossDefense);
-            $("#startbosstwo").removeClass("hidden")
+            $("#startbosstwo").removeClass("hidden");
             return console.log("fight end and you won");
         }
     }
@@ -273,7 +258,7 @@ var game1 = function() {
             $("#winlosediv").removeClass("hidden");
             $("#winlosediv").addClass("fadeInUp animated");
             $("#winlosetext").text("Your life " + arr[0].userName + " will be forgotten");
-            $("#winlosetext").append("<br><br><button><a href = '/gamepage' style='text-decoration:none'>PICK YOURSELF UP CHUMP</a></button>")
+            $("#winlosetext").append("<br><br><button><a href = '/gamepage' style='text-decoration:none'>PICK YOURSELF UP CHUMP</a></button>");
             console.log(playerDefense);
             console.log(bossDefense);
             return console.log("fight end and you loss");
@@ -283,11 +268,10 @@ var game1 = function() {
 var game2 = function() {
     playerDefense.splice(0,1,arr[0].defense);
     bossDefense.splice(0,1,arrBoss[0].defense);
-
     console.log(playerDefense);
     console.log(bossDefense);
-    console.log(arr)
-    console.log(arrBoss)
+    console.log(arr);
+    console.log(arrBoss);
     
 
     $(".playerattack").text("\nATK: " + arr[0].attack);
@@ -326,7 +310,6 @@ var game2 = function() {
             bossAttack();
             return
         }
-        
     }
 
     var bossAttack = function() {
@@ -354,7 +337,7 @@ var game2 = function() {
     // });
     $("#playerButtonb2").on("click", function(event) {
         event.preventDefault();
-        console.log(playerDefense)
+        console.log(playerDefense);
         console.log(bossDefense);
         playerAttack();
         console.log("B2Button");
@@ -378,7 +361,7 @@ var game2 = function() {
             bossDefense = ["whatBoss"];
             console.log(playerDefense);
             console.log(bossDefense);
-            $("#startbossthree").removeClass("hidden")
+            $("#startbossthree").removeClass("hidden");
             return console.log("fight end and you won");
         }
     }
@@ -389,7 +372,7 @@ var game2 = function() {
             $("#winlosediv").removeClass("hidden");
             $("#winlosediv").addClass("fadeInUp animated");
             $("#winlosetext").text("Your life " + arr[0].userName + " will be forgotten");
-            $("#winlosetext").append("<br><br><button><a href = '/gamepage' style='text-decoration:none'>PICK YOURSELF UP CHUMP</a></button>")
+            $("#winlosetext").append("<br><br><button><a href = '/gamepage' style='text-decoration:none'>PICK YOURSELF UP CHUMP</a></button>");
             console.log(playerDefense);
             console.log(bossDefense);
             return console.log("fight end and you loss");
@@ -402,14 +385,13 @@ var game3 = function() {
 
     console.log(playerDefense);
     console.log(bossDefense);
-    console.log(arr)
-    console.log(arrBoss)
+    console.log(arr);
+    console.log(arrBoss);
     
 
     $(".playerattack").text("\nATK: " + arr[0].attack);
     $(".playerdefense").text("\nDEF: " + playerDefense[0]);
     $(".playerintellect").text("\nINT: " + arr[0].intellect);
-
     $(".bossattack").text("\nATK: " + arrBoss[0].attack);
     $(".bossdefense").text("\nDEF: " + bossDefense[0]);
     $(".bossintellect").text("\nINT: " + arrBoss[0].intellect);
@@ -423,22 +405,21 @@ var game3 = function() {
         if ((Math.floor((Math.random() * 100) + 1)) <= intellect) {
             $(".playerattackstat").text("ATTACK!");
             $(".playerattackstat").addClass("tada animated");
-            var damage = (bossDefense[0] - attack)
+            var damage = (bossDefense[0] - attack);
             bossDefense.splice(0, 1, damage);
             console.log("player attacked" + "\nboss hp:" + bossDefense);
             $(".bossdefense").text("\nDEF: " + bossDefense[0]);
             ifBossDead();
             bossAttack();
-            return
+            return;
         }
         else {
             $(".playerattackstat").text("MISSED!?");
             $(".playerattackstat").addClass("flip animated");
             console.log("player missed");
             bossAttack();
-            return
+            return;
         }
-        
     }
 
     var bossAttack = function() {
@@ -501,7 +482,7 @@ var game3 = function() {
             $("#winlosediv").removeClass("hidden");
             $("#winlosediv").addClass("fadeInUp animated");
             $("#winlosetext").text("Your life " + arr[0].userName + " will be forgotten");
-            $("#winlosetext").append("<br><br><button><a href = '/gamepage' style='text-decoration:none'>PICK YOURSELF UP CHUMP</a></button>")
+            $("#winlosetext").append("<br><br><button><a href = '/gamepage' style='text-decoration:none'>PICK YOURSELF UP CHUMP</a></button>");
 
             console.log(playerDefense);
             console.log(bossDefense);
