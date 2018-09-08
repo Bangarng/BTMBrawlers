@@ -355,19 +355,19 @@ body {
 /* Custom Fonts */
 .hero-font {
     color: #396eb6;
-    text-shadow: #f3ea21 1px 1px;
+    text-shadow: #f3ea21 2px 2px;
 }
 .sidekick-font {
     color: #502f83;
-    text-shadow: #f3ea21 1px 1px;
+    text-shadow: #f3ea21 2px 2px;
 }
 .shadowtaken-font {
     color: #2e2750;
-    text-shadow: #f3ea21 1px 1px;
+    text-shadow: #502F83 2px 2px;
 }
 .mothman-font {
     color: #9c2e21;
-    text-shadow: #771D14 1px 1px;
+    text-shadow: #771D14 2px 2px;
 }
 
 /* boss 1 */

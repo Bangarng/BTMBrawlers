@@ -63,7 +63,7 @@ function changeFont() {
     if(arr[0].charName === "Sidekick") {
         $(".colorMeRad").addClass("sidekick-font");
     }
-    if(arr[0].charName === "ShadowTaken") {
+    if(arr[0].charName === "Shadowtaken") {
         $(".colorMeRad").addClass("shadowtaken-font");
     }
     if(arr[0].charName === "Mothman") {
