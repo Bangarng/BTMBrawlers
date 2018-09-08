@@ -74,16 +74,16 @@ function changeFont() {
 // Character image to display
 function charImage(x) {
     if (x == "Mothman") {
-        $("#charnamedisplay").attr("src", "../public/assets/images/fight/heroes/mothman-fight.png")
+        $(".charnamedisplay").attr("src", "../public/assets/images/fight/heroes/mothman-fight.png")
     }
     else if (x == "Sidekick") {
-        $("#charnamedisplay").attr("src", "../public/assets/images/fight/heroes/sidekick-fight.png")
+        $(".charnamedisplay").attr("src", "../public/assets/images/fight/heroes/sidekick-fight.png")
     }
     else if (x == "Hero") {
-        $("#charnamedisplay").attr("src", "../public/assets/images/fight/heroes/hero-fight.png")
+        $(".charnamedisplay").attr("src", "../public/assets/images/fight/heroes/hero-fight.png")
     }
     else if (x == "Shadowtaken") {
-        $("#charnamedisplay").attr("src", "../public/assets/images/fight/heroes/shadowtaken-fight.png")
+        $(".charnamedisplay").attr("src", "../public/assets/images/fight/heroes/shadowtaken-fight.png")
     }
     else {
         document.write('<img src="../public/assets/images/Roto-Bot.png"><br><h1>Wrong password idiot</h1>');    
@@ -309,7 +309,7 @@ var game2 = function() {
         if ((Math.floor((Math.random() * 100) + 1)) <= intellect) {
             $(".playerattackstat").text("ATTACK!");
             $(".playerattackstat").addClass("tada animated");
-            $("charnamedisplay").addClass("bounce animated");
+            $(".charnamedisplay").addClass("bounce animated");
             $(".boss-image").addClass("wobble animated");
             var damage = (bossDefense[0] - attack)
             bossDefense.splice(0, 1, damage);
@@ -322,7 +322,7 @@ var game2 = function() {
         else {
             $(".playerattackstat").text("MISSED!?");
             $(".playerattackstat").addClass("flip animated");
-            $("#charnamedisplay").addClass("pulse animated");
+            $(".charnamedisplay").addClass("pulse animated");
             $(".boss-image").addClass("tada animated");
             console.log("player missed");
             bossAttack();
