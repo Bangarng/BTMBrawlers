@@ -86,7 +86,10 @@ function charImage(x) {
         $(".charnamedisplay").attr("src", "../public/assets/images/fight/heroes/shadowtaken-fight.png")
     }
     else {
-        document.write('<img src="../public/assets/images/Roto-Bot.png"><br><h1>Wrong password idiot</h1>');    
+        // document.write('<img src="../public/assets/images/Roto-Bot.png"><br><h1>Wrong password idiot</h1>');    
+        $('div').addClass('hidden');
+        $("#wrongPasswordContainer").removeClass('hidden')
+        $("#wrongPassword").removeClass('hidden')
     }
 
 }
@@ -375,6 +378,7 @@ var game2 = function() {
             hideAllBossDivs();
             $("#winlosediv").removeClass("hidden");
             $("#winlosediv").addClass("fadeInUp animated");
+            $("#defeatedBossImg").removeClass("hidden");
             $("#winlosetext").text("Boss has been defeated! Rejoice " + arr[0].userName);
             playerDefense = ["whatPlayer"];
             bossDefense = ["whatBoss"];
@@ -390,8 +394,9 @@ var game2 = function() {
             hideAllBossDivs();
             $("#winlosediv").removeClass("hidden");
             $("#winlosediv").addClass("fadeInUp animated");
+            $("#defeatedBossImg").addClass("hidden");
             $("#winlosetext").text("Your life " + arr[0].userName + " will be forgotten");
-            $("#winlosetext").append("<br><br><button><a href = '/gamepage' style='text-decoration:none'>PICK YOURSELF UP CHUMP</a></button>")
+            $("#winlosetext").append("<br><br><button><a href = '/gamepage' style='text-decoration:none'>LIVE A DIFFERENT LIFE CHUMP</a></button>")
             console.log(playerDefense);
             console.log(bossDefense);
             return console.log("fight end and you loss");
