@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-
-
-
-
-=======
->>>>>>> 5d888932d0dd0e1f692fa89a1ebdf83d5cad7598
 //this constructo makes our static characters
 var characterMaker = function(charName, attack, defense, intellect) {
     this.charName =  charName;
@@ -417,83 +410,37 @@ $(function() {
         event.preventDefault();
         var user1 = $("#userNameInput").val().trim();
         var pass1 = $("#passwordInput").val().trim();
+        var lols = false;
 
         $.ajax("/characterAPI", {
             type: "GET",
-<<<<<<< HEAD
-        }).then(function(data) {
-          
-       
-           if(user1!==""){ 
-            for(var i=0; i<data.length; i++){
-                if(data[i].userName===user1){
-                    alert("THAT USER NAME IS TAKEN YA FILTHY CASUAL");
-                  
-                   
-                }
-                
-            }
-            itemSelection();
-            hideWelcome();
-            break;
-        }else
-            
-             if((user1==="" || pass1==="")){
-
-                alert("error, please enter a valid user name and password, no name= no brawling");
-        
-                itemSelection();
-                hideWelcome();
-             
-        
-                
-            }
-             else {    
-                    hideCredentials();
-                    itemSelection();
-
-                    $("#createUser").removeClass("hidden");
-                    $("#createUser").addClass("fadeInUp animated");
-                    var themeSong = $(".themeMusic");
-                    var charSelSong = document.createElement("audio");
-                    var site = window.location;
-                    charSelSong.src = site + "/public/assets/music/BTM Character Select.mp3";
-                    charSelSong.autoPlay = false;
-                    charSelSong.preLoad = true;
-                    charSelSong.controls = false;
-                    charSelSong.loop = true;
-                    charSelSong.duration = 0;
-                    if (charSelSong.duration > 0 && !myAudio.paused) {
-                        themeSong.stop();
-                        console.log("Character Select Song is playing.");
-                    } else {
-                        charSelSong.play();
-                        charSelSong.duration = 1;
-                    }
-            }
-        
-=======
         }).then( function(data) {
             console.log(data);
-
-            for(var i= 0; i<data.length; i++){
+            
+   
            
-            if((user1==="" || pass1==="")){
+        if(user1==="" || pass1===""){
 
-            alert("error, please enter a valid user name and favorite color, no name= no brawling");
-    
-            itemSelection();
-            hideWelcome();
-            break;
-                    
-        } else if(user1===data[i].userName){
+        alert("error, please enter a valid user name and favorite color, no name= no brawling");
 
-            alert("ERROR, Another Brawler has that username!");
-            itemSelection();
-            hideWelcome();
-            break;
+        itemSelection();
+        hideWelcome();
+        
+                
+        } else if(user1!==""){
+            for(var i= 0; i<data.length; i++){
+                if(user1===data[i].userName){
+                    alert("ERROR, Another Brawler has that username!");
+                }
+            }
+  
+        } 
+        else{
+            lols=true;
+        }
+    })
 
-        } else{    
+        if(lols){    
         hideCredentials();
         itemSelection();
 
@@ -516,9 +463,7 @@ $(function() {
             charSelSong.duration = 1;
         }
     }
-}
->>>>>>> 5d888932d0dd0e1f692fa89a1ebdf83d5cad7598
-    });
+
       
      //back to User Credentials
      $("#backToUser").on("click", function(event) {

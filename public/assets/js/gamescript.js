@@ -21,7 +21,7 @@ $("#submitPassword").on("click", function(event) {
         type: "GET",
         // data: pleasework
     }).then(function(data) {
-        for(i=0; i<data.length; i++){
+        for(var i=0; i<data.length; i++){
             if(data[i].pass===password){
                 var char = data[i];
                 arr.splice(0,1,char, char.itemOne, char.itemTwo, char.itemThree);
