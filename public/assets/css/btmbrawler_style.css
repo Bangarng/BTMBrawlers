@@ -28,7 +28,7 @@ body {
 
 /* Enter Credentials Stuff */
 #enterCredentials, #itemSelection {
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.7);
 }
 
 .create-form {
@@ -50,7 +50,7 @@ body {
     margin: 3%;
 }
 
-#submitCredentials, .backHome, #backToUser, #submitUser, #itemScreen, #charCreation, #pickItem, #modal-close, #submitPassword, #playerButtonb1, #playerButtonb2, #playerButtonb3, #backtogamepage {
+#submitCredentials, .backHome, #backToUser, #submitUser, #itemScreen, #charCreation, #pickItem, #modal-close, #submitPassword, #playerButtonb1, #playerButtonb2, #playerButtonb3, #backtogamepage, .ditchFight {
     font-family: 'Press Start 2P', cursive;
     margin: auto;
     font-size: 1em;
@@ -63,11 +63,11 @@ body {
     margin: 0 1%;
 }
 
-#submitCredentials:hover, .backHome:hover, #backToUser:hover, #charCreation:hover, #submitUser:hover, #itemScreen:hover, #modal-close:hover, #submitPassword:hover, #playerButtonb1:hover, #playerButtonb2:hover, #playerButtonb3:hover,  backtogamepage:hover {
+#submitCredentials:hover, .backHome:hover, #backToUser:hover, #charCreation:hover, #submitUser:hover, #itemScreen:hover, #modal-close:hover, #submitPassword:hover, #playerButtonb1:hover, #playerButtonb2:hover, #playerButtonb3:hover,  backtogamepage:hover, .ditchFight:hover {
     transform: scale(1.05);
 }
 
-#submitCredentials:active, .backHome:active, #backToUser:active, #submitUser:active, #itemScreen:active, #modal-close:active, #submitPassword:hover, #playerButtonb1:active, #playerButtonb2:active, #playerButtonb3:active, backtogamepage:active {
+#submitCredentials:active, .backHome:active, #backToUser:active, #submitUser:active, #itemScreen:active, #modal-close:active, #submitPassword:hover, #playerButtonb1:active, #playerButtonb2:active, #playerButtonb3:active, backtogamepage:active, .ditchFight:active {
     transform: scale(1.00);
 }
 
@@ -177,7 +177,7 @@ body {
 }
 
 #createUser, #userInfo, #passwordform, #gamePage, #bossonescreen, #bosstwoscreen, #bossthreescreen, #winlosediv, #wrongPassDIV {
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.7);
     width: 95%;
     margin: auto;
 }
@@ -406,3 +406,7 @@ body {
 .nin-three-head {
     margin-bottom: 2%;
 }
+
+/* .charnamedisplay, .boss-image {
+    background: rgba(0, 0, 0, 0.3);
+} */
