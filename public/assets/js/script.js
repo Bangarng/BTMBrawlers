@@ -412,32 +412,36 @@ $(function() {
     $("#submitCredentials").on("click", function(event) {
     
         event.preventDefault();
-        var user1 = $("#userNameInput").val().trim();
-        var pass1 = $("#passwordInput").val().trim();
+        // var user1 = $("#userNameInput").val().trim();
+        // var pass1 = $("#passwordInput").val().trim();
+        // var lol;
 
-        $.ajax("/characterAPI", {
-            type: "GET",
-        }).then( function(data) {
-            console.log(data);
+        // $.ajax("/characterAPI", {
+        //     type: "GET",
+        // }).then( function(data) {
+        //     console.log(data);
 
-            for(var i= 0; i<data.length; i++){
+        //     for(var i= 0; i<data.length; i++){
            
-            if((user1==="" || pass1==="")){
+        //     if(user1==="" || pass1===""){
 
-            alert("error, please enter a valid user name and favorite color, no name= no brawling");
+        //     alert("error, please enter a valid user name and favorite color, no name= no brawling");
+        //     lol = false;
     
-            itemSelection();
-            hideWelcome();
-            break;
+        //     itemSelection();
+        //     hideWelcome();
+        //     break;
                     
-        } else if(user1===data[i].userName){
-
-            alert("ERROR, Another Brawler has that username!");
-            itemSelection();
-            hideWelcome();
-            break;
-
-        } else{    
+        // } else if(lol===false){
+        //     for(var j in data){
+        //         if(user1===data[j].userName){
+        //             alert("ERROR, Another Brawler has that username!");
+        //             itemSelection();
+        //             hideWelcome();
+        //             break;
+        //         }
+        //     }
+        // } else{    
         hideCredentials();
         itemSelection();
 
@@ -459,9 +463,9 @@ $(function() {
             charSelSong.play();
             charSelSong.duration = 1;
         }
-    }
-}
-    });
+    // }
+// }
+    // });
      //back to User Credentials
      $("#backToUser").on("click", function(event) {
         event.preventDefault();
