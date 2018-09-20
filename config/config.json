@@ -1,19 +1,23 @@
 {
   "development": {
     "username": "root",
-    "password": "NotAnother1",
+    "password": "samM1994",
     "database": "users_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "NotAnother1",
+    "password": "samM1994",
     "database": "users_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
+    "username":"rjh5hl2338tjkgjh",
+    "password":"t703ybv0yc34yvkk",
+    "database": "u5ibfv7dcjvtj9ca",
+    "host":"yhrz9vns005e0734.cbetxkdyhwsb.us-east-1.rds.amazonaws.com", 
     "user_env_variable":"JAWSDB_URL",
     "dialect": "mysql"
   }

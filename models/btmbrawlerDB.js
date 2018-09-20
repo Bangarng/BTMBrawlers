@@ -60,6 +60,6 @@ var brawlerdb = sequelize.define("userInfo", //this is the table stupid <3 <3//
     timestamps: false   
 });
 
-
+brawlerdb.sync();
 
 module.exports = brawlerdb;
