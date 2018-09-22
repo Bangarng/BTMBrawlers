@@ -1,6 +1,6 @@
 var Sequelize = require("sequelize");
 var sequelize = require("../config/connection");
-
+    
 
 var itemDB =sequelize.define("items",{
 
